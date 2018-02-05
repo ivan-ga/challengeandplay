@@ -23,20 +23,18 @@
 
     <link href="..//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    
+
     <style type="text/css">
         img { width: 140px; height: 140px; border-radius: 50%!important }
     </style>
-    
+
 </head>
 
 
 <body>
 
     <header>
-      <div ng-controller="HeaderCtrl">
-        <div ng-include src="header.url"></div>
-      </div>
+      <% include templates/header %>
     </header>
 
     <main>
@@ -61,20 +59,20 @@
         		            <input type="submit" value="Subir archivo" name="submit" onsubmit="setTimeout(function () { window.location.reload(); }, 10)">
         	             </form>
         	           <% } %>
-        
+
                         <!--Si es usuario de alguna red social-->
                 	     <% if (user.local.username_facebook != null) { %>
                             <h2 class="fa fa-facebook"> Facebook</h2><br>
                             <img src="http://graph.facebook.com/<%= user.local.id %>/picture?type=large" class="img-circle"><br>
                             <strong>Name</strong>: <%= user.local.username_facebook %><br><br>
                          <% } %>
-                
+
                          <% if (user.local.username_twitter != null) { %>
                             <h2 class="fa fa-twitter"> Twitter</h2><br>
                             <img src="https://twitter.com/<%= user.local.username_twitter %>/profile_image?size=original" class="img-circle"><br>
                             <strong>Name</strong>: <%= user.local.username_twitter %><br><br><br>
                          <% } %>
-                          
+
                          <% if (user.local.username_github != null) { %>
                             <h2 class="fa fa-github"> Github</h2><br>
                             <img src="https://avatars2.githubusercontent.com/u/<%= user.local.id %>" class="img-circle"><br>
@@ -128,14 +126,12 @@
     </main>
 
 <!--Footer-->
-  <footer class="page-footer center-on-small-only">
 
-    <div ng-controller="PieCtrl">
-      <div ng-include src="footer.url"></div>
-    </div>
+<footer class="page-footer center-on-small-only">
+  <% include templates/footer %>
+</footer>
 
-  </footer>
-  <!--/.Footer-->
+<!--/.Footer-->
 
   <!-- SCRIPTS -->
 

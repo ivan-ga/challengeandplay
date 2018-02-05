@@ -23,7 +23,7 @@
 <body>
 
     <header>
-   
+
         <div ng-controller="HeaderCtrl">
           <div ng-include src="header.url"></div>
         </div>
@@ -45,8 +45,8 @@
                                 <th scope="col" data-priority="4">Ganadas</th>
                                 <th scope="col" data-priority="3">Perdidas</th>
                                 <th scope="col" data-priority="5">Empatadas</th>
-                                <th scope="col" data-priority="6">% Ganadas</th>            
-                            </tr>            
+                                <th scope="col" data-priority="6">% Ganadas</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <% for (var i=0; i < user.length; i++) {%>
@@ -64,16 +64,16 @@
                                         <td data-priority="6"><%= ((user[i].local.ganadas_ajedrez/user[i].local.totales_ajedrez)*100).toFixed(2) %>%</td>
                                     <% } %>
                                     </tr class="table-info">    </li>
-                            <% } %> 
-                        </tbody> 
-                    </ul>            
-                    </table>         
+                            <% } %>
+                        </tbody>
+                    </ul>
+                    </table>
                 </div>
                 <div class="offset-1 col-md-3 ">
                     <img src="/img/ranking2.jpg" class="img-fluid" alt="Responsive image">
-                </div>             
-            </div>              
-        </div>          
+                </div>
+            </div>
+        </div>
     </main>
 
     <!--Footer-->

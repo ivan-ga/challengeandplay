@@ -21,25 +21,23 @@
 <style>
     .ajuste{
        padding-left: 4%;
-      
+
     }
     .btn {
-      
+
         background-color: #2c0f62;
     }
-  
+
 </style>
 </head>
 
 <body  onload="cargarTablero();">
   <header>
-    <div ng-controller="HeaderCtrl">
-      <div ng-include src="header.url"></div>
-    </div>
+    <% include templates/header %>
   </header>
   <main class="container-fluid">
- 
- 
+
+
         <br>
   <div class="row">
   <div class="col-md-4"></div>
@@ -47,22 +45,20 @@
   <h1 class="text-center"><strong>Buscaminas</strong></h1>
   </div>
   </div>
-      
+
       <div class="row">
-             <div class="col-sm-4" align="right" > 
+             <div class="col-sm-4" align="right" >
                       <button type="button" class="btn btn-primary" onclick="resetTablero();" >Empezar</button>
               </div>
-              <div class="col-sm-8  ajuste"> 
+              <div class="col-sm-8  ajuste">
                      <div id="tablerominas" class="tablero"></div>
               </div>
       </div>
-      
+
   </main>
   <!--Footer-->
   <footer class="page-footer center-on-small-only">
-    <div ng-controller="PieCtrl">
-      <div ng-include src="footer.url"></div>
-    </div>
+    <% include templates/footer %>      
   </footer>
   <!--/.Footer-->
 

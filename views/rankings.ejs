@@ -21,9 +21,7 @@
 <body>
 
     <header>
-      <div ng-controller="HeaderCtrl">
-        <div ng-include src="header.url"></div>
-      </div>
+      <% include templates/header %>
     </header>
 
     <main>
@@ -66,11 +64,7 @@
 
     <!--Footer-->
     <footer class="page-footer center-on-small-only">
-
-      <div ng-controller="PieCtrl">
-        <div ng-include src="footer.url"></div>
-      </div>
-
+      <% include templates/header %>
     </footer>
     <!--/.Footer-->
 

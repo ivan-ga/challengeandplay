@@ -40,9 +40,9 @@
                 </div>
             </nav>
             <!--/.Navbar-->
-           
-            
-            
+
+
+
         </header>
         <main>
             <!--Main layout-->
@@ -125,10 +125,10 @@
 
 
                                     <div class="row omb_row-sm-offset-3">
-                                     
-                                      
+
+
 <div class="col-xs-12 col-sm-9">
-                                            
+
                                        <form class="omb_loginForm" method="POST" action="/login">
                                                 <div class="input-group">
                                                     	<span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -168,15 +168,15 @@
 
                                     <div class="row omb_row-sm-offset-3 omb_loginOr">
                                         <div class="col-xs-12 col-sm-9">
-                                            <hr class="omb_hrOr"><span class="omb_spanOr">or</span>	
+                                            <hr class="omb_hrOr"><span class="omb_spanOr">or</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row omb_row-sm-offset-3">
                                         <div class="col-xs-12 col-sm-9" >
                                             <form class="omb_loginForm pure-form" method="POST" action="/registro">
                                                 <div class="input-group">
-                                                    	<span class="input-group-addon"><i class="fa fa-user"></i></span> 
+                                                    	<span class="input-group-addon"><i class="fa fa-user"></i></span>
 
                                                     <input type="text" class="form-control" ng-model="fo.registro.username" name="username" id="username" placeholder="Introduce tu nombre de usuario" required>
                                                 </div>
@@ -230,16 +230,12 @@
                 </div>
             </div>
             <!--/.Main layout-->
-          
+
         </main>
 
         <!--Footer-->
         <footer class="page-footer center-on-small-only">
-
-            <div ng-controller="PieCtrl">
-                <div ng-include src="footer.url"></div>
-            </div>
-
+          <% include templates/footer %>
         </footer>
         <!--/.Footer-->
 

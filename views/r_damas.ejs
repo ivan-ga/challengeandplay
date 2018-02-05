@@ -6,7 +6,7 @@
     .en-medio{
         padding: 5%;
     }
-    
+
 </style>
 
 
@@ -34,7 +34,7 @@
 <body>
 
     <header>
-     
+
         <div ng-controller="HeaderCtrl">
           <div ng-include src="header.url"></div>
         </div>
@@ -78,7 +78,7 @@
                                             <td data-priority="5"><%= user[i].local.empatadas_damas %></td>
                                             <%if(user[i].local.ganadas_damas == 0){%>
                                                  <td data-priority="6">0</td>
-                                            
+
                                             <% } else{ %>
                                                     <td data-priority="6"><%= ((user[i].local.ganadas_damas/user[i].local.totales_damas)*100).toFixed(2) %>%</td>
                                             <% } %>
