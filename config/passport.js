@@ -4,7 +4,7 @@ var TwitterStrategy = require('passport-twitter').Strategy;
 var Strategy = require('passport-github').Strategy;
 
 var User = require('../models/user');
-var configAuth = require('./auth');
+// var configAuth = require('./auth');
 
 module.exports = function(passport) {
 
@@ -56,7 +56,7 @@ module.exports = function(passport) {
               throw err;
             return done(null, newUser);
           });
-          
+
         }
       });
     });
@@ -78,7 +78,7 @@ module.exports = function(passport) {
       return done(null, user);
     });
   }));
-
+/*
   passport.use(new FacebookStrategy({
     clientID: configAuth.facebookAuth.clientID,
     clientSecret: configAuth.facebookAuth.clientSecret,
@@ -230,4 +230,5 @@ function(token, tokenSecret, profile, done) {
       });
     });
   }));
+  */
 };
