@@ -25,101 +25,63 @@
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
-
-
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
     <header>
-
         <div ng-controller="HeaderCtrl">
           <div ng-include src="header.url"></div>
         </div>
-
-        <!--/.Navbar-->
     </header>
 
     <main>
-        <!--Main layout-->
-        <!--Main layout-->
-                  <div class="container en-medio">
-                      <!--Page heading-->
-                      <div class="row">
-                          <div class="offset-1 col-md-7">
-
-                               <h1>Ranking Damas</h1>
-                       <ul class="users">
-                              <table class="table table-hover border-dark table-bordered table-stripe">
-
-                                  <thead>
-                                      <tr>
-                                          <th scope="col" data-priority="1">Posición</th>
-                                          <th scope="col" data-priority="1">Nombre</th>
-                                          <th scope="col" data-priority="2">Totales</th>
-                                          <th scope="col" data-priority="4">Ganadas</th>
-                                          <th scope="col" data-priority="3">Perdidas</th>
-                                          <th scope="col" data-priority="5">Empatadas</th>
-                                          <th scope="col" data-priority="6">% Ganadas</th>
-
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                         <% for (var i=0; i < user.length; i++) {%>
-                                          <li class="users">
-                                          <tr class="table-info">
-                                            <td data-priority="1"><%= i+1 %> </td>
-                                            <td data-priority="2"><%= user[i].local.username %> </td>
-                                            <td data-priority="2"><%= user[i].local.totales_damas %> </td>
-                                            <td data-priority="3"><%= user[i].local.ganadas_damas %></td>
-                                            <td data-priority="4"><%= user[i].local.perdidas_damas %></td>
-                                            <td data-priority="5"><%= user[i].local.empatadas_damas %></td>
-                                            <%if(user[i].local.ganadas_damas == 0){%>
-                                                 <td data-priority="6">0</td>
-
-                                            <% } else{ %>
-                                                    <td data-priority="6"><%= ((user[i].local.ganadas_damas/user[i].local.totales_damas)*100).toFixed(2) %>%</td>
-                                            <% } %>
-                                           </tr class="table-info">    </li>
+        <div class="container en-medio">
+            <div class="row">
+                <div class="offset-1 col-md-7">
+                    <h1>Ranking Damas</h1>
+                    <ul class="users">
+                    <table class="table table-hover border-dark table-bordered table-stripe">
+                        <thead>
+                            <tr>
+                                <th scope="col" data-priority="1">Posición</th>
+                                <th scope="col" data-priority="1">Nombre</th>
+                                <th scope="col" data-priority="2">Totales</th>
+                                <th scope="col" data-priority="4">Ganadas</th>
+                                <th scope="col" data-priority="3">Perdidas</th>
+                                <th scope="col" data-priority="5">Empatadas</th>
+                                <th scope="col" data-priority="6">% Ganadas</th>
+                            </tr>
+                        </thead>
+                            <tbody>
+                                <% for (var i=0; i < user.length; i++) {%>
+                                    <li class="users">
+                                    <tr class="table-info">
+                                        <td data-priority="1"><%= i+1 %> </td>
+                                        <td data-priority="2"><%= user[i].local.username %> </td>
+                                        <td data-priority="2"><%= user[i].local.totales_damas %> </td>
+                                        <td data-priority="3"><%= user[i].local.ganadas_damas %></td>
+                                        <td data-priority="4"><%= user[i].local.perdidas_damas %></td>
+                                        <td data-priority="5"><%= user[i].local.empatadas_damas %></td>
+                                        <%if(user[i].local.ganadas_damas == 0){%>
+                                             <td data-priority="6">0</td>
+                                        
+                                        <% } else{ %>
+                                                <td data-priority="6"><%= ((user[i].local.ganadas_damas/user[i].local.totales_damas)*100).toFixed(2) %>%</td>
                                         <% } %>
-                                        </ul>
-                                  </tbody>
-                              </table>
-
-                          </div>
-
-
-                                                    <div class="offset-1 col-md-3 ">
-                                      <img src="/img/ranking2.jpg" class="img-fluid" alt="Responsive image">
-                                                    </div>
-
-
-                      </div>
-
-
-
-
-
-
-
-
-
-
-
-                  </div>
-
-                  <!--/.Main layout-->
-
-
-
-
-
-
-
-
-        <!--/.Main layout-->
+                                        </tr class="table-info">    </li>
+                                        <% } %>
+                                    </ul>
+                            </tbody>
+                    </table>
+                </div>
+                <div class="offset-1 col-md-3 ">
+                    <img src="/img/ranking2.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
     </main>
 
     <!--Footer-->
@@ -128,9 +90,6 @@
       <div ng-controller="PieCtrl">
         <div ng-include src="footer.url"></div>
       </div>
-
-
-
 
     </footer>
     <!--/.Footer-->
@@ -156,32 +115,6 @@
     <script>
             new WOW().init();
     </script>
-
-
-<!-- <script>
-angular.module('prueba', []).controller('namesCtrl', function($scope) {
-    $scope.names = [
-        {name:'Jani',country:'Norway'},
-        {name:'Carl',country:'Sweden'},
-        {name:'Margareth',country:'England'},
-        {name:'Hege',country:'Norway'},
-        {name:'Joe',country:'Denmark'},
-        {name:'Gustav',country:'Sweden'},
-        {name:'Birgit',country:'Denmark'},
-        {name:'Mary',country:'England'},
-        {name:'Kai',country:'Norway'}
-        ];
-    $scope.orderByMe = function(x) {
-        $scope.myOrderBy = x;
-    }
-});
-</script> -->
-
-
-
-
-
-
 </body>
 
 </html>
