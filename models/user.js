@@ -28,26 +28,6 @@ var userSchema = mongoose.Schema({
     totales_buscaminas:Number,
     empatadas_buscaminas:Number,
   },
-  facebook: {
-    id: String,
-    token: String,
-    email: String,
-    name: String,
-    username: String,
-  },
-  twitter: {
-    id: String,
-    token: String,
-    displayName: String,
-    username: String,
-  },
-  github: {
-    id: String,
-    token: String,
-    displayName: String,
-    username: String,
-    email: String,
-  },
 });
 
 userSchema.methods.generateHash = function(password) {
