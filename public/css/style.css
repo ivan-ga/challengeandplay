@@ -1,5 +1,12 @@
 /* YOUR CUSTOM STYLES */
 
+.text-dark {
+  color: #2c0f62 !important;
+}
+
+.text-red {
+  color: #a00100 !important;
+}
   /*<!-- Template styles -->*/
    /* <style rel="stylesheet">*/
         /* TEMPLATE STYLES */
@@ -19,12 +26,18 @@
         }
 
         .navbar {
-            background-color: #2c0f62;
+            /* background-color: #2c0f62; */
+            background-color: #d6d2e1;
         }
 
         footer.page-footer {
-            background-color: #2c0f62;
+            /* background-color: #2c0f62; */
+            background-color: #d6d2e1;
             margin-top: 2rem;
+        }
+
+        footer a{
+          color: #2c0f62 !important;
         }
 
 
