@@ -38,10 +38,8 @@
             <div class="row">
                 <div class="col-sm-4 offset-1 ">
                     <div class="">
-                    <!--Si es usuario local-->
-                      <% if (user.local.username != null) { %>
                         <img src="img/uploads/<%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/<%= user.local.username %>/140'"><br>
-                        <strong>Name</strong>: <%= user.local.username %><br><br><br>
+                        <strong>Nombre</strong>: <%= user.local.username %><br><br><br>
                         <strong>Cambiar imagen de perfil:</strong>
                         <br>
                         <% if ( expressFlash.length > 0 ) { %>
@@ -53,26 +51,6 @@
         		            <br>
         		            <input type="submit" value="Subir archivo" name="submit" onsubmit="setTimeout(function () { window.location.reload(); }, 10)">
         	             </form>
-        	           <% } %>
-
-                        <!--Si es usuario de alguna red social-->
-                	     <% if (user.local.username_facebook != null) { %>
-                            <h2 class="fa fa-facebook"> Facebook</h2><br>
-                            <img src="http://graph.facebook.com/<%= user.local.id %>/picture?type=large" class="img-circle"><br>
-                            <strong>Name</strong>: <%= user.local.username_facebook %><br><br>
-                         <% } %>
-
-                         <% if (user.local.username_twitter != null) { %>
-                            <h2 class="fa fa-twitter"> Twitter</h2><br>
-                            <img src="https://twitter.com/<%= user.local.username_twitter %>/profile_image?size=original" class="img-circle"><br>
-                            <strong>Name</strong>: <%= user.local.username_twitter %><br><br><br>
-                         <% } %>
-
-                         <% if (user.local.username_github != null) { %>
-                            <h2 class="fa fa-github"> Github</h2><br>
-                            <img src="https://avatars2.githubusercontent.com/u/<%= user.local.id %>" class="img-circle"><br>
-                            <strong>Name</strong>: <%= user.local.username_github %><br>
-                         <% } %>
                     </div>
                 </div>
 
