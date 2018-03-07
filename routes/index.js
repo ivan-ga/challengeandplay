@@ -78,7 +78,7 @@ router.get('/r_tresenraya', isLoggedIn, function(req, res) {
   User.find().sort('-local.ganadas_3enraya').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
-        res.render('r_tresenraya.ejs', { user: data,title: "3 en raya" })
+        res.render('r_tresenraya.ejs', { user: req.user, users: data,title: "3 en raya" })
      })
 });
 
@@ -86,7 +86,7 @@ router.get('/r_ajedrez', isLoggedIn, function(req, res) {
   User.find().sort('-local.ganadas_ajedrez').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
-        res.render('r_ajedrez.ejs', { user: data,title: "Ajedrez" })
+        res.render('r_ajedrez.ejs', { user: req.user, users: data,title: "Ajedrez" })
      })
 });
 
@@ -94,7 +94,7 @@ router.get('/r_buscaminas', isLoggedIn, function(req, res) {
   User.find().sort('-local.ganadas_buscaminas').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
-        res.render('r_buscaminas.ejs', { user: data,title: "Buscamnias" })
+        res.render('r_buscaminas.ejs', { user: req.user, users: data,title: "Buscamnias" })
      })
 });
 
@@ -102,7 +102,7 @@ router.get('/r_damas', isLoggedIn, function(req, res) {
   User.find().sort('-local.ganadas_damas').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
-        res.render('r_damas.ejs', { user: data,title: "Damas" })
+        res.render('r_damas.ejs', { user: req.user, users: data,title: "Damas" })
      })
 });
 

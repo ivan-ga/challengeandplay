@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='myApp'>
 <head>
-  <meta charset="UTF-8">
   <title>Buscaminas</title>
-      <!-- Font Awesome -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <% include templates/head %>
 
-      <!-- Bootstrap core CSS -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS BUSCAMINAS -->
+  <link href="css/style_buscaminas.css" rel="stylesheet">
 
-      <!-- Material Design Bootstrap -->
-      <link href="css/mdb.min.css" rel="stylesheet">
-      <link href="css/mdb.min.css" rel="stylesheet">
-
-      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-
-      <!-- CSS DAMAS -->
-      <link href="css/style_buscaminas.css" rel="stylesheet">
 <style>
     .ajuste{
        padding-left: 4%;
@@ -58,34 +47,15 @@
   </main>
   <!--Footer-->
   <footer class="page-footer center-on-small-only">
-    <% include templates/footer %>      
+    <% include templates/footer %>
   </footer>
   <!--/.Footer-->
 
   <!-- SCRIPTS -->
-
-
+  <% include templates/scripts %>
+  <!-- BUSCAMNIAS -->
   <script  src="js/juegos/buscaminas.js"></script>
-
-  <!-- AngularJS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-  <script type="text/javascript" src="js/myapp.js"></script>
-
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/tether.min.js"></script>
-
-
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-
-  <script>
-          new WOW().init();
-  </script>
-
-
+  <!-- /.SCRIPTS -->
 
 </body>
 </html>
