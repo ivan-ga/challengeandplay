@@ -42,6 +42,10 @@
         footer a{
           color: #2c0f62 !important;
         }
+        
+        .boton-homep{
+             background-color: #d6d2e1;
+        }
 
 
 /*
@@ -53,7 +57,13 @@
 /*Para contro0lar alto del footer*/
 .en-medio{
         padding: 5%;
-    }
+
+}
+
+.en-medio-home{
+    padding: 2%;
+
+}
 
 @media (min-width: 768px) {
     .omb_row-sm-offset-3 div:first-child[class*="col-"] {
@@ -160,3 +170,37 @@
   width: 100%;
   height: 470px;
 }
+
+/*Div que contiene los datos del perfil del usuario*/
+.contenido-perfil{
+    color: #2c0f62 !important;
+    padding: 4%;
+    border-radius: 2%;
+    box-shadow: 10px 10px 5px grey;
+    background-color: #d6d2e1;
+}
+
+/*Los botones de la página del home del profesor*/
+.botones-homep{
+    margin-top: 7%;
+}
+
+/*Estilos del formulario para crear nueva clase*/
+.form-nueva-clase{
+    color: #2c0f62 !important;
+    padding: 4%;
+    border-radius: 2%;
+    background-color: #d6d2e1;
+    /*-webkit-box-shadow: 10px 10px 63px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 63px -3px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 63px -3px rgba(0,0,0,0.75);*/
+}
+
+.form-nueva-clase input{
+    background-color: white;
+}
+
+.form-nueva-clase input:focus { 
+    background-color: white;
+}
+

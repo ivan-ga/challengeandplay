@@ -38,6 +38,26 @@ router.get('/home', isLoggedIn, function(req, res) {
   res.render('home.ejs', { user: req.user, expressFlash: '' });
 });
 
+router.get('/home_profesor', isLoggedIn, function(req, res) {
+  res.render('home_profesor.ejs', { user: req.user, expressFlash: '' });
+});
+
+router.get('/form_clase', isLoggedIn, function(req, res) {
+  res.render('form_clase.ejs', { user: req.user, expressFlash: '' });
+});
+
+router.get('/form_reto', isLoggedIn, function(req, res) {
+  res.render('form_reto.ejs', { user: req.user, expressFlash: '' });
+});
+
+router.get('/clases', isLoggedIn, function(req, res) {
+  res.render('clases.ejs', { user: req.user, expressFlash: '' });
+});
+
+router.get('/retos', isLoggedIn, function(req, res) {
+  res.render('retos.ejs', { user: req.user, expressFlash: '' });
+});
+
 
 router.get('/logout', function(req, res) {
  req.logout();
