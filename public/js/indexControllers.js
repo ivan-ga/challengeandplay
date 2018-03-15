@@ -98,7 +98,90 @@ function controladorRegistro($http){
         }
 }
 
+///////////////Controlador de lal desplegable de selección. //////////////////////////
+myApp.controller('TodoListController', function() {
 
+    // Inicio las variables.
+    var todoList = this;
+    todoList.todos = [{text: "Matemáticas"},{text: "Química"},
+    {text: "Física"},{text: "Geografía"}];
+
+    var listaNSelec= this; 
+    var listaSelec= this; 
+    //Listado de asignaturas no seleccionadas.
+    listaSelec.Nasignaturas = [{text: "Matemáticas"},{text: "Química"},
+    {text: "Física"},{text: "Geografía"}];
+     listaSelec.Sasignaturas = [];
+     listaSelec.addTodo = function(texto) {
+          // La lista de selección se me se introduce un nuevo elemeto
+          listaSelec.todoText = texto;
+          console.log("Estoy akii");
+          listaSelec.Sasignaturas.push({text: listaSelec.todoText});
+        
+          // De la lista No seleccionada Borrar el elemento.
+          listaSelec.removeElement(texto);
+          
+    }
+    
+    /// Borrar
+    listaSelec.removeElement = function(texto) {
+        var nueva = [];
+        var oldTodos = listaSelec.Nasignaturas;
+        var paso;
+        
+        for (paso = 0; paso < listaSelec.Nasignaturas.length; paso++) {
+            if( listaSelec.Nasignaturas[paso].text !==  texto){
+                nueva.push( listaSelec.Nasignaturas[paso] );
+                console.log(listaSelec.Nasignaturas[paso]);
+            }
+         }   
+         
+         listaSelec.Nasignaturas = [];
+         listaSelec.Nasignaturas = nueva;
+         angular.forEach(nueva,function(todo) {
+            console.log(todo); 
+      });
+    } 
+    
+     /* borra */
+    listaSelec.quitarSelec = function(texto) {
+        var nueva = [];
+        var oldTodos = listaSelec.Sasignaturas;
+        var paso;
+        
+        for (paso = 0; paso < listaSelec.Sasignaturas.length; paso++) {
+            if( listaSelec.Sasignaturas[paso].text !==  texto){
+                nueva.push( listaSelec.Sasignaturas[paso] );
+                console.log(listaSelec.Sasignaturas[paso]);
+            }else{
+                listaNSelec.Nasignaturas.push({text: texto});
+            }
+         }   
+         
+         listaSelec.Sasignaturas = [];
+         listaSelec.Sasignaturas = nueva;
+         //listaSelec.asignaturas = [];
+      
+        console.log("Estoy akii en remove");
+        
+        angular.forEach(nueva,function(todo) {
+            console.log(todo); 
+      });
+    }
+    
+   /*Imprimo por pantalla mi lista dond esta la varialbe 
+    Cojo los dato de mi lista y los guado en  loa viejos
+    hago un swqp entre listas  todo se queda con todo los datos. para eliminar*/
+    todoList.archive = function() {
+      var oldTodos = todoList.todos;
+      todoList.todos = [];
+      angular.forEach(oldTodos, function(todo) {
+        if (!todo.done) todoList.todos.push(todo);
+      });
+    };
+  });
+
+/////////////////////////////////////////////////////////////////////////////////////
 
 
 

@@ -151,18 +151,20 @@
                                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                                 <input type="password" class="form-control" ng-model="fo.registro.passwordh" name="passwordh" placeholder="Repite tu password" id="confirm_password" required>
                                             </div>
-                                            <div class="dropdown">
-                                              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                                      data-toggle="dropdown" aria-expanded="true">
-                                                Selecciona de la lista
-                                                <span class="caret"></span>
-                                              </button>
-                                              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                                              </ul>
+                                           <div ng-controller="TodoListController as listaSelec">
+                                                   <div class="dropdown">
+                                                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                                      Selecciona Materia/s de la lista.
+                                                   <span class="caret"></span>
+                                                   </button><ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                                   <li ng-repeat="asignatura in listaSelec.Nasignaturas" role="presentation" ><a role="menuitem" tabindex="-1"  ng-click='listaSelec.addTodo(asignatura.text)' >{{asignatura.text}}</a>
+                                                   </li>
+                                                   </ul>
+                                                   </div>
+                                                   <ul class="unstyled">
+                                                     <li ng-repeat="asignatura in listaSelec.Sasignaturas" role="presentation" ><a role="menuitem" tabindex="-1"
+                                                      ng-click='listaSelec.quitarSelec(asignatura.text)' >{{asignatura.text}}</a></li>
+                                                   </ul>
                                             </div>
                                             <a class="link" href="" ng-click="ShowRetroceder()">Ya tienes cuenta? Ir a login</a>
                                             <button class="btn btn-lg btn-primary btn-block pure-button pure-button-primary" value="Log in" type="submit">Registrarse</button>
@@ -188,7 +190,7 @@
     </main>
     <!--/.Main layout-->
 
-    <!--Footer-->
+    <!--Footer>
     <footer class="page-footer center-on-small-only">
         <% include templates/footer %>
     </footer>
