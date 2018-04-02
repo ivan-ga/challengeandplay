@@ -4,8 +4,6 @@ myApp.controller("PieCtrl", function($scope) {
   $scope.footer = {name: "footer.html", url: "footer.html"};
 });
 
-
-
 myApp.controller("controladorConMetodos", function($scope){
 
            $scope.form=false;
@@ -38,12 +36,7 @@ myApp.controller("controladorConMetodos", function($scope){
             }
            });
 
-
-
-  
-  
 myApp.controller('loginCtrl', ['$http',controladorPrincipal ]);
-
 function controladorPrincipal($http, $scope){
         var vm=this;
         var home=this;
@@ -51,9 +44,6 @@ function controladorPrincipal($http, $scope){
         //inicializo un objeto en los datos de formulario
         //Primero aki dentro despues html coge lso dao y lo pasa.
         vm.fdatos = {};
-        //var mensaje = {username: "pepe" ,password: "Otormas"}
-        //console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" );
-        // declaro la función enviar
         vm.enviar = function(){
                 // $http.post("/login", mensaje)
                  $http.post("/login",  vm.fdatos).then(function(res){
@@ -74,18 +64,12 @@ myApp.controller('registroCtrl', ['$http',controladorRegistro ]);
 
 function controladorRegistro($http){
         var rg=this;
-
         //inicializo un objeto en los datos de formulario
         //Primero aki dentro despues html coge lso dao y lo pasa.
         rg.registro = {};
-
-        //var mensaje = {username: "pepe" ,password: "Otormas"}
-        //console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" );
-        // declaro la función enviar
         rg.registrar = function(){
-            console.log(  rg.registro);
-                // $http.post("/login", mensaje)
-                 $http.post("/registro",   rg.registro).then(function(res){
+             console.log(  rg.registro);
+             $http.post("/registro",   rg.registro).then(function(res){
 
                                  console.log(res.data);
                                         //  rg.registro.username="";

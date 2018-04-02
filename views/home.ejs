@@ -24,8 +24,8 @@
             <div class="row">
                 <div class="col-sm-4 offset-1 ">
                     <div class="">
-                        <img src="img/uploads/<%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/<%= user.local.username %>/140'"><br>
-                        <strong>Nombre</strong>: <%= user.local.username %><br><br><br>
+                        <img src="img/uploads/<%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/<%= user.usuario.username %>/140'"><br>
+                        <strong>Nombre</strong>: <%= user.usuario.username %><br><br><br>
                         <strong>Cambiar imagen de perfil:</strong>
                         <br>
                         <% if ( expressFlash.length > 0 ) { %>
@@ -51,30 +51,30 @@
                         </tr>
                         <tr>
                              <td>3 en raya</td>
-                             <td><%= user.local.totales_3enraya%> </td>
-                             <td><%= user.local.ganadas_3enraya %></td>
-                             <td><%= user.local.perdidas_3enraya %></td>
-                             <td><%= user.local.empatadas_3enraya %></td>
+                             <td><%= user.usuario.totales_3enraya%> </td>
+                             <td><%= user.usuario.ganadas_3enraya %></td>
+                             <td><%= user.usuario.perdidas_3enraya %></td>
+                             <td><%= user.usuario.empatadas_3enraya %></td>
                         </tr>
                         <tr>
                              <td>Ajedrez</td>
-                             <td><%= user.local.totales_ajedrez%> </td>
-                             <td><%= user.local.ganadas_ajedrez %></td>
-                             <td><%= user.local.perdidas_ajedrez %></td>
-                             <td><%= user.local.empatadas_ajedrez %></td>
+                             <td><%= user.usuario.totales_ajedrez%> </td>
+                             <td><%= user.usuario.ganadas_ajedrez %></td>
+                             <td><%= user.usuario.perdidas_ajedrez %></td>
+                             <td><%= user.usuario.empatadas_ajedrez %></td>
                         </tr>
                         <tr>
                              <td>Buscaminas</td>
-                             <td><%= user.local.totales_buscaminas%> </td>
-                             <td><%= user.local.ganadas_buscaminas %></td>
-                             <td><%= user.local.perdidas_buscaminas %></td>
+                             <td><%= user.usuario.totales_buscaminas%> </td>
+                             <td><%= user.usuario.ganadas_buscaminas %></td>
+                             <td><%= user.usuario.perdidas_buscaminas %></td>
                              <td align="center">-</td>
                         </tr>
                         <tr>
                              <td>Damas</td>
-                             <td><%= user.local.totales_damas%> </td>
-                             <td><%= user.local.ganadas_damas %></td>
-                             <td><%= user.local.perdidas_damas %></td>
+                             <td><%= user.usuario.totales_damas%> </td>
+                             <td><%= user.usuario.ganadas_damas %></td>
+                             <td><%= user.usuario.perdidas_damas %></td>
                              <td align="center">-</td>
                         </tr>
                       </table>

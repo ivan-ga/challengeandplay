@@ -34,15 +34,15 @@
                                 <li class="users">
                                     <tr class="table-info">
                                         <td data-priority="1"><%= i+1 %> </td>
-                                        <td data-priority="2"><%= users[i].local.username %> </td>
-                                        <td data-priority="2"><%= users[i].local.totales_3enraya %> </td>
-                                        <td data-priority="3"><%= users[i].local.ganadas_3enraya %></td>
-                                        <td data-priority="4"><%= users[i].local.perdidas_3enraya %></td>
-                                        <td data-priority="5"><%= users[i].local.empatadas_3enraya %></td>
-                                        <%if(users[i].local.ganadas_3enraya == 0){%>
+                                        <td data-priority="2"><%= users[i].usuario.username %> </td>
+                                        <td data-priority="2"><%= users[i].usuario.totales_3enraya %> </td>
+                                        <td data-priority="3"><%= users[i].usuario.ganadas_3enraya %></td>
+                                        <td data-priority="4"><%= users[i].usuario.perdidas_3enraya %></td>
+                                        <td data-priority="5"><%= users[i].usuario.empatadas_3enraya %></td>
+                                        <%if(users[i].usuario.ganadas_3enraya == 0){%>
                                              <td data-priority="6">0</td>
                                         <% } else{ %>
-                                                <td data-priority="6"><%= ((users[i].local.ganadas_3enraya/users[i].local.totales_3enraya)*100).toFixed(2) %>%</td>
+                                                <td data-priority="6"><%= ((users[i].usuario.ganadas_3enraya/users[i].usuario.totales_3enraya)*100).toFixed(2) %>%</td>
                                         <% } %>
                                     </tr class="table-info">    </li>
                                 </ul>

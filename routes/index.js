@@ -95,15 +95,15 @@ router.get('/g_buscaminas', isLoggedIn, function(req, res) {
 });
 
 router.get('/r_tresenraya', isLoggedIn, function(req, res) {
-  User.find().sort('-local.ganadas_3enraya').find( function(err,data)
+  User.find().sort('-usuario.ganadas_3enraya').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
-        res.render('r_tresenraya.ejs', { user: req.user, users: data,title: "3 en raya" })
+        res.render('r_tresenraya.ejs', { user: req.user, users: data, title: "3 en raya" })
      })
 });
 
 router.get('/r_ajedrez', isLoggedIn, function(req, res) {
-  User.find().sort('-local.ganadas_ajedrez').find( function(err,data)
+  User.find().sort('-usuario.ganadas_ajedrez').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
         res.render('r_ajedrez.ejs', { user: req.user, users: data,title: "Ajedrez" })
@@ -111,7 +111,7 @@ router.get('/r_ajedrez', isLoggedIn, function(req, res) {
 });
 
 router.get('/r_buscaminas', isLoggedIn, function(req, res) {
-  User.find().sort('-local.ganadas_buscaminas').find( function(err,data)
+  User.find().sort('-usuario.ganadas_buscaminas').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
         res.render('r_buscaminas.ejs', { user: req.user, users: data,title: "Buscamnias" })
@@ -119,7 +119,7 @@ router.get('/r_buscaminas', isLoggedIn, function(req, res) {
 });
 
 router.get('/r_damas', isLoggedIn, function(req, res) {
-  User.find().sort('-local.ganadas_damas').find( function(err,data)
+  User.find().sort('-usuario.ganadas_damas').find( function(err,data)
    {
        if(err)  console.error("Error:"+err);
         res.render('r_damas.ejs', { user: req.user, users: data,title: "Damas" })
@@ -171,7 +171,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
                     for (var i = data.length - 1; i >= 0; i--) {
                           if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"local.ganadas_3enraya":1,"local.totales_3enraya":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_3enraya":1,"usuario.totales_3enraya":1}},function(error,dato){
                           });
                     }
               }
@@ -181,7 +181,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
                     for (var i = data.length - 1; i >= 0; i--) {
                         if(data[i].id === request.session.passport.user){
-                          User.update({"_id": data[i]._id}, {$inc: {"local.perdidas_3enraya":1,"local.totales_3enraya":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_3enraya":1,"usuario.totales_3enraya":1}},function(error,dato){
 
                           });
 
@@ -194,7 +194,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
                     for (var i = data.length - 1; i >= 0; i--) {
                         if(data[i].id === request.session.passport.user){
 
-                          User.update({"_id": data[i]._id}, {$inc: {"local.empatadas_3enraya":1,"local.totales_3enraya":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.empatadas_3enraya":1,"usuario.totales_3enraya":1}},function(error,dato){
 
                           });
 
@@ -207,7 +207,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
                     for (var i = data.length - 1; i >= 0; i--) {
                           if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"local.ganadas_ajedrez":1,"local.totales_ajedrez":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_ajedrez":1,"usuario.totales_ajedrez":1}},function(error,dato){
                           });
                     }
               }
@@ -218,7 +218,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
                     for (var i = data.length - 1; i >= 0; i--) {
                           if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"local.perdidas_ajedrez":1,"local.totales_ajedrez":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_ajedrez":1,"usuario.totales_ajedrez":1}},function(error,dato){
                           });
                     }
               }
@@ -229,7 +229,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
                     for (var i = data.length - 1; i >= 0; i--) {
                           if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"local.empatadas_ajedrez":1,"local.totales_ajedrez":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.empatadas_ajedrez":1,"usuario.totales_ajedrez":1}},function(error,dato){
                           });
                     }
               }
@@ -241,7 +241,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
                     for (var i = data.length - 1; i >= 0; i--) {
                           if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"local.ganadas_buscaminas":1,"local.totales_buscaminas":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_buscaminas":1,"usuario.totales_buscaminas":1}},function(error,dato){
                           });
                     }
               }
@@ -252,7 +252,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
                     for (var i = data.length - 1; i >= 0; i--) {
                           if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"local.perdidas_buscaminas":1,"local.totales_buscaminas":1}},function(error,dato){
+                          User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_buscaminas":1,"usuario.totales_buscaminas":1}},function(error,dato){
                           });
                     }
               }
@@ -263,7 +263,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
               if( request.query.ganadas_damas != undefined){
                 for (var i = data.length - 1; i >= 0; i--) {
                   if( data[i].id === request.session.passport.user ){
-                    User.update({"_id": data[i]._id}, {$inc: {"local.ganadas_damas":1,"local.totales_damas":1}},function(error,dato){
+                    User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_damas":1,"usuario.totales_damas":1}},function(error,dato){
                       });
                   }
                 }
@@ -272,7 +272,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
               if( request.query.perdidas_damas != undefined){
                 for (var i = data.length - 1; i >= 0; i--) {
                   if( data[i].id === request.session.passport.user ){
-                    User.update({"_id": data[i]._id}, {$inc: {"local.perdidas_damas":1,"local.totales_damas":1}},function(error,dato){
+                    User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_damas":1,"usuario.totales_damas":1}},function(error,dato){
                       });
                   }
                 }

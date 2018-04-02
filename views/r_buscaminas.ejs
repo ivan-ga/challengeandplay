@@ -34,15 +34,15 @@
                                     <li class="users">
                                     <tr class="table-info">
                                     <td data-priority="1"><%= i+1 %> </td>
-                                    <td data-priority="2"><%= users[i].local.username %> </td>
-                                    <td data-priority="2"><%= users[i].local.totales_buscaminas %> </td>
-                                    <td data-priority="3"><%= users[i].local.ganadas_buscaminas %></td>
-                                    <td data-priority="4"><%= users[i].local.perdidas_buscaminas %></td>
+                                    <td data-priority="2"><%= users[i].usuario.username %> </td>
+                                    <td data-priority="2"><%= users[i].usuario.totales_buscaminas %> </td>
+                                    <td data-priority="3"><%= users[i].usuario.ganadas_buscaminas %></td>
+                                    <td data-priority="4"><%= users[i].usuario.perdidas_buscaminas %></td>
                                     <td data-priority="5" align="center">-</td>
-                                <%if(users[i].local.ganadas_buscaminas == 0){%>
+                                <%if(users[i].usuario.ganadas_buscaminas == 0){%>
                                     <td data-priority="6">0</td>
                                 <% } else{ %>
-                                    <td data-priority="6"><%= ((users[i].local.ganadas_buscaminas/users[i].local.totales_buscaminas)*100).toFixed(2) %>%</td>
+                                    <td data-priority="6"><%= ((users[i].usuario.ganadas_buscaminas/users[i].usuario.totales_buscaminas)*100).toFixed(2) %>%</td>
                                 <% } %>
                                 </tr class="table-info">    </li>
                                 <% } %>
