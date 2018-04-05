@@ -1,0 +1,212 @@
+[
+ {
+   profesor: "Juan1",
+   asignatura: "Matemáticas",
+   titulo: "Test1",
+   preguntas:[
+               {
+                texto: "Hay 5 estuches en la mesa.Cada uno contiene como mínimo 10 lápices y como máximo 14. ¿Cuál de estos podría ser el total de lápices?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "65"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "75"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "35"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "45"
+                          }
+                         ]
+              },
+               {
+                texto: "Si X es menor que Y por una diferencia de 6 e Y es el doble de Z, ¿cuál es el valor de X cuando Z es igual a 2?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "-2"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "10"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "5"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "8"
+                          }
+                          ]
+               },
+                {
+                texto: "Si David tiene el doble de monedas de 5 céntimos que Tomás y Tomás tiene 15 monedas de 5 céntimos más que Juan, ¿cuántos euros tiene David si Juan tiene 6 monedas de cinco céntimos?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "2.10"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "14"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "42"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "21"
+                          }
+                          ]
+               }
+            ]
+ },
+ {
+   profesor: "Juan2",
+   asignatura: "Geografía",
+   titulo: "Test1",
+   preguntas:[
+               {
+                texto: "¿Cuál es el segundo continente más grande del mundo?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "América"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "Europa"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "África"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "Asia"
+                          }
+                          ]
+               },
+               {
+                texto: "¿Cuál es la montaña más alta del mundo?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "Monte Everest"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "K2"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "Makalu"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "Kilimanjaro"
+                          }
+                          ]
+               },
+               {
+                texto: "¿Cuál océano se encuentra en la Costa Este de los Estados Unidos?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "Atlántico"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "Este"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "Índico"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "Pacífico"
+                          }
+                          ]
+                }
+            ]
+ },
+   { 
+   profesor: "Juan1",
+   asignatura: "Matemáticas",
+   titulo: "Test2",
+   preguntas:[
+               {
+                texto: "¿Cuál es la diferencia entre el número de 4 dígitos más pequeño posible y el número de 3 dígitos más grande posible?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "1"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "999"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "9999"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "1000"
+                          }
+                          ]
+               },
+               {
+                texto: "¿Cómo sigue la siguiente secuencia lógica: 145, 122, 101, 82, 65, 50?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "37"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "33"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "28"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "35"
+                          }
+                          ]
+               },
+               {
+                texto: "¿A cuánto equivale un cuatrillón?",
+                opciones:[
+                          {
+                            vedadero: true,
+                            texto: "10^24"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "10^20"
+                          },
+                           {
+                            vedadero: false,
+                            texto: "10^4"
+                          },
+                          {
+                            vedadero: false,
+                            texto: "10^40"
+                          }
+                          ]
+                }
+            ]
+ } 
+]

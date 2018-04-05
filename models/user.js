@@ -33,10 +33,10 @@ var bcrypt   = require('bcrypt-nodejs');
   me mandara tod los alumnnos que quier k le ponga el reto y inicializare los valore a 0 de mi reto por alumno.
   likes_r: si le gusata los el reto a los usuario. para valorar el juego.
   crear imagen y poner la direccion qeu tein por defecto
+      id: String, estas lo genra automaticmante.
 */
 var userSchema = mongoose.Schema({
   usuario: {
-    id: String,
     username: String,
     name: String,
     apellidos: String,
@@ -48,10 +48,15 @@ var userSchema = mongoose.Schema({
 
 
 userSchema.methods.generateHash = function(password) {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+  //console.log("hossssssssssss verificaaaaaa estoy genernardo");
+  //return password;
+   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
 userSchema.methods.validPassword = function(password) {
+//  console.log("hossssssssssss verificaaaaaa");
+  // console.log("hossssssssssss verificaaaaaa " + password + " otor:" + this.usuario.password);
+//  return (password == this.usuario.password ) ? true :false;
   return bcrypt.compareSync(password, this.usuario.password);
 };
 

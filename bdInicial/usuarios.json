@@ -1,0 +1,74 @@
+[  
+  { 
+    usuario : {
+      "_comment":"_Todo los password son 123",
+      username: "Juan1",
+      name: "Juan1",
+      apellidos: "Gonzalez Pérez",
+      tipo: "profesor",
+      email: "juan1@gmail.com",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
+    }
+      
+  }
+  {
+    usuario : {
+      username: "Juan2",
+      name: "Juan2",
+      apellidos: "Gonzalez Pérez",
+      tipo: "profesor",
+      email: "juan2@gmail.com",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
+     }
+  }
+  {
+    usuario : {
+      username: "Pedro1",
+      name: "Pedro1",
+      apellidos: "Gonzalez Pérez",
+      tipo: "alumno",
+      email: "pedro1@gmail.com",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
+     }
+  }
+  {
+    usuario : {
+      username: "Pedro2",
+      name: "Pedro2",
+      apellidos: "Gonzalez Pérez",
+      tipo: "alumno",
+      email: "pedro2@gmail.com",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
+     }
+  }
+  {
+    usuario : {
+      username: "Pedro3",
+      name: "Pedro3",
+      apellidos: "Gonzalez Pérez",
+      tipo: "alumno",
+      email: "pedro3@gmail.com",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
+     }
+  }
+  {
+    usuario : {
+      username: "Pedro4",
+      name: "Pedro4",
+      apellidos: "Gonzalez Pérez",
+      tipo: "alumno",
+      email: "pedro4@gmail.com",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
+     }
+  }
+  {
+    usuario : {
+      username: "Pedro5",
+      name: "Pedro5",
+      apellidos: "Gonzalez Pérez",
+      tipo: "alumno",
+      email: "pedro5@gmail.com",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
+     }
+  }
+]

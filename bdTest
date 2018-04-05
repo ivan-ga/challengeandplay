@@ -1,0 +1,11 @@
+// Borramos los datos de nuestras collection para rellanarlo con los test.
+mongo midbnueva --eval "db.users.drop()"
+mongo midbnueva --eval "db.cuestionarios.drop()"
+mongo midbnueva --eval "db.clases.drop()"
+
+// Hay dos profesores Juan$ y 5 alumno Pedro$
+mongoimport --db midbnueva --collection users --type json --file ./bdInicial/usuarios.json --jsonArray
+// Hay tres cuestionario de tres pregutnas y de dos asignaturas distintas.
+mongoimport --db midbnueva --collection cuestionarios --type json --file ./bdInicial/cuestionarios.json --jsonArray
+// algo
+mongoimport --db midbnueva --collection clases --type json --file ./bdInicial/clases.json --jsonArray

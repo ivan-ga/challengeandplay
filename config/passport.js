@@ -42,7 +42,7 @@ module.exports = function(passport) {
             });
             
             // prueba de como meter el registro de una clase.
-            ingresarPruebaClase();
+           // ingresarPruebaClase();
         
         }
       });

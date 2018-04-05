@@ -35,10 +35,13 @@ var claseSchema = mongoose.Schema({
 });
 
 claseSchema.methods.generateHash = function(password) {
+  //return password;
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
 claseSchema.methods.validPassword = function(password) {
+  
+  //return(password, this.clase.password)
   return bcrypt.compareSync(password, this.clase.password);
 };
 
