@@ -6,16 +6,12 @@ var multer = require('multer');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var flash = require('express-flash');
-
-
 var router = express.Router();
-
 router.use(flash());
 
 //Importando esquemas de BD
 const Estructura = require('../models/user.js');
 const userSchema = Estructura.User;
-
 const User = mongoose.model("User", userSchema);
 
 router.get('/', function(req, res, next) {
@@ -23,13 +19,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/registro_error', function(req, res, next) {
-
      var error = { status: 405, stack : "" };
      res.render('error.ejs',{message:  'Error al registrar el usuario, usuario ya existe' ,  error })
 });
 
 router.get('/login_error', function(req, res, next) {
-
      var error = { status: 406, stack : "" };
      res.render('error.ejs',{message:  'Error al loguearse, usuario o contraseña erronera' ,  error })
 });
@@ -39,56 +33,47 @@ router.get('/home', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
     res.render('home_profesor.ejs', { user: req.user, expressFlash: '' });
   }else{
-     res.render('home.ejs', { user: req.user, expressFlash: '' });
-  }
-});
+    res.render('home.ejs', { user: req.user, expressFlash: '' });
+}});
 
 router.get('/home_profesor', isLoggedIn, function(req, res) {
    if(req.user.usuario.tipo == "profesor"){
-      res.render('home_profesor.ejs', { user: req.user, expressFlash: '' });
+    res.render('home_profesor.ejs', { user: req.user, expressFlash: '' });
    }else{
-     
-   }
-   
-});
+    res.redirect("/");
+}});
 
 router.get('/form_clase', isLoggedIn, function(req, res) {
-console.log("E pedido console lod form claseeeeeeeeeeeeeeeeeeeeeee");
-if(req.user.usuario.tipo == "profesor"){
-  res.render('form_clase.ejs', { user: req.user, expressFlash: '' });
-}else{
-  
-}
-});
+  if(req.user.usuario.tipo == "profesor"){
+    res.render('form_clase.ejs', { user: req.user, expressFlash: '' });
+  }else{
+    res.redirect("/");
+}});
 
 router.get('/form_reto', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-  res.render('form_reto.ejs', { user: req.user, expressFlash: '' });
+    res.render('form_reto.ejs', { user: req.user, expressFlash: '' });
   }else{
-    
-  }
-});
+    res.redirect("/");
+}});
 
 router.get('/clases', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-  res.render('clases.ejs', { user: req.user, expressFlash: '' });
+      res.render('clases.ejs', { user: req.user, expressFlash: '' });
   }else{
-    
-  }
-});
+      res.redirect("/");
+}});
 
 router.get('/retos', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-  res.render('retos.ejs', { user: req.user, expressFlash: '' });
+       res.render('retos.ejs', { user: req.user, expressFlash: '' });
   }else{
-    
-  }
-});
-
+       res.redirect("/");
+}});
 
 router.get('/logout', function(req, res) {
- req.logout();
- res.redirect("/");
+  req.logout();
+  res.redirect("/");
 });
 
 router.get('/games', isLoggedIn, function(req, res) {
@@ -99,7 +84,6 @@ router.get('/rankings', isLoggedIn, function(req, res) {
   res.render('rankings.ejs', { user: req.user,title: "Rankings" });
 });
 
-
 router.get('/g_damas', isLoggedIn, function(req, res) {
   res.render('g_damas.ejs', { user: req.user,title: "Damas" });
 });
@@ -107,7 +91,6 @@ router.get('/g_damas', isLoggedIn, function(req, res) {
 router.get('/g_tresenraya', isLoggedIn, function(req, res) {
   res.render('g_tresenraya.ejs', { user: req.user,title: "3 en raya" });
 });
-
 
 router.get('/g_ajedrez', isLoggedIn, function(req, res) {
   res.render('g_ajedrez.ejs', { user: req.user,title: "Ajedrez" });
@@ -118,37 +101,28 @@ router.get('/g_buscaminas', isLoggedIn, function(req, res) {
 });
 
 router.get('/r_tresenraya', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_3enraya').find( function(err,data)
-   {
-       if(err)  console.error("Error:"+err);
-        res.render('r_tresenraya.ejs', { user: req.user, users: data, title: "3 en raya" })
-     })
-});
+  User.find().sort('-usuario.ganadas_3enraya').find( function(err,data){
+    if(err)  console.error("Error:"+err);
+      res.render('r_tresenraya.ejs', { user: req.user, users: data, title: "3 en raya" })
+})});
 
 router.get('/r_ajedrez', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_ajedrez').find( function(err,data)
-   {
-       if(err)  console.error("Error:"+err);
-        res.render('r_ajedrez.ejs', { user: req.user, users: data,title: "Ajedrez" })
-     })
-});
+  User.find().sort('-usuario.ganadas_ajedrez').find( function(err,data){
+    if(err)  console.error("Error:"+err);
+      res.render('r_ajedrez.ejs', { user: req.user, users: data,title: "Ajedrez" })
+})});
 
 router.get('/r_buscaminas', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_buscaminas').find( function(err,data)
-   {
-       if(err)  console.error("Error:"+err);
-        res.render('r_buscaminas.ejs', { user: req.user, users: data,title: "Buscamnias" })
-     })
-});
+  User.find().sort('-usuario.ganadas_buscaminas').find( function(err,data){
+    if(err)  console.error("Error:"+err);
+      res.render('r_buscaminas.ejs', { user: req.user, users: data,title: "Buscamnias" })
+})});
 
 router.get('/r_damas', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_damas').find( function(err,data)
-   {
-       if(err)  console.error("Error:"+err);
-        res.render('r_damas.ejs', { user: req.user, users: data,title: "Damas" })
-     })
-});
-
+  User.find().sort('-usuario.ganadas_damas').find( function(err,data){
+    if(err)  console.error("Error:"+err);
+      res.render('r_damas.ejs', { user: req.user, users: data,title: "Damas" })
+})});
 
 router.post('/registro', passport.authenticate('local-signup', {
   successRedirect: '/home',
@@ -156,34 +130,10 @@ router.post('/registro', passport.authenticate('local-signup', {
   failureFlash: true,
 }));
 
-
-
-
 router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/home',
   failureRedirect: '/login_error',
   failureFlash: true,
-}));
-
-router.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
-
-router.get('/auth/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/home',
-  failureRedirect: '/login_error',
-}));
-
-router.get('/auth/twitter', passport.authenticate('twitter'));
-
-router.get('/auth/twitter/callback', passport.authenticate('twitter', {
-  successRedirect: '/home',
-  failureRedirect: '/login_error',
-}));
-
-router.get('/login/github', passport.authenticate('github', { scope: ['profile', 'email'] }));
-
-router.get('/login/github/return', passport.authenticate('github', {
-  successRedirect: '/home',
-  failureRedirect: '/login_error',
 }));
 
 // ### ACTUALIZAR ESTADÍSTICAS ###
@@ -304,7 +254,6 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
                   }
                 }
               }
-
         }
     });
 
@@ -313,9 +262,6 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
 
 
 //////////////////////SUBIR IMAGEN PARA PERFIL DE USUARIO
-
-
-
 var storage = multer.diskStorage({
 	destination: function(req, file, callback) {
 		callback(null, './public/img/uploads')
@@ -327,7 +273,6 @@ var storage = multer.diskStorage({
 })
 
 router.post('/home', isLoggedIn, function(req, res) {
-
 	var upload = multer({
 		storage: storage,
 		fileFilter: function (req, file, callback) {
@@ -347,11 +292,9 @@ router.post('/home', isLoggedIn, function(req, res) {
       res.redirect('back'); //Refresca la página después de cambiar la foto de perfil
     }
 	})
-
 })
 
 router.post('/home_profesor', isLoggedIn, function(req, res) {
-
 	var upload = multer({
 		storage: storage,
 		fileFilter: function (req, file, callback) {
@@ -370,11 +313,8 @@ router.post('/home_profesor', isLoggedIn, function(req, res) {
     else{
       res.redirect('back'); //Refresca la página después de cambiar la foto de perfil
     }
-	})
-
-})
+	})})
 //////////////////////TERMINADO SUBIR IMAGEN
-
 module.exports = router;
 
 function isLoggedIn(req, res, next) {
