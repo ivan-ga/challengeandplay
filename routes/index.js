@@ -35,27 +35,54 @@ router.get('/login_error', function(req, res, next) {
 });
 
 router.get('/home', isLoggedIn, function(req, res) {
-  res.render('home.ejs', { user: req.user, expressFlash: '' });
+ // console.log(req.user.usuario.tipo);
+  if(req.user.usuario.tipo == "profesor"){
+    res.render('home_profesor.ejs', { user: req.user, expressFlash: '' });
+  }else{
+     res.render('home.ejs', { user: req.user, expressFlash: '' });
+  }
 });
 
 router.get('/home_profesor', isLoggedIn, function(req, res) {
-  res.render('home_profesor.ejs', { user: req.user, expressFlash: '' });
+   if(req.user.usuario.tipo == "profesor"){
+      res.render('home_profesor.ejs', { user: req.user, expressFlash: '' });
+   }else{
+     
+   }
+   
 });
 
 router.get('/form_clase', isLoggedIn, function(req, res) {
+console.log("E pedido console lod form claseeeeeeeeeeeeeeeeeeeeeee");
+if(req.user.usuario.tipo == "profesor"){
   res.render('form_clase.ejs', { user: req.user, expressFlash: '' });
+}else{
+  
+}
 });
 
 router.get('/form_reto', isLoggedIn, function(req, res) {
+  if(req.user.usuario.tipo == "profesor"){
   res.render('form_reto.ejs', { user: req.user, expressFlash: '' });
+  }else{
+    
+  }
 });
 
 router.get('/clases', isLoggedIn, function(req, res) {
+  if(req.user.usuario.tipo == "profesor"){
   res.render('clases.ejs', { user: req.user, expressFlash: '' });
+  }else{
+    
+  }
 });
 
 router.get('/retos', isLoggedIn, function(req, res) {
+  if(req.user.usuario.tipo == "profesor"){
   res.render('retos.ejs', { user: req.user, expressFlash: '' });
+  }else{
+    
+  }
 });
 
 
@@ -76,10 +103,6 @@ router.get('/rankings', isLoggedIn, function(req, res) {
 router.get('/g_damas', isLoggedIn, function(req, res) {
   res.render('g_damas.ejs', { user: req.user,title: "Damas" });
 });
-
-// router.get('/r_damas', isLoggedIn, function(req, res) {
-//   res.render('r_damas.ejs', { user: req.user,title: "Damas" });
-// });
 
 router.get('/g_tresenraya', isLoggedIn, function(req, res) {
   res.render('g_tresenraya.ejs', { user: req.user,title: "3 en raya" });
@@ -126,11 +149,15 @@ router.get('/r_damas', isLoggedIn, function(req, res) {
      })
 });
 
+
 router.post('/registro', passport.authenticate('local-signup', {
   successRedirect: '/home',
   failureRedirect: '/registro_error',
   failureFlash: true,
 }));
+
+
+
 
 router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/home',
@@ -323,11 +350,35 @@ router.post('/home', isLoggedIn, function(req, res) {
 
 })
 
+router.post('/home_profesor', isLoggedIn, function(req, res) {
+
+	var upload = multer({
+		storage: storage,
+		fileFilter: function (req, file, callback) {
+			var ext = path.extname(file.originalname);
+			if (ext != '.jpg') {
+				req.fileValidationError = true;
+				return callback(new Error('formato incorrecto')); //Para que no suba y almacene la imagen si no es jpg
+			}
+			callback(null, true);
+		}
+	}).single('userFile');
+	upload(req, res, function(err) {
+    if(req.fileValidationError) { //Error con el formato de la imagen
+      res.render('home.ejs', { user: req.user, expressFlash: 'ERROR: solo imágenes JPG!' });
+    }
+    else{
+      res.redirect('back'); //Refresca la página después de cambiar la foto de perfil
+    }
+	})
+
+})
 //////////////////////TERMINADO SUBIR IMAGEN
 
 module.exports = router;
 
 function isLoggedIn(req, res, next) {
+ console.log("Me cago en la putaaaaaaaaaaaaaaaaaaa");
   if (req.isAuthenticated())
       return next();
   res.redirect('/');

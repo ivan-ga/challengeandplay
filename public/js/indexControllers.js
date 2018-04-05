@@ -68,18 +68,19 @@ function controladorRegistro($http){
         //Primero aki dentro despues html coge lso dao y lo pasa.
         rg.registro = {};
         rg.registrar = function(){
-             console.log(  rg.registro);
-             $http.post("/registro",   rg.registro).then(function(res){
-
+            // console.log(  rg.registro);
+           if(rg.registrar.optradio == "prfesor"){
+              $http.post("/registro_profesor",   rg.registro).then(function(res){
                                  console.log(res.data);
-                                        //  rg.registro.username="";
-                                         // rg.registro.password="";
-                                          // rg.registro.passwordh="";
-              //por supuesto podrás volcar la respuesta al modelo con algo como vm.res = res;
+                                 //  rg.registro.username="";
+                                 // rg.registro.password="";
+                                 // rg.registro.passwordh="";
+    
                     },function (res) {
                          console.log(res.data);
                      });
-        }
+         }
+      }
 }
 
 ///////////////Controlador de lal desplegable de selección. //////////////////////////

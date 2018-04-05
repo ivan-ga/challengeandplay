@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en" ng-app ="myApp">
 <head>
     <title>Challenge&Play</title>
     <% include templates/head %>
     <!-- Material Design Bootstrap -->
     <link href="css/table.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
 
     <style type="text/css">
         img { width: 140px; height: 140px; border-radius: 50%!important }
@@ -26,8 +25,8 @@
             <div class="row">
                 <div class="col-sm-4 offset-1 ">
                     <div class="contenido-perfil">
-                        <img src="img/uploads/<%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/<%= user.local.username %>/140'"><br><br>
-                        <strong>Nombre</strong>: <%= user.local.username %><br><br>
+                        <img src="img/uploads/<!--%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/<%= user.usuario.username %>/140'"><br><br>
+                        <strong>Nombre</strong>: <%= user.usuario.username %><br><br>
                         <strong>Categoría</strong>: Profesor<br><br><br>
                         <strong>Cambiar imagen de perfil:</strong>
                         <br>
@@ -36,18 +35,18 @@
                         <% } %>
                          <form id="uploadForm" enctype="multipart/form-data" action="/home" method="post">
         		            <input type="file" name="userFile" />
-        		            <br>
-        		            <br>
+        		            </br>
+        		            </br>
         		            <input type="submit" value="Subir archivo" name="submit" onsubmit="setTimeout(function () { window.location.reload(); }, 10)">
         	             </form>
                     </div>
                 </div>
 
                 <div class="col-sm-7 botones-homep">
-                    <a href=""><button type="button" class="btn text-dark boton-homep"><strong>NUEVO RETO </strong><i class="fa fa-plus"></i></button></a>
-                    <a href=""><button type="button" class="btn text-dark boton-homep"><strong>NUEVA CLASE </strong><i class="fa fa-group"></i></button><br><br></a>
-                    <a href=""><button type="button" class="btn text-dark boton-homep"><strong>RETOS </strong><i class="fa fa-rocket"></i></button></a>
-                    <a href=""><button type="button" class="btn text-dark boton-homep"><strong>CLASES </strong><i class="fa fa-graduation-cap"></i></button></a>
+                    <a href="/form_reto"><button type="button" class="btn text-dark boton-homep"><strong>NUEVO RETO </strong><i class="fa fa-plus"></i></button></a>
+                    <a href="/form_clase"><button type="button" class="btn text-dark boton-homep"><strong>NUEVA CLASE </strong><i class="fa fa-group"></i></button></br></br></a>
+                    <a href="/retos"><button type="button" class="btn text-dark boton-homep"><strong>RETOS </strong><i class="fa fa-rocket"></i></button></a>
+                    <a href="/clases"><button type="button" class="btn text-dark boton-homep"><strong>CLASES </strong><i class="fa fa-graduation-cap"></i></button></a>
                 </div>
             </div>
           </div>
