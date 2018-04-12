@@ -10,7 +10,7 @@
       password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
     }
       
-  }
+  },
   {
     usuario : {
       username: "Juan2",
@@ -20,7 +20,7 @@
       email: "juan2@gmail.com",
       password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
      }
-  }
+  },
   {
     usuario : {
       username: "Pedro1",
@@ -30,7 +30,7 @@
       email: "pedro1@gmail.com",
       password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
      }
-  }
+  },
   {
     usuario : {
       username: "Pedro2",
@@ -40,7 +40,7 @@
       email: "pedro2@gmail.com",
       password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
      }
-  }
+  },
   {
     usuario : {
       username: "Pedro3",
@@ -50,7 +50,7 @@
       email: "pedro3@gmail.com",
       password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
      }
-  }
+  },
   {
     usuario : {
       username: "Pedro4",
@@ -60,7 +60,7 @@
       email: "pedro4@gmail.com",
       password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q"
      }
-  }
+  },
   {
     usuario : {
       username: "Pedro5",
