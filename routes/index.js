@@ -9,10 +9,14 @@ var flash = require('express-flash');
 var router = express.Router();
 router.use(flash());
 
-//Importando esquemas de BD
+//Importando esquemas de BD Para los usuario
 const Estructura = require('../models/user.js');
 const userSchema = Estructura.User;
 const User = mongoose.model("User", userSchema);
+
+const EstrucClase = require('../models/clase.js');
+const claseSchema = EstrucClase.Clase;
+const Clase = mongoose.model("Clase", claseSchema);
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Login' });
@@ -45,10 +49,36 @@ router.get('/home_profesor', isLoggedIn, function(req, res) {
 
 router.get('/form_clase', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-    res.render('form_clase.ejs', { user: req.user, expressFlash: '' });
+     res.render('form_clase.ejs', { user: req.user, registrado: null, expressFlash: '' });
   }else{
     res.redirect("/");
 }});
+
+router.post('/registro_clase',  isLoggedIn, function(req,res){
+  var newClase = Clase();
+  Clase.find({"clase.nombre_clase" :req.body.nombreClase,"clase.profesor_username":req.user.usuario.username,"clase.curso" :req.body.curso},
+            function(err,clas) {
+                //console.log("error" + err);
+                //console.log("error" + clas);
+                if (err) throw err;
+                //console.log(clas.length + "Datos que miroa ahioar")
+                if (clas.length < 1){
+                  newClase.clase.nombre_clase = req.body.nombreClase;
+                  newClase.clase.curso = req.body.curso;  
+                  newClase.clase.profesor_username = req.user.usuario.username; 
+                  newClase.clase.password =  newClase.generateHash(req.body.password);
+                  // Guardamos en la bbdd.
+                  newClase.save(function(err) {
+                  if (err) throw err;
+                    return newClase;
+                  });
+                  console.log("Introducir datos nuevo en la collection clase");
+                  res.render('form_clase.ejs', { user: req.user, registrado: true, expressFlash: '' });
+                }else{
+                  console.log("Dato nuevo esta en la bbdd. No se introduce.");
+                  res.render('form_clase.ejs', { user: req.user, registrado: false, expressFlash: '' });
+            }});
+});
 
 router.get('/form_reto', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
@@ -129,6 +159,8 @@ router.post('/registro', passport.authenticate('local-signup', {
   failureRedirect: '/registro_error',
   failureFlash: true,
 }));
+
+
 
 router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/home',
@@ -315,10 +347,11 @@ router.post('/home_profesor', isLoggedIn, function(req, res) {
     }
 	})})
 //////////////////////TERMINADO SUBIR IMAGEN
+
+
 module.exports = router;
 
 function isLoggedIn(req, res, next) {
- console.log("Me cago en la putaaaaaaaaaaaaaaaaaaa");
   if (req.isAuthenticated())
       return next();
   res.redirect('/');

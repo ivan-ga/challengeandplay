@@ -6,6 +6,7 @@ el tipo nos dice si es un cuestionario o si es del otro para irlo a buscar.*/
 var claseSchema = mongoose.Schema({
     clase: {
             nombre_clase: String,
+            curso : String,
             profesor_username: String,
             password: String,
             alumnos_email: [ String ],
@@ -40,7 +41,6 @@ claseSchema.methods.generateHash = function(password) {
 };
 
 claseSchema.methods.validPassword = function(password) {
-  
   //return(password, this.clase.password)
   return bcrypt.compareSync(password, this.clase.password);
 };

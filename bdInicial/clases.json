@@ -1,203 +1,209 @@
 [
-  {      
-    nombre_clase: "Matemáticas",
-    profesor_username: "Juan1",
-    password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q",
-    alumnos_email: [ "pedro1@gmail.com", "pedro2@gmail.com","pedro3@gmail.com"],
-    retos: [
+  { 
+    clase: {
+      nombre_clase: "Matemáticas",
+      profesor_username: "Juan1",
+      curso: "1",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q",
+      alumnos_email: [ "pedro1@gmail.com", "pedro2@gmail.com","pedro3@gmail.com"],
+      retos: [
+              {  
+                nombre_reto: "JuegoBandera",
+                tipo: "juego",
+                activo: true,
+                fecha_comienzo: "2018-04-15",
+                fecha_fin: "2018-04-20",
+                n_veces_relizar: 30,
+                ganadas: [
+                            {
+                              alumnos_email: "pedro1@gmail.com",
+                              ganareto: 10,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro2@gmail.com",
+                              ganareto: 2,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro3@gmail.com",
+                              ganareto: 8,
+                              puntuacion: 0
+                             }
+                          ],
+                perdidas:[
+                            {
+                              alumnos_email: "pedro1@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            },
+                            {
+                              alumnos_email: "pedro2@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            }
+                         ]
+            },
             {  
-              nombre_reto: "JuegoBandera",
-              tipo: "juego",
-              activo: true,
-              fecha_comienzo: "2018-04-15",
-              fecha_fin: "2018-04-20",
-              n_veces_relizar: 30,
-              ganadas: [
-                          {
-                            alumnos_email: "pedro1@gmail.com",
-                            ganareto: 10,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro2@gmail.com",
-                            ganareto: 2,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro3@gmail.com",
-                            ganareto: 8,
-                            puntuacion: 0
-                           }
-                        ],
-              perdidas:[
-                          {
-                            alumnos_email: "pedro1@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          },
-                          {
-                            alumnos_email: "pedro2@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          }
-                       ]
-          },
-          {  
-              nombre_reto: "Test1",
-              tipo: "test",
-              activo: true,
-              fecha_comienzo: "2018-04-15",
-              fecha_fin: "2018-04-20",
-              n_veces_relizar: 30,
-              ganadas: [
-                          {
-                            alumnos_email: "pedro1@gmail.com",
-                            ganareto: 10,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro2@gmail.com",
-                            ganareto: 2,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro3@gmail.com",
-                            ganareto: 8,
-                            puntuacion: 0
-                           }
-                        ],
-              perdidas:[
-                          {
-                            alumnos_email: "pedro1@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          },
-                          {
-                            alumnos_email: "pedro3@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          }
-                       ]
-          },
-             {  
-              nombre_reto: "Test2",
-              tipo: "test",
-              activo: false,
-              fecha_comienzo: "2018-04-5",
-              fecha_fin: "2018-04-15",
-              n_veces_relizar: 30,
-              ganadas: [
-                          {
-                            alumnos_email: "pedro1@gmail.com",
-                            ganareto: 10,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro2@gmail.com",
-                            ganareto: 2,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro3@gmail.com",
-                            ganareto: 8,
-                            puntuacion: 0
-                           }
-                        ],
-              perdidas:[
-                          {
-                            alumnos_email: "pedro1@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          },
-                          {
-                            alumnos_email: "pedro3@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          }
-                       ]
-          }
-        ]
-    },
-     {      
-    nombre_clase: "Geografía",
-    profesor_username: "Juan2",
-    password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q",
-    alumnos_email: [ "pedro4@gmail.com", "pedro5@gmail.com","pedro3@gmail.com"],
-    retos: [
+                nombre_reto: "Test1",
+                tipo: "test",
+                activo: true,
+                fecha_comienzo: "2018-04-15",
+                fecha_fin: "2018-04-20",
+                n_veces_relizar: 30,
+                ganadas: [
+                            {
+                              alumnos_email: "pedro1@gmail.com",
+                              ganareto: 10,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro2@gmail.com",
+                              ganareto: 2,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro3@gmail.com",
+                              ganareto: 8,
+                              puntuacion: 0
+                             }
+                          ],
+                perdidas:[
+                            {
+                              alumnos_email: "pedro1@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            },
+                            {
+                              alumnos_email: "pedro3@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            }
+                         ]
+            },
+               {  
+                nombre_reto: "Test2",
+                tipo: "test",
+                activo: false,
+                fecha_comienzo: "2018-04-5",
+                fecha_fin: "2018-04-15",
+                n_veces_relizar: 30,
+                ganadas: [
+                            {
+                              alumnos_email: "pedro1@gmail.com",
+                              ganareto: 10,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro2@gmail.com",
+                              ganareto: 2,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro3@gmail.com",
+                              ganareto: 8,
+                              puntuacion: 0
+                             }
+                          ],
+                perdidas:[
+                            {
+                              alumnos_email: "pedro1@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            },
+                            {
+                              alumnos_email: "pedro3@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            }
+                         ]
+            }
+          ]
+      }
+  }
+  {
+    clase: {      
+      nombre_clase: "Geografía",
+      profesor_username: "Juan2",
+      password: "$2a$08$QH9iKsb5ue3P6pQXV8ySgelLwtnsHNglr03Sfhs6L/05FpEF2nJ9q",
+      curso: "1",
+      alumnos_email: [ "pedro4@gmail.com", "pedro5@gmail.com","pedro3@gmail.com"],
+      retos: [
+              {  
+                nombre_reto: "Sumar",
+                tipo: "juego",
+                activo: true,
+                fecha_comienzo: "2018-04-15",
+                fecha_fin: "2018-04-20",
+                n_veces_relizar: 30,
+                ganadas: [
+                            {
+                              alumnos_email: "pedro3@gmail.com",
+                              ganareto: 10,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro4@gmail.com",
+                              ganareto: 2,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro5@gmail.com",
+                              ganareto: 8,
+                              puntuacion: 0
+                             }
+                          ],
+                perdidas:[
+                            {
+                              alumnos_email: "pedro5@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            },
+                            {
+                              alumnos_email: "pedro4@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            }
+                         ]
+            },
             {  
-              nombre_reto: "Sumar",
-              tipo: "juego",
-              activo: true,
-              fecha_comienzo: "2018-04-15",
-              fecha_fin: "2018-04-20",
-              n_veces_relizar: 30,
-              ganadas: [
-                          {
-                            alumnos_email: "pedro3@gmail.com",
-                            ganareto: 10,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro4@gmail.com",
-                            ganareto: 2,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro5@gmail.com",
-                            ganareto: 8,
-                            puntuacion: 0
-                           }
-                        ],
-              perdidas:[
-                          {
-                            alumnos_email: "pedro5@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          },
-                          {
-                            alumnos_email: "pedro4@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          }
-                       ]
-          },
-          {  
-              nombre_reto: "Test1",
-              tipo: "test",
-              activo: true,
-              fecha_comienzo: "2018-04-15",
-              fecha_fin: "2018-04-20",
-              n_veces_relizar: 30,
-              ganadas: [
-                          {
-                            alumnos_email: "pedro41@gmail.com",
-                            ganareto: 10,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro3@gmail.com",
-                            ganareto: 2,
-                            puntuacion: 0
-                           },
-                           {
-                            alumnos_email: "pedro5@gmail.com",
-                            ganareto: 8,
-                            puntuacion: 0
-                           }
-                        ],
-              perdidas:[
-                          {
-                            alumnos_email: "pedro5@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          },
-                          {
-                            alumnos_email: "pedro4@gmail.com",
-                            pierdereto: 5,
-                            puntuacion: 0
-                          }
-                       ]
-          }
-        ]
-    }
+                nombre_reto: "Test1",
+                tipo: "test",
+                activo: true,
+                fecha_comienzo: "2018-04-15",
+                fecha_fin: "2018-04-20",
+                n_veces_relizar: 30,
+                ganadas: [
+                            {
+                              alumnos_email: "pedro41@gmail.com",
+                              ganareto: 10,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro3@gmail.com",
+                              ganareto: 2,
+                              puntuacion: 0
+                             },
+                             {
+                              alumnos_email: "pedro5@gmail.com",
+                              ganareto: 8,
+                              puntuacion: 0
+                             }
+                          ],
+                perdidas:[
+                            {
+                              alumnos_email: "pedro5@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            },
+                            {
+                              alumnos_email: "pedro4@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            }
+                         ]
+            }
+          ]
+      }
+  }
 ]

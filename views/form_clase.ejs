@@ -19,21 +19,41 @@
     </header>
 
     <main>
+        <% if ( registrado != null ) { %> 
+          <% if ( registrado == true ) { %> 
+           <div class = "row">
+               <div class="col-sm-12 alert alert-danger alert-dismissable">
+                 <button type="button" class="close" data-dismiss="alert">&times;</button>
+                 <strong>Registro Correcto</strong>  <!--p><p><!--%= message %> <!--%= error.status %><pre><!--%= error.stack %></pre></p-->
+               </div>
+            </div>
+           <% }else{ %>
+              <div class = "row">
+               <div class="col-sm-12 alert alert-danger alert-dismissable">
+                 <button type="button" class="close" data-dismiss="alert">&times;</button>
+                 <strong>Registro Incorrecto</strong>  <!--p><p><!--%= message %> <!--%= error.status %><pre><!--%= error.stack %></pre></p-->
+               </div>
+             </div>
+           <% } %>
+           <% } %>
+         
+         <div class ="row">
         <div class="col-sm-12 en-medio">
+          
           <div class="text-center">
-            <div class="row">
+              <div class="row">
                 <div class="col-sm-4 offset-4 align-middle ">
                     <div class="">
-                        <form class="form-nueva-clase">
+                        <form class="form-nueva-clase" method="POST" action="/registro_clase" >
                           <h3>Nueva clase</h3>
                           <div class="form-group">
-                            <input type="email" class="form-control" id="nombre-clase" aria-describedby="emailHelp" placeholder="Nombre de la clase">
+                            <input class="form-control" id="nombre-clase" aria-describedby="emailHelp"  name="nombreClase" placeholder="Nombre de la clase">
                           </div>
                           <div class="form-group">
-                            <input type="email" class="form-control" id="curso-clase" aria-describedby="emailHelp" placeholder="Curso">
+                            <input class="form-control" id="curso-clase" aria-describedby="emailHelp" name="curso" placeholder="Curso">
                           </div>
                           <div class="form-group">
-                            <input type="password" class="form-control" id="pass-clase" placeholder="Password para acceder a la clase">
+                            <input type="password" class="form-control" id="pass-clase"  name="password" placeholder="Password para acceder a la clase">
                           </div>
                           <div class="form-group">
                             <input type="password" class="form-control" id="pass-clase2" placeholder="Repita password para acceder a la clase">
@@ -44,6 +64,8 @@
                 </div>
             </div>
           </div>
+        </div>
+             
         </div>
     </main>
 
