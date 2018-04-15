@@ -1,0 +1,44 @@
+
+
+/*General Rules*/
+
+html {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: $base-font-size;
+  @media (max-width: 400px) {
+    font-size: $mobile-base-font-size;
+  }
+}
+
+body {
+  
+}
+
+h1{
+  font-size: 5em !important;
+  text-align: center;
+}
+
+/*Layout, Overlays and Flag template*/
+
+.container {
+  display: flex;
+  max-width: $max-container-width;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.flag {
+  font-size: 1rem;
+  width: 12em;
+  height: 9em;
+  margin: 20px;
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+

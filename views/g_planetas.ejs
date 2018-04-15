@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de los planetas</title>
+    <% include templates/head %>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <script type="text/javascript" src="js/reto_planetas.js"></script>
+      
+      <style type="text/css">
+          img{
+              width: 160px;
+              height: 160px;
+          }
+          
+          .suelta{
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            
+            margin-top: 5%;
+          }
+          
+          body{
+            background-image: url('https://wallpapertag.com/wallpaper/full/b/f/4/413426-amazing-space-star-background-3564x2005-pc.jpg');
+            color: white;
+            font-weight: bold;
+          }
+          
+          #imagenes_planetas{
+            margin-top: 3%;
+          }
+          
+          #inputs {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            font-size: 1.5em;
+          }
+          
+          input {
+            width: 50px;
+            padding: 10px;
+          }
+          
+          #qty_fallo{
+            background-color:red;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            margin-left: 3%;
+            width: 5%;
+          }
+          
+          #qty{
+            background-color:green;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            width: 5%;
+          }
+              
+      </style>
+</head>
+
+<body onload="imagenes_aleatorias()">
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+
+  <div class="container">
+        <div class="row center">
+            <div class="col sm1 suelta" id="div8" ondrop="drop(event)" ondragover="allowDrop(event)">Mercurio</div>
+            <div class="col sm1 suelta" id="div9" ondrop="drop(event)" ondragover="allowDrop(event)">Venus</div>
+            <div class="col sm1 suelta" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">La Tierra</div>
+            <div class="col sm1 suelta" id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">Marte</div>
+            <div class="col sm1 suelta" id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">Jupiter</div>
+            <div class="col sm1 suelta" id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">Saturno</div>
+            <div class="col sm1 suelta" id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">Urano</div>
+            <div class="col sm1 suelta" id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">Neptuno</div>
+            <div class="col sm1 suelta" id="div7" ondrop="drop(event)" ondragover="allowDrop(event)">Plutón</div>
+        </div>
+        
+        <div class="row" id="imagenes_planetas">
+           
+        </div>
+        
+        <div class="row center">
+          <div class="col s12">
+            <div id="inputs">
+              <input id="qty" value="0">
+              <input id="qty_fallo" value="0">
+            </div>
+          </div>
+        </div>
+    </div>
+            
+            
+        </div>
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+
+
+</body>
+</html>

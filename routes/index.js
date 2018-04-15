@@ -130,6 +130,14 @@ router.get('/g_buscaminas', isLoggedIn, function(req, res) {
   res.render('g_buscaminas.ejs', { user: req.user,title: "Buscaminas" });
 });
 
+router.get('/g_banderas', isLoggedIn, function(req, res) {
+  res.render('g_banderas.ejs', { user: req.user,title: "Reto de las banderas" });
+});
+
+router.get('/g_planetas', isLoggedIn, function(req, res) {
+  res.render('g_planetas.ejs', { user: req.user,title: "Reto de los planetas" });
+});
+
 router.get('/r_tresenraya', isLoggedIn, function(req, res) {
   User.find().sort('-usuario.ganadas_3enraya').find( function(err,data){
     if(err)  console.error("Error:"+err);

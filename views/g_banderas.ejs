@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de las banderas</title>
+    <% include templates/head %>
+
+    <!-- CSS BANDERAS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style_banderas.scss">
+    
+    <style type="text/css">
+    #tabla-resultados{
+      background-color: black !important;
+      color:white;
+      font-family: "Arial Black", Gadget, sans-serif;
+      
+    }
+    #tabla-resultados input{
+      background-color: black !important;
+      border: 2px solid white;
+      
+    }
+    
+    #inputs {
+      margin-bottom: 30px;
+      margin-top: 30px;
+      font-size: 1.5em;
+    }
+    
+    input {
+      width: 50px;
+      padding: 10px;
+    }
+    
+    #qty_fallo{
+      background-color:red;
+      color: white;
+      font-weight:bold;
+      font-size: 1.5em;
+      text-align: center;
+      margin-left: 3%;
+    }
+    
+    #qty{
+      background-color:green;
+      color: white;
+      font-weight:bold;
+      font-size: 1.5em;
+      text-align: center;
+    }
+  
+  </style> 
+</head>
+
+<body  onload="pais_aleatorio()">
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+  <h1 id="pais" style="position: fixed;top:0px;width:100%;height:85px;z-index:10; background-color: grey;color: white"></h1>
+
+<div class="container" style="margin-top: 7%;">
+  <div class="" id="Argentina" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Argentina.png">
+  </div>
+  <div class="" id="Australia" onClick="comprueba(this.id)">
+     <img class="flag" src="img/banderas/Australia.png">
+  </div>
+  <div class="" id="Brasil" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Brasil.png">
+  </div>
+  <div class="" id="China" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/China.png">
+  </div>
+  <div class="" id="Cuba" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Cuba.png">
+  </div>
+  <div class="" id="Francia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Francia.png">
+  </div>
+  <div class="" id="Alemania" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Alemania.png">
+  </div>
+  <div class="" id="Ghana" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Ghana.png">
+  </div>
+  <div class="" id="India" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/India.png">
+  </div>
+  <div class="" id="Jamaica" onClick="comprueba(this.id)">
+     <img class="flag" src="img/banderas/Jamaica.png">
+  </div>
+  <div class="" id="Noruega" onClick="comprueba(this.id)">
+     <img class="flag" src="img/banderas/Noruega.png">
+  </div>
+  <div class="" id="Israel" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Israel.png">
+  </div>
+  <div class="" id="Kenia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Kenia.png">
+  </div>
+ <div class="" id="Dinamarca" onClick="comprueba(this.id)">
+    <div></div>
+    <img class="flag" src="img/banderas/Dinamarca.png">
+  </div>
+  <div class="" id="Polonia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Polonia.png">
+  </div>
+  <div class="" id="Suecia" onClick="comprueba(this.id)">
+     <img class="flag" src="img/banderas/Suecia.png">
+  </div>
+  <div class="" id="Marruecos" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Marruecos.png">
+  </div>
+  <div class="" id="Grecia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Grecia.png">
+  </div>
+  <div class="" id="Colombia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Colombia.png">
+  </div>
+  <div class="" id="Rusia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Rusia.png">
+  </div>
+  <div class="" id="Gales" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Gales.PNG">
+  </div>
+  <div class="" id="Tailandia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Tailandia.png">
+  </div>
+  <div class="" id="Albania" onClick="comprueba(this.id)">
+    <div></div>
+    <img class="flag" src="img/banderas/Albania.png">
+  </div>
+  <div class="" id="Inglaterra" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Inglaterra.PNG">
+  </div>
+  <div class="" id="Ucrania" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Ucrania.png">
+  </div>
+  <div class="" id="Italia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Italia.png">
+  </div>
+  <div class="" id="Finlandia" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Finlandia.png">
+  </div>
+ <div class="" id="Venezuela" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Venezuela.png">
+  </div>
+  <div class="" id="Irlanda" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Irlanda.png">
+  </div>
+  <div class="" id="Bulgaria" onClick="comprueba(this.id)">
+    <img class="flag" src="img/banderas/Bulgaria.png">
+  </div>
+</div>
+
+
+<div id="inputs">
+  <input id="qty" value="0">
+  <input id="qty_fallo" value="0">
+</div>
+
+  
+
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+
+
+  <script  src="js/banderas.js"></script>
+  <!-- /.SCRIPTS -->
+
+</body>
+</html>
