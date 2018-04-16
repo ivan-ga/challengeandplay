@@ -138,6 +138,10 @@ router.get('/g_planetas', isLoggedIn, function(req, res) {
   res.render('g_planetas.ejs', { user: req.user,title: "Reto de los planetas" });
 });
 
+router.get('/g_capitales', isLoggedIn, function(req, res) {
+  res.render('g_capitales.ejs', { user: req.user,title: "Reto de las capitales" });
+});
+
 router.get('/r_tresenraya', isLoggedIn, function(req, res) {
   User.find().sort('-usuario.ganadas_3enraya').find( function(err,data){
     if(err)  console.error("Error:"+err);

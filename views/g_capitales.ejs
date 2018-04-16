@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de las capitales</title>
+    <% include templates/head %>
+
+    <!-- CSS -->
+    <link href="css/style_capitales.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+  <div class="col-sm-12">
+    <div class="row center-block">
+      <div id="inputs">
+        <input id="qty" value="0">
+        <input id="qty_fallo" value="0">
+      </div>
+    </div>
+  </div>
+   
+  <div class="" id="mainContainer">
+		<div class="" id="capitals">
+			<div class="" id="dropContent">
+				<div class="dragableBox" id="box1">Oslo</div>
+				<div class="dragableBox" id="box2">Estocolmo</div>
+				<div class="dragableBox" id="box3">Washington</div>
+				<div class="dragableBox" id="box4">Copenhage</div>
+				<div class="dragableBox" id="box5">Seúl</div>
+				<div class="dragableBox" id="box6">Roma</div>
+				<div class="dragableBox" id="box7">Madrid</div>
+				<div class="dragableBox" id="box8">Canberra</div>
+				<div class="dragableBox" id="box9">París</div>
+				<div class="dragableBox" id="box10">Caracas</div>
+				<div class="dragableBox" id="box11">El Cairo</div>
+				<div class="dragableBox" id="box12">Nueva Dehli</div>
+				<div class="dragableBox" id="box13">Tokio</div>
+				<div class="dragableBox" id="box14">Moscú</div>
+				
+			</div>
+		</div>
+		<div class="" id="countries">
+			<div id="box106" class="dragableBoxRight">Italia</div>
+			<div id="box109" class="dragableBoxRight">Francia</div>
+			<div id="box107" class="dragableBoxRight">España</div>
+			<div id="box101" class="dragableBoxRight">Noruega</div>
+			<div id="box114" class="dragableBoxRight">Rusia</div>
+			<div id="box104" class="dragableBoxRight">Dinamarca</div>
+			<div id="box105" class="dragableBoxRight">Corea del Sur</div>
+			<div id="box113" class="dragableBoxRight">Japón</div>
+			<div id="box102" class="dragableBoxRight">Suecia</div>
+			<div id="box112" class="dragableBoxRight">India</div>
+			<div id="box103" class="dragableBoxRight">Estados Unidos</div>
+			<div id="box108" class="dragableBoxRight">Australia</div>
+			<div id="box111" class="dragableBoxRight">Egipto</div>
+			<div id="box114" class="dragableBoxRight">Rusia</div>
+			<div id="box110" class="dragableBoxRight">Venezuela</div>
+      
+		</div>
+		<div class="clear"></div>
+		<div class="konaBody"></div>
+	</div>
+
+<div id="debug"></div>
+  <script src='http://www.dhtmlgoodies.com/scripts/drag-drop-custom/js/drag-drop-custom.js'></script>
+
+  
+
+    
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  
+  <% include templates/scripts %>
+  <script  src="js/reto_capitales.js"></script>
+
+  <!-- /.SCRIPTS -->
+
+</body>
+</html>
