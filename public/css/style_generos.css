@@ -1,0 +1,61 @@
+.btn {
+  margin: 10px;
+}
+
+.jumbotron {
+  border-radius: 15px;
+}
+
+#test-word {
+  padding: 10px 10px 5px 10px;
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+#main-header {
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  font-weight: bold;
+}
+
+.btn {
+ font-family: Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 130%;
+}
+
+#main-text {
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 120%;
+}
+
+.glyphicon {
+  font-size: 22px;
+}
+
+ #inputs {
+            margin-bottom: 5%;
+            margin-top: 10%;
+            font-size: 1.5em;
+          }
+          
+          input {
+            width: 50px;
+            padding: 10px;
+          }
+          
+          #qty_fallo{
+            background-color:red;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            margin-left: 3%;
+            width: 5%;
+          }
+          
+          #qty{
+            background-color:green;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            width: 5%;
+          }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de la multiplicación</title>
+    <% include templates/head %>
+
+    <!-- CSS-->
+    <link href="css/style_multiplicacion.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+  <div class="container" id="container">
+    <div class="row">
+      <div class="col-sm-12">
+            <div id="score">Puntuación: <span id="scorevalue"></span></div>
+            <div id="correct">Correcto</div>
+            <div id="wrong">Inténtalo de nuevo</div>
+            <div id="question"></div>
+            <div id="instruction">Selecciona la respuesta correcta:</div>
+            <div id="choices">
+                <div id="box1" class="box"></div>
+                <div id="box2" class="box"></div>
+                <div id="box3" class="box"></div>
+                <div id="box4" class="box"></div>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+            <div id="startReset">Empezar</div>
+            <div id="timeremaining">Tiempo: <span id="timevalue">60</span></div>
+            <div id="gameOver"></div>
+        </div>
+      </div>
+    </div>
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+
+  <script  src="js/g_multiplicacion.js"></script>
+  <!-- /.SCRIPTS -->
+
+</body>
+</html>

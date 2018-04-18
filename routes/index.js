@@ -142,6 +142,14 @@ router.get('/g_capitales', isLoggedIn, function(req, res) {
   res.render('g_capitales.ejs', { user: req.user,title: "Reto de las capitales" });
 });
 
+router.get('/g_generos', isLoggedIn, function(req, res) {
+  res.render('g_generos.ejs', { user: req.user,title: "Reto de los géneros" });
+});
+
+router.get('/g_multiplicacion', isLoggedIn, function(req, res) {
+  res.render('g_multiplicacion.ejs', { user: req.user,title: "Reto de la multiplicación" });
+});
+
 router.get('/r_tresenraya', isLoggedIn, function(req, res) {
   User.find().sort('-usuario.ganadas_3enraya').find( function(err,data){
     if(err)  console.error("Error:"+err);
