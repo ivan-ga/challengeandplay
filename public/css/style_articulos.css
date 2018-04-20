@@ -36,9 +36,10 @@
             font-size: 1.5em;
           }
           
-          input {
-            width: 50px;
-            padding: 10px;
+          #input {
+            
+            margin-top: 5%;
+            
           }
           
           #qty_fallo{
@@ -47,7 +48,6 @@
             font-weight:bold;
             font-size: 1.5em;
             text-align: center;
-            margin-left: 3%;
             width: 5%;
           }
           
@@ -58,4 +58,5 @@
             font-size: 1.5em;
             text-align: center;
             width: 5%;
+            
           }

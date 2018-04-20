@@ -2,14 +2,14 @@
 <html lang="en" ng-app='myApp'>
 <head>
   <meta charset="UTF-8">
-  <title>Reto de los géneros</title>
+  <title>Reto de los artículos</title>
     <% include templates/head %>
 
     <!-- CSS -->
-    <link href="css/style_generos.css" rel="stylesheet">
+    <link href="css/style_articulos.css" rel="stylesheet">
 </head>
 
-<body onload="check_marcador()">
+<body >
   <header>
     <% include templates/header %>
   </header>
@@ -24,19 +24,19 @@
       <div class="col-sm-12">
         <button type="button" class="btn btn-danger btn-lg" id="el-btn">EL</button>
         <button type="button" class="btn btn-danger pull-right btn-lg" id="la-btn">LA</button>
+        <h1 id="fin"></h1>
       </div>
     </div>
     <div class="row">
-     
-          <div class="col-sm-12">
-            <div id="inputs">
-              <input id="qty" value="">
-              <input id="qty_fallo" value="">
-            </div>
-          </div>
-        
+      <div class="col-sm-12" id="input">
+            
+              <input id="qty" value="0">
+              <input id="qty_fallo" value="0">
+            
+      </div>
     </div>
   </div>
+  
 </div>
 
 <br style="clear:both">
@@ -50,7 +50,7 @@
   <!-- SCRIPTS -->
   <% include templates/scripts %>
 
-  <script  src="js/generos.js"></script>
+  <script  src="js/articulos.js"></script>
   <!-- /.SCRIPTS -->
 
 </body>

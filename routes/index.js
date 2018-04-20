@@ -142,8 +142,8 @@ router.get('/g_capitales', isLoggedIn, function(req, res) {
   res.render('g_capitales.ejs', { user: req.user,title: "Reto de las capitales" });
 });
 
-router.get('/g_generos', isLoggedIn, function(req, res) {
-  res.render('g_generos.ejs', { user: req.user,title: "Reto de los géneros" });
+router.get('/g_articulos', isLoggedIn, function(req, res) {
+  res.render('g_articulos.ejs', { user: req.user,title: "Reto de los artículos" });
 });
 
 router.get('/g_multiplicacion', isLoggedIn, function(req, res) {
