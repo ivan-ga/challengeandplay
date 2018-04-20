@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de la suma</title>
+    <% include templates/head %>
+
+    <!-- CSS DAMAS -->
+    <link href="css/style_suma.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+  <div class="container">
+    
+    <div class="row final">
+      <div class="col-sm-12">
+        <h1 id="fin"></h1>
+      </div>
+    </div>
+    
+    <div class=" row p">
+      <div class="col-sm-12">
+              <h1>Suma de <span class="main_one">0</span> y <span class="main_two">0</span></h1>
+              <div class="box">
+                  <div class="correct"><span>0</span> </div>
+                  <div class="wrong"><span>0</span> </div>
+              </div>
+          <div class="main">
+              <div class="block_0" id="block">0</div>
+              <div class="block_1" id="block">0</div>
+              <div class="block_2" id="block">0</div>
+              <div class="block_3" id="block">0</div>
+          </div>
+          <button id="btn">Empezar</button>
+          <span></span>
+      </div>
+    </div>
+    
+    
+      
+  </div>
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+
+  <script  src="js/g_suma.1.js"></script>
+  <!-- /.SCRIPTS -->
+
+</body>
+</html>
