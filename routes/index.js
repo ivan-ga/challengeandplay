@@ -111,41 +111,6 @@ router.get('/games', isLoggedIn, function(req, res) {
   res.render('games.ejs', { user: req.user,title: "Juegos" });
 });
 
-//*Se veran las clase en la qeu estoy si soy alumno con diversos datos *//
-//Se veran las clase en la que estoy condiversos datos. buscamo donde estamo los alumnos.
-router.get('/rankings', isLoggedIn, function(req, res) {
-  //db.clases.find({"clase.alumnos_email": "pedro3@gmail.com"},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1}).pretty();
-  //    res.render('rankings.ejs', { user: req.user,title: "Rankings" });
-  var newClase = Clase();
-    console.log(req.user.usuario.email);
-  Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1},
-            function(err, clas) {
-                if (err) throw err;
-                //console.log(clas.length + "Datos que miroa ahioar")
-                  console.log("Introducir datos nuevo en la collection clase");
-                  console.log(clas[0].clase.nombre_clase);
-                  res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
-          });
-});
-////////////////////////////////////
-// de ranking se le pasaran los datos de que reto exactamente se quieres jugar.
-// aki se buscara segurn ese retot
-router.get('/r_reto', isLoggedIn, function(req, res) {
-  //db.clases.find({"clase.retos.nombre_reto": "Test2"},{"clase.retos.$":1}).pretty();
-  //console.log(req.query.selector); esta sera la seleccion de mi reto para 
-  // db.clases.find({"clase.nombre_clase":"Geografía","clase.alumnos_email":"pedro3@gmail.com"},{"clase.retos.nombre_reto":1, "clase.retos.ganadas": 1, "clase.retos.perdidas": 1}).pretty();
- 
- 
-   Clase.find({"clase.nombre_clase":"Matemáticas","clase.alumnos_email":"pedro3@gmail.com", "clase.retos.nombre_reto":"JuegoBandera"},
-              { "clase.retos.$": 1},
-   
-      function(err,data){
-    if(err)  console.error("Error:"+err);
-     res.render('r_reto.ejs', { user: req.user, win: data[0].clase.retos[0].ganadas, loss: data[0].clase.retos[0].perdidas , title: req.query.selector })
-})});
-
-
-
 router.get('/g_damas', isLoggedIn, function(req, res) {
   res.render('g_damas.ejs', { user: req.user,title: "Damas" });
 });
@@ -384,6 +349,44 @@ router.post('/home_profesor', isLoggedIn, function(req, res) {
     }
 	})})
 //////////////////////TERMINADO SUBIR IMAGEN
+//*Se veran las clase en la qeu estoy si soy alumno con diversos datos *//
+//Se veran las clase en la que estoy condiversos datos. buscamo donde estamo los alumnos.
+router.get('/rankings', isLoggedIn, function(req, res) {
+  //db.clases.find({"clase.alumnos_email": "pedro3@gmail.com"},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1}).pretty();
+  //    res.render('rankings.ejs', { user: req.user,title: "Rankings" });
+  var newClase = Clase();
+    console.log(req.user.usuario.email);
+  Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1},
+            function(err, clas) {
+                if (err) throw err;
+                //console.log(clas.length + "Datos que miroa ahioar")
+                  console.log("Introducir datos nuevo en la collection clase");
+                 // console.log(clas[0].clase.nombre_clase);
+                   
+                  res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
+          });
+});
+////////////////////////////////////
+// de ranking se le pasaran los datos de que reto exactamente se quieres jugar.
+// aki se buscara segurn ese retot
+router.get('/r_reto', isLoggedIn, function(req, res) {
+  //db.clases.find({"clase.retos.nombre_reto": "Test2"},{"clase.retos.$":1}).pretty();
+  //console.log(req.query.selector); esta sera la seleccion de mi reto para 
+  // db.clases.find({"clase.nombre_clase":"Geografía","clase.alumnos_email":"pedro3@gmail.com"},{"clase.retos.nombre_reto":1, "clase.retos.ganadas": 1, "clase.retos.perdidas": 1}).pretty();
+
+   //var nameClase =  req.query.selector.split("=",  req.query.selector.length);
+  // console.log(nameClase);
+    // console.log("dddddddddddddddddddddddddd" );
+   req.query.selector;
+   Clase.find({"clase.nombre_clase":"Matemáticas","clase.alumnos_email":"pedro3@gmail.com", "clase.retos.nombre_reto": "JuegoBandera" },
+              { "clase.retos.$": 1},
+   
+      function(err,data){
+    if(err)  console.error("Error:"+err);
+     res.render('r_reto.ejs', { user: req.user, win: data[0].clase.retos[0].ganadas, loss: data[0].clase.retos[0].perdidas , title: req.query.selector })
+})});
+
+
 
 
 module.exports = router;

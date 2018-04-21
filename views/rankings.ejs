@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='myApp'>
 <head>
+    
   <title>Proyecto-SYTW</title>
   <% include templates/head %>
 
@@ -59,9 +60,10 @@
                 <div class="offset-1 col-md-7">
                     <h1>Clases</h1>
                     <form name="ranking"  method="GET" action="/r_reto">
+                 
                       <div class="btn-group">
- 
-
+                       
+                 
 
                     <table class="table table-hover border-dark table-bordered table-stripe">
                         <thead>
@@ -73,12 +75,14 @@
                         <tbody>
                             <% for (var i=0; i < data.length; i++) {%>
                                 <tr class="table-info">
-                                   <td rowspan=<%= data[i].clase.retos.length %> ><%= data[i].clase.nombre_clase %> </td>
+                                   <td rowspan=<%= data[i].clase.retos.length %> > 
+                                       <%= data[i].clase.nombre_clase %> </td>
+                                   
                                    <% for (var j=0; j < data[i].clase.retos.length; j++) {%>
                                        <% if(j==0){ %>
                                           <td>     
                                          
-                  <button type="submit" name="selector" class="link" value=<%=  data[i].clase.retos[j].nombre_reto %>><%=  data[i].clase.retos[j].nombre_reto %></button>
+<button type="submit" name="selector" class="link" value=<%=  data[i].clase.retos[j].nombre_reto+'.dato='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></button>
                                                 </td>
                                           <tr class="table-info">
                                        <% }else{ %>
