@@ -1,0 +1,131 @@
+#periodic-table
+{
+	margin-top: 1%;
+	display: grid;
+	grid-template-columns: repeat(18, 1fr);
+	grid-template-rows: repeat(7, 1fr)
+		[separator-start] 0.25fr
+		[separator-end lanthanides-start] 1fr
+		[lanthanides-end actinides-start] 1fr
+		[actinides-end];
+	grid-gap: 0.125em;
+	list-style: none;
+	padding: 0;
+	font: 1em/1 Calibri, sans-serif;
+	counter-reset: atomic-number;
+}
+
+#periodic-table li
+{
+	background: #d6d2e1;
+	color: #2c0f62;
+	padding: 0.5em 0.125em;
+	text-align: center;
+	counter-increment: atomic-number;
+	cursor: pointer;
+}
+
+#periodic-table li:nth-of-type(2)
+{
+	grid-column: 18;
+}
+
+#periodic-table li:nth-of-type(5),
+#periodic-table li:nth-of-type(13)
+{
+	grid-column: 13;
+}
+
+#periodic-table li:nth-of-type(n+58):not(:nth-of-type(n+72))
+{
+	grid-row: lanthanides;
+}
+
+#periodic-table li:nth-of-type(n+90):not(:nth-of-type(n+104))
+{
+	grid-row: actinides;
+}
+
+@media (min-width: 60em)
+{
+	#periodic-table li::before
+	{
+		content: counter(atomic-number, decimal);
+		font-size: 0.75em;
+		vertical-align: sub;
+	}
+}
+
+@media (min-width: 90em)
+{
+	#periodic-table li
+	{
+		font-size: 1.5em;
+	}
+	
+	#periodic-table li::before,
+	#periodic-table li::after
+	{
+		font-size: 0.5em;
+	}
+	
+	#periodic-table li::after
+	{
+		content: attr(title);
+		display: block;
+		margin-top: 0.5em;
+	}
+}
+
+ 
+    #tabla-resultados{
+      background-color: black !important;
+      color:white;
+      font-family: "Arial Black", Gadget, sans-serif;
+      
+    }
+    #tabla-resultados input{
+      background-color: black !important;
+      border: 2px solid white;
+      
+    }
+    
+    #inputs {
+      margin-bottom: 30px;
+      margin-top: 30px;
+      font-size: 1.5em;
+    }
+    
+    input {
+      width: 50px;
+      padding: 10px;
+    }
+    
+    #qty_fallo{
+      background-color:red;
+      color: white;
+      font-weight:bold;
+      font-size: 1.5em;
+      text-align: center;
+      margin-left: 3%;
+    }
+    
+    #qty{
+      background-color:green;
+      color: white;
+      font-weight:bold;
+      font-size: 1.5em;
+      text-align: center;
+    }
+  
+#elemento{
+	width:100%;
+	height:85px;
+	z-index:10; 
+	background-color: white;
+	color: black; 
+	text-align: center;
+	font-weight: bold;
+	font-size: 4em;
+	margin-top: 1%;
+}

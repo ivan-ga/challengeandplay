@@ -154,6 +154,10 @@ router.get('/g_suma', isLoggedIn, function(req, res) {
   res.render('g_suma.ejs', { user: req.user,title: "Reto de la suma" });
 });
 
+router.get('/g_tp', isLoggedIn, function(req, res) {
+  res.render('g_tp.ejs', { user: req.user,title: "Reto de los elementos" });
+});
+
 router.get('/r_tresenraya', isLoggedIn, function(req, res) {
   User.find().sort('-usuario.ganadas_3enraya').find( function(err,data){
     if(err)  console.error("Error:"+err);

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de los elementos</title>
+    <% include templates/head %>
+
+    <!-- CSS -->
+    <link href="css/style_tp.css" rel="stylesheet">
+</head>
+
+<body onload="elemento_aleatorio()">
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 id="elemento"></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <ol id="periodic-table">
+      	<li id="Hidrógeno" onClick="comprueba(this.id)">H</li>
+      	<li id="Hélio" onClick="comprueba(this.id)">He</li>
+      	<li id="Litio" onClick="comprueba(this.id)">Li</li>
+      	<li id="Berilio" onClick="comprueba(this.id)">Be</li>
+      	<li id="Borón" onClick="comprueba(this.id)">B</li>
+      	<li id="Carbón" onClick="comprueba(this.id)">C</li>
+      	<li id="Nitrógeno" onClick="comprueba(this.id)">N</li>
+      	<li id="Oxígeno" onClick="comprueba(this.id)">O</li>
+      	<li id="Fluor" onClick="comprueba(this.id)">F</li>
+      	<li id="Neón" onClick="comprueba(this.id)">Ne</li>
+      	<li id="Sodio" onClick="comprueba(this.id)">Na</li>
+      	<li id="Magnesio" onClick="comprueba(this.id)">Mg</li>
+      	<li id="Aluminio" onClick="comprueba(this.id)">Al</li>
+      	<li id="Silicio" onClick="comprueba(this.id)">Si</li>
+      	<li id="Fósforo" onClick="comprueba(this.id)">P</li>
+      	<li id="Azufre" onClick="comprueba(this.id)">S</li>
+      	<li id="Cloro" onClick="comprueba(this.id)">Cl</li>
+      	<li id="Argón" onClick="comprueba(this.id)">Ar</li>
+      	<li id="Potasio" onClick="comprueba(this.id)">K</li>
+      	<li id="Calcio" onClick="comprueba(this.id)">Ca</li>
+      	<li id="Escandio" onClick="comprueba(this.id)">Sc</li>
+      	<li id="Titanio" onClick="comprueba(this.id)">Ti</li>
+      	<li id="Vanadio" onClick="comprueba(this.id)">V</li>
+      	<li id="Cromo" onClick="comprueba(this.id)">Cr</li>
+      	<li id="Manganeso" onClick="comprueba(this.id)">Mn</li>
+      	<li id="Hierro" onClick="comprueba(this.id)">Fe</li>
+      	<li id="Cobalto" onClick="comprueba(this.id)">Co</li>
+      	<li id="Níquel" onClick="comprueba(this.id)">Ni</li>
+      	<li id="Cobre" onClick="comprueba(this.id)">Cu</li>
+      	<li id="Zinc" onClick="comprueba(this.id)">Zn</li>
+      	<li id="Galio" onClick="comprueba(this.id)">Ga</li>
+      	<li id="Germanio" onClick="comprueba(this.id)">Ge</li>
+      	<li id="Arsenico" onClick="comprueba(this.id)">As</li>
+      	<li id="Selenio" onClick="comprueba(this.id)">Se</li>
+      	<li id="Bromo" onClick="comprueba(this.id)">Br</li>
+      	<li id="Criptón" onClick="comprueba(this.id)">Kr</li>
+      	<li id="Rubidio" onClick="comprueba(this.id)">Rb</li>
+      	<li id="Estroncio" onClick="comprueba(this.id)">Sr</li>
+      	<li id="Itrio" onClick="comprueba(this.id)">Y</li>
+      	<li id="Circonio" onClick="comprueba(this.id)">Zr</li>
+      	<li id="Niobio" onClick="comprueba(this.id)">Nb</li>
+      	<li id="Molibdeno" onClick="comprueba(this.id)">Mo</li>
+      	<li id="Tecnecio" onClick="comprueba(this.id)">Tc</li>
+      	<li id="Rutenio" onClick="comprueba(this.id)">Ru</li>
+      	<li id="Rodio" onClick="comprueba(this.id)">Rh</li>
+      	<li id="Paladio" onClick="comprueba(this.id)">Pd</li>
+      	<li id="Plata" onClick="comprueba(this.id)">Ag</li>
+      	<li id="Cadmio" onClick="comprueba(this.id)">Cd</li>
+      	<li id="Indio" onClick="comprueba(this.id)">In</li>
+      	<li id="Estaño" onClick="comprueba(this.id)">Sn</li>
+      	<li id="Antimonio" onClick="comprueba(this.id)">Sb</li>
+      	<li id="Telurio" onClick="comprueba(this.id)">Te</li>
+      	<li id="Yodo" onClick="comprueba(this.id)">I</li>
+      	<li id="Xenón" onClick="comprueba(this.id)">Xe</li>
+      	<li id="Cesio" onClick="comprueba(this.id)">Cs</li>
+      	<li id="Bario" onClick="comprueba(this.id)">Ba</li>
+      	<li id="Lantano" onClick="comprueba(this.id)">La</li>
+      	<li id="Cerio" onClick="comprueba(this.id)">Ce</li>
+      	<li id="Praseodimio" onClick="comprueba(this.id)">Pr</li>
+      	<li id="Neodimio" onClick="comprueba(this.id)">Nd</li>
+      	<li id="Prometeo" onClick="comprueba(this.id)">Pm</li>
+      	<li id="Samario" onClick="comprueba(this.id)">Sm</li>
+      	<li id="Europio" onClick="comprueba(this.id)">Eu</li>
+      	<li id="Gadolinio" onClick="comprueba(this.id)">Gd</li>
+      	<li id="Terbio" onClick="comprueba(this.id)">Tb</li>
+      	<li id="Disprosio" onClick="comprueba(this.id)">Dy</li>
+      	<li id="Holmio" onClick="comprueba(this.id)">Ho</li>
+      	<li id="Erbio" onClick="comprueba(this.id)">Er</li>
+      	<li id="Tulio" onClick="comprueba(this.id)">Tm</li>
+      	<li id="Iterbio" onClick="comprueba(this.id)">Yb</li>
+      	<li id="Lutecio" onClick="comprueba(this.id)">Lu</li>
+      	<li id="Hafnio" onClick="comprueba(this.id)">Hf</li>
+      	<li id="Tántalo" onClick="comprueba(this.id)">Ta</li>
+      	<li id="Tungsteno" onClick="comprueba(this.id)">W</li>
+      	<li id="Renio" onClick="comprueba(this.id)">Re</li>
+      	<li id="Osmio" onClick="comprueba(this.id)">Os</li>
+      	<li id="Iridio" onClick="comprueba(this.id)">Ir</li>
+      	<li id="Platino" onClick="comprueba(this.id)">Pt</li>
+      	<li id="Oro" onClick="comprueba(this.id)">Au</li>
+      	<li id="Mercurio" onClick="comprueba(this.id)">Hg</li>
+      	<li id="Talio" onClick="comprueba(this.id)">Tl</li>
+      	<li id="Plomo" onClick="comprueba(this.id)">Pb</li>
+      	<li id="Bismuto" onClick="comprueba(this.id)">Bi</li>
+      	<li id="Polonio" onClick="comprueba(this.id)">Po</li>
+      	<li id="Ástato" onClick="comprueba(this.id)">At</li>
+      	<li id="Radón" onClick="comprueba(this.id)">Rn</li>
+      	<li id="Francio" onClick="comprueba(this.id)">Fr</li>
+      	<li id="Radio" onClick="comprueba(this.id)">Ra</li>
+      	<li id="Actinio" onClick="comprueba(this.id)">Ac</li>
+      	<li id="Torio" onClick="comprueba(this.id)">Th</li>
+      	<li id="Protactinio" onClick="comprueba(this.id)">Pa</li>
+      	<li id="Uranio" onClick="comprueba(this.id)">U</li>
+      	<li id="Neptunio" onClick="comprueba(this.id)">Np</li>
+      	<li id="Plutonio" onClick="comprueba(this.id)">Pu</li>
+      	<li id="Americio" onClick="comprueba(this.id)">Am</li>
+      	<li id="Curio" onClick="comprueba(this.id)">Cm</li>
+      	<li id="Berkelio" onClick="comprueba(this.id)">Bk</li>
+      	<li id="Californio" onClick="comprueba(this.id)">Cf</li>
+      	<li id="Einsteinio" onClick="comprueba(this.id)">Es</li>
+      	<li id="Fermio" onClick="comprueba(this.id)">Fm</li>
+      	<li id="Mendelevio" onClick="comprueba(this.id)">Md</li>
+      	<li id="Nobelio" onClick="comprueba(this.id)">No</li>
+      	<li id="Lawrencio" onClick="comprueba(this.id)">Lr</li>
+      	<li id="Rutherfordio" onClick="comprueba(this.id)">Rf</li>
+      	<li id="Dubnio" onClick="comprueba(this.id)">Db</li>
+      	<li id="Seaborgio" onClick="comprueba(this.id)">Sg</li>
+      	<li id="Bohrio" onClick="comprueba(this.id)">Bh</li>
+      	<li id="Hasio" onClick="comprueba(this.id)">Hs</li>
+      	<li id="Meitnerio" onClick="comprueba(this.id)">Mt</li>
+      	<li id="Darmstatio" onClick="comprueba(this.id)">Ds</li>
+      	<li id="Roentgenio" onClick="comprueba(this.id)">Rg</li>
+      	<li id="Copernicio" onClick="comprueba(this.id)">Cn</li>
+      	<li id="Nihonio" onClick="comprueba(this.id)">Nh</li>
+      	<li id="Flerovio" onClick="comprueba(this.id)">Fl</li>
+      	<li id="Moscovio" onClick="comprueba(this.id)">Mc</li>
+      	<li id="Livermorio" onClick="comprueba(this.id)">Lv</li>
+      	<li id="Teneso" onClick="comprueba(this.id)">Ts</li>
+      	<li id="Oganesón" onClick="comprueba(this.id)">Og</li>
+      </ol>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="inputs">
+          <input id="qty" value="0">
+          <input id="qty_fallo" value="0">
+        </div>
+      </div>
+    </div>
+
+</div>
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+
+  <script  src="js/g_tp.js"></script>
+  <!-- /.SCRIPTS -->
+
+</body>
+</html>
