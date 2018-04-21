@@ -41,7 +41,12 @@
                               alumnos_email: "pedro2@gmail.com",
                               pierdereto: 5,
                               puntuacion: 0
-                            }
+                            },
+                            {
+                              alumnos_email: "pedro3@gmail.com",
+                              pierdereto: 0,
+                              puntuacion: 0
+                             }
                          ]
             },
             {  
@@ -74,6 +79,11 @@
                               pierdereto: 5,
                               puntuacion: 0
                             },
+                            {
+                              alumnos_email: "pedro2@gmail.com",
+                              pierdereto: 0,
+                              puntuacion: 0
+                             },
                             {
                               alumnos_email: "pedro3@gmail.com",
                               pierdereto: 5,
@@ -111,6 +121,11 @@
                               pierdereto: 5,
                               puntuacion: 0
                             },
+                             {
+                              alumnos_email: "pedro2@gmail.com",
+                              pierdereto: 0,
+                              puntuacion: 0
+                            },
                             {
                               alumnos_email: "pedro3@gmail.com",
                               pierdereto: 5,
@@ -120,7 +135,7 @@
             }
           ]
       }
-  }
+  },
   {
     clase: {      
       nombre_clase: "Geografía",
@@ -155,12 +170,17 @@
                           ],
                 perdidas:[
                             {
-                              alumnos_email: "pedro5@gmail.com",
-                              pierdereto: 5,
+                              alumnos_email: "pedro3@gmail.com",
+                              pierdereto: 0,
                               puntuacion: 0
                             },
                             {
                               alumnos_email: "pedro4@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            },
+                            {
+                              alumnos_email: "pedro5@gmail.com",
                               pierdereto: 5,
                               puntuacion: 0
                             }
@@ -174,16 +194,17 @@
                 fecha_fin: "2018-04-20",
                 n_veces_relizar: 30,
                 ganadas: [
-                            {
-                              alumnos_email: "pedro41@gmail.com",
-                              ganareto: 10,
-                              puntuacion: 0
-                             },
                              {
                               alumnos_email: "pedro3@gmail.com",
                               ganareto: 2,
                               puntuacion: 0
                              },
+                            {
+                              alumnos_email: "pedro4@gmail.com",
+                              ganareto: 10,
+                              puntuacion: 0
+                             },
+                            
                              {
                               alumnos_email: "pedro5@gmail.com",
                               ganareto: 8,
@@ -192,12 +213,17 @@
                           ],
                 perdidas:[
                             {
-                              alumnos_email: "pedro5@gmail.com",
-                              pierdereto: 5,
+                              alumnos_email: "pedro3@gmail.com",
+                              pierdereto: 0,
                               puntuacion: 0
                             },
                             {
                               alumnos_email: "pedro4@gmail.com",
+                              pierdereto: 5,
+                              puntuacion: 0
+                            },
+                              {
+                              alumnos_email: "pedro5@gmail.com",
                               pierdereto: 5,
                               puntuacion: 0
                             }
