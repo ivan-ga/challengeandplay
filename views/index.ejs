@@ -71,6 +71,20 @@
                       
                 </div>
                    <div class="col-md-8 ng-scope ng-building" ng-controller="controladorConMetodos as fo">
+                               <% if (error.status == 406 ) { %> 
+                 
+                                <div class="alert alert-danger alert-dismissable">
+                                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                  <strong>¡ERROR!</strong>  <p><p><%= message %> <%= error.status %><pre><%= error.stack %></pre></p>
+                                </div>
+                     <% }%>
+                    <% if (error.status == 405 ) { %> 
+                          
+                                <div class="alert alert-danger alert-dismissable">
+                                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                  <strong>¡ERROR!</strong>  <p><p><%= message %> <%= error.status %><pre><%= error.stack %></pre></p>
+                                </div>
+                     <% } %>
                       <div class="row">
                            <h3 class="omb_authTitle center-form"><a  href="" ng-click="ShowRetroceder()">
                            Login</a> or <a href="" ng-click="ShowForm()">Sign up</a></h3>

@@ -19,17 +19,18 @@ const claseSchema = EstrucClase.Clase;
 const Clase = mongoose.model("Clase", claseSchema);
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Login' });
+   var error = { status: 0, stack : "" };
+     res.render('index.ejs',{message:  'No hay error' ,  error })
 });
 
 router.get('/registro_error', function(req, res, next) {
      var error = { status: 405, stack : "" };
-     res.render('error.ejs',{message:  'Error al registrar el usuario, usuario ya existe' ,  error })
+     res.render('index.ejs',{message:  'Error al registrar el usuario, usuario ya existe' ,  error })
 });
 
 router.get('/login_error', function(req, res, next) {
      var error = { status: 406, stack : "" };
-     res.render('error.ejs',{message:  'Error al loguearse, usuario o contraseña erronera' ,  error })
+     res.render('index.ejs',{message:  'Error al loguearse, usuario o contraseña erronera' ,  error })
 });
 
 router.get('/home', isLoggedIn, function(req, res) {
@@ -189,29 +190,6 @@ router.get('/g_tp', isLoggedIn, function(req, res) {
   res.render('g_tp.ejs', { user: req.user,title: "Reto de los elementos" });
 });
 
-router.get('/r_tresenraya', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_3enraya').find( function(err,data){
-    if(err)  console.error("Error:"+err);
-      res.render('r_tresenraya.ejs', { user: req.user, users: data, title: "3 en raya" })
-})});
-
-router.get('/r_ajedrez', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_ajedrez').find( function(err,data){
-    if(err)  console.error("Error:"+err);
-      res.render('r_ajedrez.ejs', { user: req.user, users: data,title: "Ajedrez" })
-})});
-
-router.get('/r_buscaminas', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_buscaminas').find( function(err,data){
-    if(err)  console.error("Error:"+err);
-      res.render('r_buscaminas.ejs', { user: req.user, users: data,title: "Buscamnias" })
-})});
-
-router.get('/r_damas', isLoggedIn, function(req, res) {
-  User.find().sort('-usuario.ganadas_damas').find( function(err,data){
-    if(err)  console.error("Error:"+err);
-      res.render('r_damas.ejs', { user: req.user, users: data,title: "Damas" })
-})});
 
 router.post('/registro', passport.authenticate('local-signup', {
   successRedirect: '/home',
