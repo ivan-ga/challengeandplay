@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de inglés</title>
+    <% include templates/head %>
+
+    <!-- CSS DAMAS -->
+    <link href="css/style_ingles.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+  <div class = 'wholeMenu'>
+    <div class = 'figures'>
+        <figure class="item" id = "animalIcon">
+            <img src="https://www.dropbox.com/s/vz4796x7rlj6bzh/cat.png?raw=1">
+            <figcaption class="engLang">animals</figcaption>
+            <figcaption class="espLang">animales</figcaption>
+        </figure>
+        <figure class="item" id = "medicalIcon">
+            <img src="https://www.dropbox.com/s/fdpauwoh4tmaf9q/cardiogram.png?raw=1">
+            <figcaption class="engLang">medical</figcaption>
+            <figcaption class="espLang">médico</figcaption>
+        </figure>
+        <figure class="item" id = "natureIcon">
+            <img src="https://www.dropbox.com/s/mpx7554usnes1tb/forest.png?raw=1">
+            <figcaption class="engLang">nature</figcaption>
+            <figcaption class="espLang">naturaleza</figcaption>
+        </figure>
+        <figure class="item" id = "foodIcon">
+            <img src="https://www.dropbox.com/s/fodmyn5dwpt4lle/groceries.png?raw=1">
+            <figcaption class="engLang">food</figcaption>
+            <figcaption class="espLang">comida</figcaption>
+        </figure>
+        <figure class="item" id = "businessIcon">
+            <img src="https://www.dropbox.com/s/dolytj8o52wq2vs/money-bag.png?raw=1">
+            <figcaption class="engLang">business</figcaption>
+            <figcaption class="espLang">negocios</figcaption>
+        </figure>
+        <figure class="item" id = "potterIcon">
+            <img src="https://www.dropbox.com/s/fb2zs3oh0x95jdd/seethrupotter.png?raw=1">
+            <figcaption class="engLang">potter</figcaption>
+            <figcaption class="espLang">potter</figcaption>
+       </figure>
+    </div>
+  
+  <div class = 'wrapperTop'>
+     <div class = 'questionShow'>
+          <p class = 'engLang compShow'></p>
+          <p class = 'espLang compShow'></p>
+      
+    </div>
+  </div>
+  
+  <div class = 'wrapperMid'>
+     <!-- correctAnswer plus randoms -->
+    <button class = "buttonStyle" id = 'buttonA'></button>
+    <button class = "buttonStyle" id = 'buttonB'></button>
+    <button class = "buttonStyle" id = 'buttonC'></button>
+  </div>
+  
+  <div class = "wrapperBottom">
+      <button class = "" id = 'empezar' style = "text-align:center;">Empezar</button>
+      <p class = 'conclusion'></p>
+      <p class = 'score'></p>
+ </div>
+ 
+ <div class="col-sm-12">
+   <div class="row center">
+            <div class="col s12">
+              <div id="inputs">
+                <input id="qty" value="0">
+                <input id="qty_fallo" value="0">
+              </div>
+            </div>
+    </div>
+  </div>
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+
+  <script  src="js/g_ingles.js"></script>
+  <!-- /.SCRIPTS -->
+
+</body>
+</html>

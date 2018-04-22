@@ -1,0 +1,257 @@
+* {
+  padding: 0em;
+  margin: 0em;
+}
+
+body {
+  font-family: Quicksand, sans-serif;
+  text-align: center;
+}
+
+.wrapperTopMost {
+  width: 99%;
+  padding: 1%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.wrapperTop {
+  width: 85%;
+  padding-bottom: 1.5em;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.wrapperMid {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapperBottom {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.langSwitch {
+  padding-top: 0.5em;
+  height: 2.5em;
+}
+
+#changeLang, #generateQuestionButton {
+  font-weight: bold;
+}
+
+.menuButton {
+   cursor: pointer;
+   z-index: 2;
+   font-size: 2.2em
+}
+
+.compShow {
+  font-size: 2.5em;
+}
+
+.buttonStyle {
+  font-family: Quicksand, sans-serif;
+  height: 2em;
+  width: 6.7em;
+  margin: 0.2em;
+  font-weight: 400;
+  font-size: 2.2em;
+}
+
+#empezar {
+  
+  height: 30%;
+  width: 15%;
+  font-size: 1em;
+  background-color: red;
+  color: white;
+  padding: 1%;
+  margin-top: 3%;
+}
+
+#buttonC {
+  margin-bottom: 0.15em;
+}
+
+.score {
+  font-size: 1.5em;
+}
+
+.conclusion {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  font-size: 2em;
+  min-height: 1.5em;
+}
+
+.figures {
+  display: none;
+  text-align: left;
+  position: absolute;
+  top: 1.5em;
+  left: 5.5em;
+  width: 10em;
+  padding: 1em 3.5em;
+  border-radius: 25px;
+  background-color: rgba(95, 120, 140, 0.6);
+}
+
+figcaption {
+  position: relative;
+  top: -2.3em;
+  text-align: right;
+  color: white;
+  font-weight: 600;
+}
+
+#inputs {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            font-size: 1.5em;
+          }
+          
+          input {
+            width: 50px;
+            padding: 10px;
+          }
+          
+          #qty_fallo{
+            background-color:red;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            margin-left: 3%;
+            width: 7%;
+          }
+          
+          #qty{
+            background-color:green;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            width: 7%;
+          }
+
+#changeLang, #menuButton {
+  color: #949CB5; /*palegrey*/
+}
+
+.questionShow, .buttonStyle, .score, .conclusion {
+  color: #386174; /*darkgrey*/
+}
+
+.selected {
+  background-color: #BBFFAF; /*palegreen*/
+}
+
+.item:hover .caption {
+  display: block;
+}
+.item:hover {
+  animation: bounce 0.6s;
+}
+
+button:focus {
+  outline-color: #C3D6D1;
+}
+
+#changeLang:hover {
+  cursor: pointer;
+}
+
+.espLang {
+  display: none;
+}
+
+.engLang {
+  display: block;
+}
+
+/*bouncing icons*/
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-12px);
+		transform: translateY(-12px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
+}
+
+
+@media only screen and (max-width: 780px) {
+  .wrapperMid {
+      flex-flow: column wrap;
+  }
+  
+  .wrapperTop {
+      width: 100%;
+  }
+  
+  .wrapperTopMost {
+      padding: 0em 0.7em;
+  }
+  
+  .figures {
+      font-size: 1em;
+      padding: 1em 2.2em 0em 2.2em;
+      top: 1.2em;
+      left: 0.8em;
+      width: 10em;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .compShow {
+      font-size: 2em;
+  }
+  .buttonStyle {
+      font-size: 1.5em;
+  }
+  
+  #generateQuestionButton {
+      font-size: 0.8em;
+  }
+  .figures img {
+      height: 45px;
+      width: 45px;
+  }
+  
+  .figures {
+      padding: 1em 2em 0em 2em;
+      top: 1.1em;
+      left: 0.8em;
+      width: 9em;
+  }
+  
+  .score {
+      font-size: 1.3em;
+  }
+  
+  .conclusion {
+      font-size: 1.6em;
+      margin-top: 0.6em;
+      margin-bottom: 0.5em;
+  }
+}
+
+ 

@@ -155,6 +155,10 @@ router.get('/g_tp', isLoggedIn, function(req, res) {
   res.render('g_tp.ejs', { user: req.user,title: "Reto de los elementos" });
 });
 
+router.get('/g_ingles', isLoggedIn, function(req, res) {
+  res.render('g_ingles.ejs', { user: req.user,title: "Reto de inglés" });
+});
+
 
 router.post('/registro', passport.authenticate('local-signup', {
   successRedirect: '/home',
