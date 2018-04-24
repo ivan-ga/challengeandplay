@@ -1,0 +1,47 @@
+#pregunta{
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+#respuesta{
+    margin-top: 5%;
+}
+
+#comprueba{
+    margin-top: 5%;
+    text-align: center;
+    width: 100%;
+}
+
+#inputs {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            font-size: 1.5em;
+          }
+          
+          input {
+            width: 50px;
+            padding: 10px;
+          }
+          
+          #qty_fallo{
+            background-color:red;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            margin-left: 3%;
+            width: 7%;
+          }
+          
+          #qty{
+            background-color:green;
+            color: white;
+            font-weight:bold;
+            font-size: 1.5em;
+            text-align: center;
+            width: 7%;
+          }

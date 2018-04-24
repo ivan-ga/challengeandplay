@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Reto de los personajes históricos</title>
+    <% include templates/head %>
+
+    <!-- CSS-->
+    <link href="css/style_historia.css" rel="stylesheet">
+</head>
+
+<body onload="generar_pregunta()">
+  <header>
+    <% include templates/header %>
+  </header>
+  <br>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+    		<div id="pregunta"></div>
+    		<input type="text" name="" id="respuesta"/>
+    		<button id="comprueba" class="btn btn-danger" onclick="comprobar()">Comprobar</button>
+    		<div id="comprobacion"></div>
+    	</div>
+		</div>
+		
+		<div class="col-sm-12">
+   <div class="row center">
+            <div class="col s12">
+              <div id="inputs">
+                <input id="qty" value="0">
+                <input id="qty_fallo" value="0">
+              </div>
+            </div>
+    </div>
+  </div>
+	</div>
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+
+  <script  src="js/g_historia.js"></script>
+  <!-- /.SCRIPTS -->
+
+</body>
+</html>
