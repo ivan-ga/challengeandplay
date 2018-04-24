@@ -1,4 +1,5 @@
 var score = 0;
+var cuenta = 0;
 
 //Contador de aciertos y errores
 function modify_qty(val, tipo) {
@@ -189,80 +190,86 @@ $(document).ready(function () {
   $('.conclusion').text('');
   $('#empezar').text('Siguiente');
 
-
-  var keyNames = Object.keys(selectedDatabase);
-  var valueNames = Object.values(selectedDatabase);
-  var userChoice = 0;
-  var computerChoice = keyNames[Math.floor(Math.random()*keyNames.length)];
-  var correctAnswer = selectedDatabase[computerChoice];
-  var randomWrongAnswerOne = valueNames[Math.floor(Math.random()*valueNames.length)];
-  var randomWrongAnswerTwo = valueNames[Math.floor(Math.random()*valueNames.length)];
-
-  //check for duplicates
-
-  do {
-    var randomWrongAnswerOne = valueNames[Math.floor(Math.random()*valueNames.length)]; 
-  }
-  while (randomWrongAnswerOne===randomWrongAnswerTwo || randomWrongAnswerOne===correctAnswer);
-  do {
+  if(cuenta<10){ //Para 10 palabras
+    var keyNames = Object.keys(selectedDatabase);
+    var valueNames = Object.values(selectedDatabase);
+    var userChoice = 0;
+    var computerChoice = keyNames[Math.floor(Math.random()*keyNames.length)];
+    var correctAnswer = selectedDatabase[computerChoice];
+    var randomWrongAnswerOne = valueNames[Math.floor(Math.random()*valueNames.length)];
     var randomWrongAnswerTwo = valueNames[Math.floor(Math.random()*valueNames.length)];
-  }
-  while (randomWrongAnswerOne===randomWrongAnswerTwo || randomWrongAnswerTwo===correctAnswer);
-
-  $('.compShow').text(computerChoice);
   
-//randomise location of correct answer
-   
-getButtonLocation();   
-function getButtonLocation() {
-var randomNum = Math.random();
-  if (randomNum < 0.34) {
-  $('#buttonA').html(correctAnswer);
-  $('#buttonB').html(randomWrongAnswerOne);
-  $('#buttonC').html(randomWrongAnswerTwo);
-  } else if(randomNum <= 0.67) {
-    $('#buttonB').html(correctAnswer);
-    $('#buttonA').html(randomWrongAnswerOne);
+    //check for duplicates
+  
+    do {
+      var randomWrongAnswerOne = valueNames[Math.floor(Math.random()*valueNames.length)]; 
+    }
+    while (randomWrongAnswerOne===randomWrongAnswerTwo || randomWrongAnswerOne===correctAnswer);
+    do {
+      var randomWrongAnswerTwo = valueNames[Math.floor(Math.random()*valueNames.length)];
+    }
+    while (randomWrongAnswerOne===randomWrongAnswerTwo || randomWrongAnswerTwo===correctAnswer);
+  
+    $('.compShow').text(computerChoice);
+    
+  //randomise location of correct answer
+     
+  getButtonLocation();   
+  function getButtonLocation() {
+  var randomNum = Math.random();
+    if (randomNum < 0.34) {
+    $('#buttonA').html(correctAnswer);
+    $('#buttonB').html(randomWrongAnswerOne);
     $('#buttonC').html(randomWrongAnswerTwo);
-  } else {
-    $('#buttonC').html(correctAnswer);
-    $('#buttonA').html(randomWrongAnswerOne);
-    $('#buttonB').html(randomWrongAnswerTwo);
+    } else if(randomNum <= 0.67) {
+      $('#buttonB').html(correctAnswer);
+      $('#buttonA').html(randomWrongAnswerOne);
+      $('#buttonC').html(randomWrongAnswerTwo);
+    } else {
+      $('#buttonC').html(correctAnswer);
+      $('#buttonA').html(randomWrongAnswerOne);
+      $('#buttonB').html(randomWrongAnswerTwo);
+    }
   }
-}
-
- //and let's click  
-$('#buttonA').one('click', function() {
-  userChoice = $('#buttonA').html();
-  $('#buttonA').addClass('selected').siblings().removeClass('selected');
-  compare(userChoice, correctAnswer);
-});
-$('#buttonB').one('click', function() {
-  userChoice = $('#buttonB').html();
-  $('#buttonB').addClass('selected').siblings().removeClass('selected');
-  compare(userChoice, correctAnswer);
-});
-$('#buttonC').one('click', function() {
-  userChoice = $('#buttonC').html();
-  $('#buttonC').addClass('selected').siblings().removeClass('selected');
-  compare(userChoice, correctAnswer);
-});
-
-   function compare(userChoice, correctAnswer) {
-
-     if (userChoice===correctAnswer) {
-      
-       $('.conclusion').text('¡Correcto!');
-       modify_qty(1,1);
+  
+   //and let's click  
+  $('#buttonA').one('click', function() {
+    userChoice = $('#buttonA').html();
+    $('#buttonA').addClass('selected').siblings().removeClass('selected');
+    compare(userChoice, correctAnswer);
+  });
+  $('#buttonB').one('click', function() {
+    userChoice = $('#buttonB').html();
+    $('#buttonB').addClass('selected').siblings().removeClass('selected');
+    compare(userChoice, correctAnswer);
+  });
+  $('#buttonC').one('click', function() {
+    userChoice = $('#buttonC').html();
+    $('#buttonC').addClass('selected').siblings().removeClass('selected');
+    compare(userChoice, correctAnswer);
+  });
+  
+     function compare(userChoice, correctAnswer) {
+        cuenta++;
         
-     } else if(userChoice!=correctAnswer) {
-       //console.log('maaaal');
-       $('.conclusion').text('Inténtalo otra vez');
-       modify_qty(1,0);
-       
-       $('#buttonA, #buttonB, #buttonC').removeClass('selected');
-   }
-}
+       if (userChoice===correctAnswer) {
+        
+         $('.conclusion').text('¡Correcto!');
+         modify_qty(1,1);
+          
+       } else if(userChoice!=correctAnswer) {
+         //console.log('maaaal');
+         $('.conclusion').text('Inténtalo otra vez');
+         modify_qty(1,0);
+         
+         $('#buttonA, #buttonB, #buttonC').removeClass('selected');
+     }
+  }
+  }
+  else{
+    document.getElementById('final').innerHTML="¡FIN DEL RETO!";
+    document.getElementById('palabra').style.visibility = 'hidden';
+  }
  
 });
 });
