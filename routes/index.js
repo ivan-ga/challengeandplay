@@ -324,6 +324,21 @@ router.get('/rankings', isLoggedIn, function(req, res) {
                   res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
           });
 });
+router.get('/rankings_global?*', isLoggedIn, function(req, res) {
+  //db.clases.find({"clase.alumnos_email": "pedro3@gmail.com"},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1}).pretty();
+  //    res.render('rankings.ejs', { user: req.user,title: "Rankings" });
+  var newClase = Clase();
+    console.log(req.user.usuario.email);
+  Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1},
+            function(err, clas) {
+                if (err) throw err;
+                //console.log(clas.length + "Datos que miroa ahioar")
+                  console.log("Introducir datos nuevo en la collection clase");
+                 // console.log(clas[0].clase.nombre_clase);
+                   
+                  res.render('rankings_global.ejs', {user: req.user, data: clas, title: "Rankings" });
+          });
+});
 ////////////////////////////////////
 // de ranking se le pasaran los datos de que reto exactamente se quieres jugar.
 // aki se buscara segurn ese retot
