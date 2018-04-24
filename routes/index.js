@@ -18,6 +18,11 @@ const EstrucClase = require('../models/clase.js');
 const claseSchema = EstrucClase.Clase;
 const Clase = mongoose.model("Clase", claseSchema);
 
+//Importando esquemas de BD Para los usuario
+const EstructuraJuego = require('../models/juego.js');
+const juegoSchema = Estructura.Juego;
+const Juego = mongoose.model("Juego", juegoSchema);
+
 router.get('/', function(req, res, next) {
    var error = { status: 0, stack : "" };
      res.render('index.ejs',{message:  'No hay error' ,  error })
@@ -180,125 +185,70 @@ router.post('/login', passport.authenticate('local-login', {
 
 // ### ACTUALIZAR ESTADÍSTICAS ###
 router.get('/actualizar', isLoggedIn, (request, response) => {
-
-    User.find({}, function(err,data)
-    {
-        if(err)  console.error("Error:"+err);
-        else
-        {
-              if( request.query.ganadas_3enraya != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                          if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_3enraya":1,"usuario.totales_3enraya":1}},function(error,dato){
-                          });
+    var newJuego = Juego();
+    console.log("######## request.query: " + request.query.ganadas);
+    console.log("######## request.query: " + request.query.perdidas);
+    console.log("######## request.query: " + request.query.empatadas);
+    console.log("######## request.query: " + request.query.nombre_juego);
+    console.log("######## request.query: " + request.user.usuario.username);
+    Juego.findOne({ 'juego.nombre_juego': request.query.nombre_juego}, 
+       function(err,data) {
+                        if (err)
+                           throw err; // EXEPCION SI DA ERRRO 
+               console.log(data);   
+               var encuentro = false;
+               for(var i=0; i< data.juego.ranking.length;i++){
+                  if(data.juego.ranking[i].username == request.user.usuario.username ){
+                    if(request.query.ganadas == 1){
+                       data.juego.ranking[i].ganadas=  data.juego.ranking[i].ganadas +1;
+                       console.log(data.juego.ranking[i].ganadas + " ganadas");
                     }
-              }
-
-              }
-              if( request.query.perdidas_3enraya  != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                        if(data[i].id === request.session.passport.user){
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_3enraya":1,"usuario.totales_3enraya":1}},function(error,dato){
-
-                          });
-
-                        }
-                     }
-
-              }
-              if( request.query.empatadas_3enraya  != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                        if(data[i].id === request.session.passport.user){
-
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.empatadas_3enraya":1,"usuario.totales_3enraya":1}},function(error,dato){
-
-                          });
-
-                        }
-                     }
-
-              }
-
-              if( request.query.ganadas_ajedrez != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                          if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_ajedrez":1,"usuario.totales_ajedrez":1}},function(error,dato){
-                          });
+                    if(request.query.perdidas == 1){
+                       data.juego.ranking[i].perdidas=  data.juego.ranking[i].perdidas +1;
+                       console.log(data.juego.ranking[i].perdidas + " perdidas");
                     }
-              }
-
-              }
-
-              if( request.query.perdidas_ajedrez != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                          if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_ajedrez":1,"usuario.totales_ajedrez":1}},function(error,dato){
-                          });
+                    if(request.query.empatadas == 1){
+                       data.juego.ranking[i].empatadas =  data.juego.ranking[i].empatadas +1;
+                       console.log(data.juego.ranking[i].empatadas + " empatadas");
                     }
-              }
-
-              }
-
-              if( request.query.empatadas_ajedrez != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                          if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.empatadas_ajedrez":1,"usuario.totales_ajedrez":1}},function(error,dato){
-                          });
-                    }
-              }
-
-              }
-
-              ///Actualizar Buscaminas
-              if( request.query.ganadas_buscaminas != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                          if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_buscaminas":1,"usuario.totales_buscaminas":1}},function(error,dato){
-                          });
-                    }
-              }
-
-              }
-
-              if( request.query.perdidas_buscaminas != undefined){
-
-                    for (var i = data.length - 1; i >= 0; i--) {
-                          if( data[i].id === request.session.passport.user ){
-                          User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_buscaminas":1,"usuario.totales_buscaminas":1}},function(error,dato){
-                          });
-                    }
-              }
-
-              }
-
-              ///Actualizar Damas
-              if( request.query.ganadas_damas != undefined){
-                for (var i = data.length - 1; i >= 0; i--) {
-                  if( data[i].id === request.session.passport.user ){
-                    User.update({"_id": data[i]._id}, {$inc: {"usuario.ganadas_damas":1,"usuario.totales_damas":1}},function(error,dato){
-                      });
+                    encuentro = true;
+                    break;
                   }
-                }
-              }
-
-              if( request.query.perdidas_damas != undefined){
-                for (var i = data.length - 1; i >= 0; i--) {
-                  if( data[i].id === request.session.passport.user ){
-                    User.update({"_id": data[i]._id}, {$inc: {"usuario.perdidas_damas":1,"usuario.totales_damas":1}},function(error,dato){
-                      });
-                  }
-                }
-              }
-        }
-    });
-
+               }
+               // si no es encontrado tengo k introducirlo uno nuevo.
+               if(!encuentro){
+                    if(request.query.ganadas == 1){
+                       data.juego.ranking.push({
+                              username : request.user.usuario.username,
+                              ganadas: 1,
+                              perdidas: 0,
+                              empatadas: 0
+                     });
+                     
+                    }
+                    if(request.query.perdidas == 1){
+                       data.juego.ranking.push({
+                              username : request.user.usuario.username,
+                              ganadas: 0,
+                              perdidas: 1,
+                              empatadas: 0
+                       });
+                    }
+                    if(request.query.empatadas == 1){
+                        data.juego.ranking.push({
+                              username : request.user.usuario.username,
+                              ganadas: 0,
+                              perdidas: 1,
+                              empatadas: 0
+                        });
+                    }
+               }
+               data.save(function(err) {
+                  if (err)  // si erro es nll es k hay un erro al guardar.
+                   throw err;/// esto es una exepcio si se dispara no  sigue con return.
+                  return data;
+               });
+        });
 });
 
 

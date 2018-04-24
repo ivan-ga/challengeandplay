@@ -122,21 +122,20 @@ function full(state) {
 }
 /*Enviar acutilizar la tabla de base de datos*/
 function enviadatos_gan(){
-		window.location = "/actualizar?ganadas_3enraya=1";
-	
+		// window.location = "/actualizar?ganadas_3enraya=1";
+    window.location = "/actualizar?ganadas=1&nombre_juego=3enraya";
 		return true;
-
 
 }
 function enviadatos_per(){
-		window.location = "/actualizar?perdidas_3enraya=1";
-	
+	  //	window.location = "/actualizar?perdidas_3enraya=1";
+		window.location = "/actualizar?perdidas=1&nombre_juego=3enraya";	
 		return true;
 
 }
 function enviadatos_empat(){
-		window.location = "/actualizar?empatadas_3enraya=1";
-	
+		//window.location = "/actualizar?empatadas_3enraya=1";
+		window.location = "/actualizar?empatadas=1&nombre_juego=3enraya";
 		return true;
 
 }

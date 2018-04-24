@@ -2,6 +2,7 @@
 mongo midbnueva --eval "db.users.drop()"
 mongo midbnueva --eval "db.cuestionarios.drop()"
 mongo midbnueva --eval "db.clases.drop()"
+mongo midbnueva --eval "db.juegos.drop()"
 
 // Hay dos profesores Juan$ y 5 alumno Pedro$
 mongoimport --db midbnueva --collection users --type json --file ./bdInicial/usuarios.json --jsonArray
@@ -9,3 +10,4 @@ mongoimport --db midbnueva --collection users --type json --file ./bdInicial/usu
 mongoimport --db midbnueva --collection cuestionarios --type json --file ./bdInicial/cuestionarios.json --jsonArray
 // algo
 mongoimport --db midbnueva --collection clases --type json --file ./bdInicial/clases.json --jsonArray
+mongoimport --db midbnueva --collection juegos --type json --file ./bdInicial/datosIniciales.json --jsonArray
