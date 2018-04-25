@@ -1,9 +1,9 @@
-[ 
+[
   {
    juego : {
-      
+
             nombre_juego: "3enraya",
-            ranking: [ 
+            ranking: [
                        {
                                 username : "Miguel0",
                                 ganadas : 1,
@@ -45,71 +45,85 @@
   },
   {
    juego : {
-      
+
             nombre_juego: "buscaminas",
             ranking: []
     }
    },
    {
    juego : {
-      
+
             nombre_juego: "ajedrez",
             ranking: []
     }
    },
    {
    juego : {
-      
+
             nombre_juego: "damas",
             ranking: []
     }
    },
     {
    juego : {
-      
+
             nombre_juego: "articulos",
             ranking: []
     }
    },
     {
    juego : {
-      
+
             nombre_juego: "banderas",
             ranking: []
     }
    },
     {
    juego : {
-      
+
             nombre_juego: "capitales",
             ranking: []
     }
    },
     {
    juego : {
-      
+
             nombre_juego: "planetas",
             ranking: []
     }
    },
     {
    juego : {
-      
+
             nombre_juego: "multiplicacion",
             ranking: []
     }
-   }, 
+   },
    {
    juego : {
-      
+
             nombre_juego: "suma",
             ranking: []
     }
    },
     {
    juego : {
-      
+
             nombre_juego: "tp",
+            ranking: []
+    }
+  },
+  {
+   juego : {
+
+            nombre_juego: "ingles",
+            ranking: []
+    }
+  },
+  {
+   juego : {
+
+            nombre_juego: "historia",
             ranking: []
     }
    }
