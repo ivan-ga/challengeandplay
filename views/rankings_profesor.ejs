@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+    
+  <title>Proyecto-SYTW</title>
+  <% include templates/head %>
+
+<style type="text/css">
+		body {
+			font-family: "Verdana" sans-serif;
+		}
+		a:link,
+		a:visited { 
+			color: blue;
+		}
+		a:hover,
+		a:focus,
+		a:active {
+			color: black;
+		}
+		button {
+			overflow: visible;
+			width: auto;
+		}
+		button.link {
+			font-family: "Verdana" sans-serif;
+			font-size: 1em;
+			text-align: left;
+			color: blue;
+			background: none;
+			margin: 0;
+			padding: 0;
+			border: none;
+			cursor: pointer;
+			
+			-moz-user-select: text;
+
+			/* override all your button styles here if there are any others */
+		}
+		button.link span {
+			text-decoration: underline;
+		}
+		button.link:hover span,
+		button.link:focus span {
+			color: black;
+		}
+
+	</style>
+
+</head>
+
+<body>
+  <header>
+    <% include templates/header %>
+  </header>
+
+  <main>
+      <div class="container">
+            <div class="row">
+                <div class="offset-1 col-md-7">
+                    <h1>Clases</h1>
+                    <form name="ranking"  method="GET" action="/r_reto">
+                 
+                      <div class="btn-group">
+                       
+                 
+
+                    <table class="table table-hover border-dark table-bordered table-stripe">
+                        <thead>
+                            <tr>
+                                <th scope="col" data-priority="1">Nombre Clase</th>
+                                <th scope="col" data-priority="2">Retos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var i=0; i < data.length; i++) {%>
+                                <tr class="table-info">
+                                   <td rowspan=<%= data[i].clase.retos.length %> > 
+                                       <%= data[i].clase.nombre_clase %> </td>
+                                   
+                                   <% for (var j=0; j < data[i].clase.retos.length; j++) {%>
+                                       <% if(j==0){ %>
+                                          <td>     
+                            <a href=<%= "/r_reto?nombre_reto="+ data[i].clase.retos[j].nombre_reto+'&nombre_clase='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></a>
+
+                                                </td>
+                                              
+                                          <tr class="table-info">
+                                       <% }else{ %>
+                                             <td>
+                                           
+                                      <a href=<%= "/r_reto?nombre_reto="+ data[i].clase.retos[j].nombre_reto+'&nombre_clase='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></a>
+                                                </td>
+                                                
+                                          </tr>
+                                        <% } %>
+                                   
+                                   
+                                   <% } %>
+                                 
+                                 
+                                 </tr class="table-info">
+                            <% } %>
+                        </tbody>
+                    </table>
+                    </div>
+                    </form>
+                </div>
+                <div class="offset-1 col-md-3 ">
+                    <img src="/img/ranking2.jpg" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+      
+      
+      <!--/.Page heading-->
+    </div>
+    <!--/.Main layout-->
+  </main>
+
+  <!--Footer-->
+  <footer class="page-footer center-on-small-only">
+    <% include templates/footer %>
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <% include templates/scripts %>
+  <!-- /.SCRIPTS -->
+
+</body>
+
+</html>

@@ -96,6 +96,20 @@ router.get('/form_reto', isLoggedIn, function(req, res) {
 router.get('/clases', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
       res.render('clases.ejs', { user: req.user, expressFlash: '' });
+      
+      Clase.find({"clase.profesor_username": req.user.usuario.username, "clase.retos.nombre_reto":   req.query.nombre_reto },
+      {"clase.retos.$": 1},
+               function(err, clas) {
+                if(err) console.error("Error:"+err);
+                  console.log(clas[0].clase.retos[0].ganadas);
+              res.render('r_reto.ejs', { user: req.user, win: clas[0].clase.retos[0].ganadas, loss: clas[0].clase.retos[0].perdidas ,
+                    title: req.query.nombre_reto});
+               });
+      
+      
+      
+      
+      
   }else{
       res.redirect("/");
 }});
@@ -312,18 +326,33 @@ router.post('/home_profesor', isLoggedIn, function(req, res) {
 router.get('/rankings', isLoggedIn, function(req, res) {
   //db.clases.find({"clase.alumnos_email": "pedro3@gmail.com"},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1}).pretty();
   //    res.render('rankings.ejs', { user: req.user,title: "Rankings" });
-  var newClase = Clase();
-    console.log(req.user.usuario.email);
-  Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1,
-  "clase.retos.nombre_juego": 1},
-            function(err, clas) {
-                if (err) throw err;
-                //console.log(clas.length + "Datos que miroa ahioar")
-                  console.log("Introducir datos nuevo en la collection clase");
-                console.log(clas[0].clase.retos[0]);
-                   
-                  res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
-          });
+  if(req.user.usuario.tipo != "profesor"){
+   
+    //console.log(req.user.usuario.email);
+    Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1,
+    "clase.retos.nombre_juego": 1},
+              function(err, clas) {
+                  if (err) throw err;
+                  //console.log(clas.length + "Datos que miroa ahioar")
+                    console.log("Introducir datos nuevo en la collection clase");
+                  console.log(clas[0].clase.retos[0]);
+                     
+                    res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
+            });
+  }else{
+    // Soy profesor busco en todas mis calse
+      console.log("Soy profesor");
+      Clase.find({"clase.profesor_username":req.user.usuario.username}, 
+                 {"clase.nombre_clase":1, "clase.retos":1} ,
+              function(err, clas) {
+                  if (err) throw err;
+                  //console.log(clas.length + "Datos que miroa ahioar")
+                    console.log("Introducir datos nuevo en la collection clase");
+                  console.log(clas);
+                     
+                  res.render('rankings_profesor.ejs', {user: req.user, data: clas, title: "Clases" });
+            });
+  }
 });
 router.get('/rankings_global?*', isLoggedIn, function(req, res) {
   //db.clases.find({"clase.alumnos_email": "pedro3@gmail.com"},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1}).pretty();
@@ -344,6 +373,7 @@ router.get('/rankings_global?*', isLoggedIn, function(req, res) {
 // aki se buscara segurn ese retot
 router.get('/r_reto?*', isLoggedIn, function(req, res) {
  //console.log("Estoy aki"+ req.query.nombre_reto);
+if(req.user.usuario.tipo != "profesor"){
  Clase.find({"clase.nombre_clase": req.query.nombre_clase ,"clase.alumnos_email": req.user.usuario.email,
    "clase.retos.nombre_reto":   req.query.nombre_reto },
  {"clase.retos.$": 1},
@@ -354,6 +384,18 @@ router.get('/r_reto?*', isLoggedIn, function(req, res) {
               res.render('r_reto.ejs', { user: req.user, win: clas[0].clase.retos[0].ganadas, loss: clas[0].clase.retos[0].perdidas ,
                     title: req.query.nombre_reto});
                });
+}else{
+  Clase.find({"clase.profesor_username": req.user.usuario.username, "clase.retos.nombre_reto":   req.query.nombre_reto },
+ {"clase.retos.$": 1},
+ 
+               function(err, clas) {
+                if(err) console.error("Error:"+err);
+                  console.log(clas[0].clase.retos[0].ganadas);
+              res.render('r_reto.ejs', { user: req.user, win: clas[0].clase.retos[0].ganadas, loss: clas[0].clase.retos[0].perdidas ,
+                    title: req.query.nombre_reto});
+               });
+  
+}
 });
 
 
