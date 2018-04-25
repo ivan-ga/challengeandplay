@@ -82,7 +82,6 @@ function resetgame() {
   function playgame() {
     document.getElementById("btn").setAttribute('disabled','disabled');
     document.getElementById("btn").style.cursor = "not-allowed";
-    console.log('cuenta'+cuenta);
     cuenta++;
     var boton_empezar = document.getElementById('btn');
     boton_empezar.disabled = "disabled";
@@ -152,7 +151,6 @@ function resetgame() {
         } else {
           s_2 = s_2 + 1;
         } //if else finnish here
-        console.log('aaaaaaaaaaaaaaaaaaa');
         playgame();
         
       };

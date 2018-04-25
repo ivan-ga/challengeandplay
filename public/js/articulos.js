@@ -25,9 +25,7 @@ function setWord() {
       var $word = $('#test-word');
       var word = wordList[elOrLa][getRandomInt(0, wordList[elOrLa].length)];
       $word.text(word);
-      console.log('pal: '+word);
-      console.log('art: '+article);
-          document.getElementById("la-btn").onclick = function(){
+      document.getElementById("la-btn").onclick = function(){
         if (this.id == $goodBtn[0].id) {
             modify_qty(1,1);
             setWord();

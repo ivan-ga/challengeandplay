@@ -34,9 +34,11 @@
                             <p><strong><%= expressFlash %></strong></p>
                         <% } %>
                          <form id="uploadForm" enctype="multipart/form-data" action="/home" method="post">
-        		            <input type="file" name="userFile" />
-        		            </br>
-        		            </br>
+        		            <input type="file" style="display:none;" name="userFile" id="enviar-foto"/>
+        		            <br>
+        		            <input type="button" value="Seleccionar imagen" onclick="document.getElementById('enviar-foto').click();" />
+        		            <br>
+        		            <br>
         		            <input type="submit" value="Subir archivo" name="submit" onsubmit="setTimeout(function () { window.location.reload(); }, 10)">
         	             </form>
                     </div>
@@ -55,7 +57,7 @@
 
 <!--Footer-->
 
-<footer class="page-footer center-on-small-only" style="position: relative; bottom:0px;width:100%;z-index:10">
+<footer class="page-footer center-on-small-only" style="position: fixed; bottom:0px;width:100%;z-index:10">
   <% include templates/footer %>
 </footer>
 

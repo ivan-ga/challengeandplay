@@ -59,8 +59,7 @@
 
 /*Para contro0lar alto del footer*/
 .en-medio{
-    margin-top: -5%;
-    padding: 5%;
+        padding: 5%;
 
 }
 
@@ -182,6 +181,14 @@
     border-radius: 2%;
     box-shadow: 10px 10px 5px grey;
     background-color: #d6d2e1;
+}
+
+.contenido-perfil-alu{
+    color: #2c0f62 !important;
+    padding: 4%;
+    border-radius: 2%;
+    box-shadow: 10px 10px 5px grey;
+    
 }
 
 /*Los botones de la página del home del profesor*/

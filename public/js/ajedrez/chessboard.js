@@ -305,9 +305,9 @@ function error(code, msg, obj) {
   if (cfg.showErrors === 'console' &&
       typeof console === 'object' &&
       typeof console.log === 'function') {
-    console.log(errorText);
+    //console.log(errorText);
     if (arguments.length >= 2) {
-      console.log(obj);
+      //console.log(obj);
     }
     return;
   }

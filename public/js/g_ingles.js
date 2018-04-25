@@ -258,7 +258,7 @@ $(document).ready(function () {
          modify_qty(1,1);
           
        } else if(userChoice!=correctAnswer) {
-         //console.log('maaaal');
+
          $('.conclusion').text('Inténtalo otra vez');
          modify_qty(1,0);
          

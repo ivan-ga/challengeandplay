@@ -29,7 +29,6 @@ $(document).ready(function() {
     PLAYER_CLASS = 'cross';
     COMPUTER_CLASS = 'nought';
     $(".board__settings").css('visibility', 'hidden');
-    console.log('set class to cross');
   });
 
   $(".board__settings__choice-nought").click(function() {

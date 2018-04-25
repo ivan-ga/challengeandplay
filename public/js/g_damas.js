@@ -170,7 +170,7 @@ var GameBoard = React.createClass({
 					alert('Felicidades has ganado!');
 					enviadatos_gan();
 				}
-				console.log(this.state.activePlayer + ' won the game!');
+				
 			} else {
 				this.state.activePlayer = this.state.activePlayer == 'r' ? 'b' : 'r';
 				if (this.state.activePlayer == 'b') {
@@ -362,13 +362,12 @@ var GameBoard = React.createClass({
 	ai: function ai() {
 		//prep a branching future prediction
 		this.count = 0;
-		console.time('decisionTree');
+		
 		var decisionTree = this.aiBranch(this.state.board, this.state.activePlayer, 1);
-		console.timeEnd('decisionTree');
-		console.log(this.count);
+		
 		//execute the most favorable move
 		if (decisionTree.length > 0) {
-			console.log(decisionTree[0]);
+			
 			setTimeout(function () {
 				this.handlePieceClick({
 					target: {
@@ -433,7 +432,7 @@ var GameBoard = React.createClass({
 						buildingObject.terminal = this.winDetection(buildingObject.board, activePlayer);
 
 						if (buildingObject.terminal) {
-							//console.log('a terminal move was found');
+							
 							//if terminal, score is easy, just depends on who won
 							if (activePlayer == this.state.activePlayer) {
 								buildingObject.score = 100 - depth;

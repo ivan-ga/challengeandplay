@@ -12,7 +12,7 @@ var capitals = [
 		    "respuesta": "George Washington"
 		  },
 		   {
-		    "preg": "Nombres de los Reyes Católicos",
+		    "preg": "Nombres de los Reyes Católicos (Reina Rey)",
 		    "respuesta": "isabel fernando"
 		  },
 		   {
@@ -20,7 +20,7 @@ var capitals = [
 		    "respuesta": "Neil Armstrong"
 		  },
 		   {
-		    "preg": "Emperador romano más famoso",
+		    "preg": "Emperador romano más conocido",
 		    "respuesta": "Julio César"
 		  },
 		   {
@@ -29,7 +29,7 @@ var capitals = [
 		  },
 		   {
 		    "preg": "General republicano durante la revolución francesa",
-		    "respuesta": "Napoleón"
+		    "respuesta": "Napoleón Bonaparte"
 		  },
 		   {
 		    "preg": "Descifró la máquina enigma",
@@ -47,7 +47,6 @@ var capitals = [
     			p = capitals[0].preg;
     			r = capitals[0].respuesta.toLowerCase();
     			capitals.splice(0, 1);
-    			console.log('r: '+r);
 			}
 			else{
 			   document.getElementById('pregunta').innerHTML = '¡RETO TERMINADO!'; 
@@ -57,7 +56,6 @@ var capitals = [
 		
 		function comprobar(){
 			if(document.getElementById('respuesta').value.toLowerCase() == r){
-				console.log('bieeeen');
 				modify_qty(1,1);
 				//document.getElementById('comprobacion').innerHTML = '¡Correcto!';
 				generar_pregunta();
@@ -66,7 +64,6 @@ var capitals = [
 			}
 			else{
 			    modify_qty(1,0);
-				console.log('maaaaal');
 				//document.getElementById('comprobacion').innerHTML = '¡Incorrecto!';
 				generar_pregunta();
 				document.getElementById('respuesta').value = ''; //Limpiar el input
@@ -79,7 +76,6 @@ var capitals = [
 		  event.preventDefault();
 		  // Number 13 is the "Enter" key on the keyboard
 		  if (event.keyCode === 13) {
-		  	console.log('enteeeeerrrrrr');
 		    // Trigger the button element with a click
 		    //document.getElementById("comprueba").click();
 		    comprobar();

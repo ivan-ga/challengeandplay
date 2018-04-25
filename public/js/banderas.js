@@ -3,7 +3,7 @@
 
 var paises = ["Argentina", "Australia", "Brasil", "China", "Italia", "Israel", "Noruega", "Suecia", "Bulgaria", "Finlandia", "Cuba", "Dinamarca", 
 "Alemania", "Francia", "Colombia", "Ucrania", "Albania", "Grecia", "Kenia", "Marruecos", "Gales", "Inglaterra", "Irlanda", "Tailandia", 
-"Ghana", "India", "Rusia", "Venezuela", "Jamaica"];
+"Ghana", "India", "Rusia", "Venezuela", "Jamaica", "Portugal", "Canadá"];
 
 
 function pais_aleatorio(){
