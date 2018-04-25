@@ -200,6 +200,8 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
     console.log("######## request.query: " + request.query.empatadas);
     console.log("######## request.query: " + request.query.nombre_juego);
     console.log("######## request.query: " + request.user.usuario.username);
+
+if(request.user.usuario.tipo != "profesor"){
     Juego.findOne({ 'juego.nombre_juego': request.query.nombre_juego},
        function(err,data) {
                         if (err)
@@ -258,6 +260,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
                   return data;
                });
         });
+  }
 });
 
 
