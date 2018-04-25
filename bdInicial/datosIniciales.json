@@ -3,7 +3,44 @@
    juego : {
       
             nombre_juego: "3enraya",
-            ranking: []
+            ranking: [ 
+                       {
+                                username : "Miguel0",
+                                ganadas : 1,
+                                perdidas : 0,
+                                empatadas : 0
+                        },
+                         {
+                                username : "Miguel1",
+                                ganadas : 1,
+                                perdidas : 45,
+                                empatadas : 0
+                        },
+                         {
+                                username : "Miguel2",
+                                ganadas : 1,
+                                perdidas : 0,
+                                empatadas : 0
+                        },
+                         {
+                                username : "Miguel3",
+                                ganadas : 1,
+                                perdidas : 0,
+                                empatadas : 0
+                        },
+                         {
+                                username : "Miguel4",
+                                ganadas : 1,
+                                perdidas : 0,
+                                empatadas : 0
+                        },
+                         {
+                                username : "Miguel5",
+                                ganadas : 11,
+                                perdidas : 30,
+                                empatadas : 3
+                        }
+                        ]
     }
   },
   {

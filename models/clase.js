@@ -6,6 +6,7 @@ el tipo nos dice si es un cuestionario o si es del otro para irlo a buscar.*/
 var claseSchema = mongoose.Schema({
     clase: {
             nombre_clase: String,
+            nombre_juego: String,
             curso : String,
             profesor_username: String,
             password: String,

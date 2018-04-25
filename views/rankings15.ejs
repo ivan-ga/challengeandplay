@@ -84,14 +84,14 @@
                                          
 <button type="submit" name="selector" class="link" value=<%=  data[i].clase.retos[j].nombre_reto+'.dato='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></button>
                                                 </td>
-                                                <td>   <a href=<%='/g_' + data[i].clase.retos[j].nombre_reto%>>  Ir Reto </a> </td>
+                                                <td>   <a href=<%= "g_" + data[i].clase.retos[j].nombre_juego.toLowerCase();%>>  Ir Reto </a> </td>
                                           <tr class="table-info">
                                        <% }else{ %>
                                              <td>
                                            
                                       <button type="submit" name="selector" class="link" value=<%=  data[i].clase.retos[j].nombre_reto %>><%=  data[i].clase.retos[j].nombre_reto %></button>
                                                 </td>
-                                                  <td>   <a href=<%= "g_" + data[i].clase.retos[j].nombre_juego%>>  Ir Reto </a> </td>
+                                                  <td>   <a href=<%= "g_" + data[i].clase.retos[j].nombre_juego.toLowerCase();%>>  Ir Reto </a> </td>
                                           </tr>
                                         <% } %>
                                    
@@ -131,3 +131,4 @@
 </body>
 
 </html>
+

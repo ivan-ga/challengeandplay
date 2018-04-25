@@ -314,12 +314,13 @@ router.get('/rankings', isLoggedIn, function(req, res) {
   //    res.render('rankings.ejs', { user: req.user,title: "Rankings" });
   var newClase = Clase();
     console.log(req.user.usuario.email);
-  Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1},
+  Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1,
+  "clase.retos.nombre_juego": 1},
             function(err, clas) {
                 if (err) throw err;
                 //console.log(clas.length + "Datos que miroa ahioar")
                   console.log("Introducir datos nuevo en la collection clase");
-                 // console.log(clas[0].clase.nombre_clase);
+                console.log(clas[0].clase.retos.get(0));
                    
                   res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
           });
@@ -334,7 +335,7 @@ router.get('/rankings_global?*', isLoggedIn, function(req, res) {
                 if (err) throw err;
                 //console.log(clas.length + "Datos que miroa ahioar")
                   console.log("Introducir datos nuevo en la collection clase");
-                 // console.log(clas[0].clase.nombre_clase);
+                 //console.log(clas[0].clase.nombre_clase);
                    
                   res.render('rankings_global.ejs', {user: req.user, data: clas, title: "Rankings" });
           });
@@ -356,6 +357,7 @@ router.get('/r_reto', isLoggedIn, function(req, res) {
    
       function(err,data){
     if(err)  console.error("Error:"+err);
+  
      res.render('r_reto.ejs', { user: req.user, win: data[0].clase.retos[0].ganadas, loss: data[0].clase.retos[0].perdidas , title: req.query.selector })
 })});
 

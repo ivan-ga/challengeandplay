@@ -8,8 +8,7 @@
       alumnos_email: [ "pedro1@gmail.com", "pedro2@gmail.com","pedro3@gmail.com"],
       retos: [
               {  
-                nombre_reto: "JuegoBanderas",
-                nombre_juego: "banderas",
+                nombre_reto: "JuegoBandera",
                 tipo: "juego",
                 activo: true,
                 fecha_comienzo: "2018-04-15",
@@ -52,7 +51,6 @@
             },
             {  
                 nombre_reto: "Test1",
-                nombre_juego: "test1",
                 tipo: "test",
                 activo: true,
                 fecha_comienzo: "2018-04-15",
@@ -95,7 +93,6 @@
             },
                {  
                 nombre_reto: "Test2",
-                nombre_juego: "test2",
                 tipo: "test",
                 activo: false,
                 fecha_comienzo: "2018-04-5",
@@ -149,7 +146,6 @@
       retos: [
               {  
                 nombre_reto: "Sumar",
-                nombre_juego: "suma",
                 tipo: "juego",
                 activo: true,
                 fecha_comienzo: "2018-04-15",
@@ -192,7 +188,6 @@
             },
             {  
                 nombre_reto: "Test1",
-                nombre_juego: "test1",
                 tipo: "test",
                 activo: true,
                 fecha_comienzo: "2018-04-15",
