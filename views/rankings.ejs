@@ -81,15 +81,15 @@
                                    <% for (var j=0; j < data[i].clase.retos.length; j++) {%>
                                        <% if(j==0){ %>
                                           <td>     
-                                         
-<button type="submit" name="selector" class="link" value=<%=  data[i].clase.retos[j].nombre_reto+'.dato='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></button>
+                            <a href=<%= "/r_reto?nombre_reto="+ data[i].clase.retos[j].nombre_reto+'&nombre_clase='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></a>
+
                                                 </td>
-                                                <td>   <a href=<%='/g_' + data[i].clase.retos[j].nombre_reto%>>  Ir Reto </a> </td>
+                                                <td>   <a href=<%='/g_' + data[i].clase.retos[j].nombre_juego%>>  Ir Reto </a> </td>
                                           <tr class="table-info">
                                        <% }else{ %>
                                              <td>
                                            
-                                      <button type="submit" name="selector" class="link" value=<%=  data[i].clase.retos[j].nombre_reto %>><%=  data[i].clase.retos[j].nombre_reto %></button>
+                                      <a href=<%= "/r_reto?nombre_reto="+ data[i].clase.retos[j].nombre_reto+'&nombre_clase='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></a>
                                                 </td>
                                                   <td>   <a href=<%= "g_" + data[i].clase.retos[j].nombre_juego%>>  Ir Reto </a> </td>
                                           </tr>

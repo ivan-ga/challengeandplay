@@ -320,7 +320,7 @@ router.get('/rankings', isLoggedIn, function(req, res) {
                 if (err) throw err;
                 //console.log(clas.length + "Datos que miroa ahioar")
                   console.log("Introducir datos nuevo en la collection clase");
-                console.log(clas[0].clase.retos.get(0));
+                console.log(clas[0].clase.retos[0]);
                    
                   res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
           });
@@ -328,38 +328,33 @@ router.get('/rankings', isLoggedIn, function(req, res) {
 router.get('/rankings_global?*', isLoggedIn, function(req, res) {
   //db.clases.find({"clase.alumnos_email": "pedro3@gmail.com"},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1}).pretty();
   //    res.render('rankings.ejs', { user: req.user,title: "Rankings" });
-  var newClase = Clase();
-    console.log(req.user.usuario.email);
-  Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1},
-            function(err, clas) {
-                if (err) throw err;
-                //console.log(clas.length + "Datos que miroa ahioar")
-                  console.log("Introducir datos nuevo en la collection clase");
-                 //console.log(clas[0].clase.nombre_clase);
-                   
-                  res.render('rankings_global.ejs', {user: req.user, data: clas, title: "Rankings" });
+  //console.log(req.query.nombre_juego);
+  Juego.find({"juego.nombre_juego": req.query.nombre_juego},
+          function(err, jue) {
+                 if (err) throw err;
+                  console.log("akii " +jue[0].juego.ranking.length);
+              
+        res.render('rankings_global.ejs', { user: req.user, ranking: jue[0].juego.ranking,
+                  title: req.query.nombre_juego});    
           });
 });
+
 ////////////////////////////////////
 // de ranking se le pasaran los datos de que reto exactamente se quieres jugar.
 // aki se buscara segurn ese retot
-router.get('/r_reto', isLoggedIn, function(req, res) {
-  //db.clases.find({"clase.retos.nombre_reto": "Test2"},{"clase.retos.$":1}).pretty();
-  //console.log(req.query.selector); esta sera la seleccion de mi reto para 
-  // db.clases.find({"clase.nombre_clase":"Geografía","clase.alumnos_email":"pedro3@gmail.com"},{"clase.retos.nombre_reto":1, "clase.retos.ganadas": 1, "clase.retos.perdidas": 1}).pretty();
-
-   //var nameClase =  req.query.selector.split("=",  req.query.selector.length);
-  // console.log(nameClase);
-    // console.log("dddddddddddddddddddddddddd" );
-   req.query.selector;
-   Clase.find({"clase.nombre_clase":"Matemáticas","clase.alumnos_email":"pedro3@gmail.com", "clase.retos.nombre_reto": "JuegoBandera" },
-              { "clase.retos.$": 1},
-   
-      function(err,data){
-    if(err)  console.error("Error:"+err);
-  
-     res.render('r_reto.ejs', { user: req.user, win: data[0].clase.retos[0].ganadas, loss: data[0].clase.retos[0].perdidas , title: req.query.selector })
-})});
+router.get('/r_reto?*', isLoggedIn, function(req, res) {
+ //console.log("Estoy aki"+ req.query.nombre_reto);
+ Clase.find({"clase.nombre_clase": req.query.nombre_clase ,"clase.alumnos_email": req.user.usuario.email,
+   "clase.retos.nombre_reto":   req.query.nombre_reto },
+ {"clase.retos.$": 1},
+ 
+               function(err, clas) {
+                if(err) console.error("Error:"+err);
+                  console.log(clas[0].clase.retos[0].ganadas);
+              res.render('r_reto.ejs', { user: req.user, win: clas[0].clase.retos[0].ganadas, loss: clas[0].clase.retos[0].perdidas ,
+                    title: req.query.nombre_reto});
+               });
+});
 
 
 

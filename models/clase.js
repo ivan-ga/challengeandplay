@@ -13,6 +13,7 @@ var claseSchema = mongoose.Schema({
             alumnos_email: [ String ],
             retos: [{  
                        nombre_reto: String,
+                       nombre_juego: String,
                        tipo: String,
                        activo: Boolean,
                        fecha_comienzo: { type: Date, default: Date.now },
