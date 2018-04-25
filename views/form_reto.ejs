@@ -5,6 +5,8 @@
     <% include templates/head %>
     <!-- Material Design Bootstrap -->
     <link href="css/table.css" rel="stylesheet">
+    <!-- Checkbox -->
+    <link href="css/checkbox_switch.css" rel="stylesheet">
 
     <style type="text/css">
         img { width: 140px; height: 140px; border-radius: 50%!important }
@@ -20,10 +22,10 @@
 
     <main>
         <div class="col-sm-12 en-medio">
-          <div class="text-center">
+          <div>
             <div class="row">
-                <div class="col-sm-4 offset-4 align-middle ">
-                    <div class="">
+                <div class="col-sm-4 align-middle">
+                    <div class="text-center">
                         <form class="form-nueva-clase">
                           <h3>Nuevo reto</h3>
                           <div class="form-group">
@@ -39,6 +41,98 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-sm-8 align-middle">
+                  <h3 class="text-center">Selecionar Reto</h3>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h4>Matemáticas</h4>
+                        <div class="panel-body">
+                            <div class="checkbox checbox-switch switch-danger">
+                              <label id="reto">
+                                <input type="checkbox" name="check" value="1" id="reto-1"/>
+                                <span></span>
+                                Suma
+                              </label>
+
+                              <!-- <label id="reto">
+                                <input type="checkbox" name="check" value="2" id="reto-2"/>
+                                <span></span>
+                                Multiplicar
+                              </label> -->
+
+                            </div>
+
+                            <div class="checkbox checbox-switch switch-danger">
+                              <label id="reto">
+                                <input type="checkbox" name="" id="reto-2"/>
+                                <span></span>
+                                Multiplicar
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <h4>Geografía</h4>
+                      <div class="panel-body">
+                          <div class="checkbox checbox-switch switch-success">
+                            <label id="reto">
+                              <input type="checkbox" name="" id="reto-3"/>
+                              <span></span>
+                              Capitales
+                            </label>
+                          </div>
+
+                          <div class="checkbox checbox-switch switch-success">
+                            <label id="reto">
+                              <input type="checkbox" name="" id="reto-4"/>
+                              <span></span>
+                              Banderas
+                            </label>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <h4>Lenguaje</h4>
+                      <div class="panel-body">
+                          <div class="checkbox checbox-switch switch-primary">
+                            <label id="reto">
+                              <input type="checkbox" name="" id="reto-5"/>
+                              <span></span>
+                              Artículos
+                            </label>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <h4>Química</h4>
+                        <div class="panel-body">
+                            <div class="checkbox checbox-switch switch-warning">
+                              <label id="reto">
+                                <input type="checkbox" name="" id="reto-6"/>
+                                <span></span>
+                                Tabla Perdiódica
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <h4>Astronomía</h4>
+                      <div class="panel-body">
+                          <div class="checkbox checbox-switch switch-dark">
+                            <label id="reto">
+                              <input type="checkbox" name="" id="reto-7"/>
+                              <span></span>
+                              Planetas
+                            </label>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
@@ -46,14 +140,24 @@
 
 <!--Footer-->
 
-<footer class="page-footer center-on-small-only">
+<footer class="page-footer center-on-small-only" style="position: fixed; bottom:0px;width:100%;z-index:10">
   <% include templates/footer %>
 </footer>
 
 <!--/.Footer-->
 
   <!-- SCRIPTS -->
-  <% include templates/scripts %>
+    <% include templates/scripts %>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('input[type=checkbox]').live('click', function(){
+            var parent = $(this).parent().attr('id');
+            $('#'+parent+' input[type=checkbox]').removeAttr('checked');
+            $(this).attr('checked', true);
+        });
+    });
+    </script>
   <!-- /.SCRIPTS -->
 
 </body>

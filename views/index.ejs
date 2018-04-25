@@ -68,18 +68,18 @@
                           <source class="center" media="(min-width: 500px)" srcset="img/logos/logoGrande.png">
                         <img class="img-responsive center-medio"src="img/logos/logoPequeno.png" alt="Logo de la empresa">
                      </picture>
-                      
+
                 </div>
                    <div class="col-md-8 ng-scope ng-building" ng-controller="controladorConMetodos as fo">
-                               <% if (error.status == 406 ) { %> 
-                 
+                               <% if (error.status == 406 ) { %>
+
                                 <div class="alert alert-danger alert-dismissable">
                                       <button type="button" class="close" data-dismiss="alert">&times;</button>
                                   <strong>¡ERROR!</strong>  <p><p><%= message %> <%= error.status %><pre><%= error.stack %></pre></p>
                                 </div>
                      <% }%>
-                    <% if (error.status == 405 ) { %> 
-                          
+                    <% if (error.status == 405 ) { %>
+
                                 <div class="alert alert-danger alert-dismissable">
                                       <button type="button" class="close" data-dismiss="alert">&times;</button>
                                   <strong>¡ERROR!</strong>  <p><p><%= message %> <%= error.status %><pre><%= error.stack %></pre></p>
@@ -87,7 +87,7 @@
                      <% } %>
                       <div class="row">
                            <h3 class="omb_authTitle center-form"><a  href="" ng-click="ShowRetroceder()">
-                           Login</a> or <a href="" ng-click="ShowForm()">Sign up</a></h3>
+                           Login</a> o <a href="" ng-click="ShowForm()">Registrarse</a></h3>
                       </div>
                       <div class="omb_login row">
                         <div class="col-md-12">
@@ -142,7 +142,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon col-md-offset-2 text-center"><i class="fa fa-user"></i></span>
                                                     <input type="text" class="form-control col-md-3 col-md-offset-3" ng-model="fo.registro.username" name="username" id="username" placeholder="Username" required>
- 
+
                                                      <span class="input-group-addon col-md-offset-2 text-center"><i class="fa fa-envelope-o"></i></span>
                                                     <input type="text" class="form-control" ng-model="fo.registro.email" name="email" id="email" placeholder="email" required>
                                                 </div>
@@ -187,9 +187,9 @@
         </div>
     </main>
     <!--/.Main layout-->
-   
-    <!--footer class="page-footer center-on-small-only">
-                <!--% include templates/footer %>
+
+    <footer class="page-footer center-on-small-only" style="position: fixed; bottom:0px;width:100%;z-index:10">
+      <% include templates/footer %>
     </footer>
     <!--/.Footer-->
 

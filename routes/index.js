@@ -70,8 +70,8 @@ router.post('/registro_clase',  isLoggedIn, function(req,res){
                 //console.log(clas.length + "Datos que miroa ahioar")
                 if (clas.length < 1){
                   newClase.clase.nombre_clase = req.body.nombreClase;
-                  newClase.clase.curso = req.body.curso;  
-                  newClase.clase.profesor_username = req.user.usuario.username; 
+                  newClase.clase.curso = req.body.curso;
+                  newClase.clase.profesor_username = req.user.usuario.username;
                   newClase.clase.password =  newClase.generateHash(req.body.password);
                   // Guardamos en la bbdd.
                   newClase.save(function(err) {
@@ -96,7 +96,7 @@ router.get('/form_reto', isLoggedIn, function(req, res) {
 router.get('/clases', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
       res.render('clases.ejs', { user: req.user, expressFlash: '' });
-      
+
       Clase.find({"clase.profesor_username": req.user.usuario.username, "clase.retos.nombre_reto":   req.query.nombre_reto },
       {"clase.retos.$": 1},
                function(err, clas) {
@@ -105,11 +105,11 @@ router.get('/clases', isLoggedIn, function(req, res) {
               res.render('r_reto.ejs', { user: req.user, win: clas[0].clase.retos[0].ganadas, loss: clas[0].clase.retos[0].perdidas ,
                     title: req.query.nombre_reto});
                });
-      
-      
-      
-      
-      
+
+
+
+
+
   }else{
       res.redirect("/");
 }});
@@ -205,11 +205,11 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
     console.log("######## request.query: " + request.query.empatadas);
     console.log("######## request.query: " + request.query.nombre_juego);
     console.log("######## request.query: " + request.user.usuario.username);
-    Juego.findOne({ 'juego.nombre_juego': request.query.nombre_juego}, 
+    Juego.findOne({ 'juego.nombre_juego': request.query.nombre_juego},
        function(err,data) {
                         if (err)
-                           throw err; // EXEPCION SI DA ERRRO 
-               console.log(data);   
+                           throw err; // EXEPCION SI DA ERRRO
+               console.log(data);
                var encuentro = false;
                for(var i=0; i< data.juego.ranking.length;i++){
                   if(data.juego.ranking[i].username == request.user.usuario.username ){
@@ -238,7 +238,7 @@ router.get('/actualizar', isLoggedIn, (request, response) => {
                               perdidas: 0,
                               empatadas: 0
                      });
-                     
+
                     }
                     if(request.query.perdidas == 1){
                        data.juego.ranking.push({
@@ -323,11 +323,11 @@ router.post('/home_profesor', isLoggedIn, function(req, res) {
 //////////////////////TERMINADO SUBIR IMAGEN
 //*Se veran las clase en la qeu estoy si soy alumno con diversos datos *//
 //Se veran las clase en la que estoy condiversos datos. buscamo donde estamo los alumnos.
-router.get('/rankings', isLoggedIn, function(req, res) {
+router.get('/rankings_clases', isLoggedIn, function(req, res) {
   //db.clases.find({"clase.alumnos_email": "pedro3@gmail.com"},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1}).pretty();
   //    res.render('rankings.ejs', { user: req.user,title: "Rankings" });
   if(req.user.usuario.tipo != "profesor"){
-   
+
     //console.log(req.user.usuario.email);
     Clase.find({"clase.alumnos_email": req.user.usuario.email},{"clase.nombre_clase":1, "clase.retos.nombre_reto": 1,
     "clase.retos.nombre_juego": 1},
@@ -336,20 +336,20 @@ router.get('/rankings', isLoggedIn, function(req, res) {
                   //console.log(clas.length + "Datos que miroa ahioar")
                     console.log("Introducir datos nuevo en la collection clase");
                   console.log(clas[0].clase.retos[0]);
-                     
-                    res.render('rankings.ejs', {user: req.user, data: clas, title: "Rankings" });
+
+                    res.render('rankings_clases.ejs', {user: req.user, data: clas, title: "Rankings Clases" });
             });
   }else{
     // Soy profesor busco en todas mis calse
       console.log("Soy profesor");
-      Clase.find({"clase.profesor_username":req.user.usuario.username}, 
+      Clase.find({"clase.profesor_username":req.user.usuario.username},
                  {"clase.nombre_clase":1, "clase.retos":1} ,
               function(err, clas) {
                   if (err) throw err;
                   //console.log(clas.length + "Datos que miroa ahioar")
                     console.log("Introducir datos nuevo en la collection clase");
                   console.log(clas);
-                     
+
                   res.render('rankings_profesor.ejs', {user: req.user, data: clas, title: "Clases" });
             });
   }
@@ -362,9 +362,9 @@ router.get('/rankings_global?*', isLoggedIn, function(req, res) {
           function(err, jue) {
                  if (err) throw err;
                   console.log("akii " +jue[0].juego.ranking.length);
-              
+
         res.render('rankings_global.ejs', { user: req.user, ranking: jue[0].juego.ranking,
-                  title: req.query.nombre_juego});    
+                  title: req.query.nombre_juego});
           });
 });
 
@@ -377,7 +377,7 @@ if(req.user.usuario.tipo != "profesor"){
  Clase.find({"clase.nombre_clase": req.query.nombre_clase ,"clase.alumnos_email": req.user.usuario.email,
    "clase.retos.nombre_reto":   req.query.nombre_reto },
  {"clase.retos.$": 1},
- 
+
                function(err, clas) {
                 if(err) console.error("Error:"+err);
                   console.log(clas[0].clase.retos[0].ganadas);
@@ -387,14 +387,14 @@ if(req.user.usuario.tipo != "profesor"){
 }else{
   Clase.find({"clase.profesor_username": req.user.usuario.username, "clase.retos.nombre_reto":   req.query.nombre_reto },
  {"clase.retos.$": 1},
- 
+
                function(err, clas) {
                 if(err) console.error("Error:"+err);
                   console.log(clas[0].clase.retos[0].ganadas);
               res.render('r_reto.ejs', { user: req.user, win: clas[0].clase.retos[0].ganadas, loss: clas[0].clase.retos[0].perdidas ,
                     title: req.query.nombre_reto});
                });
-  
+
 }
 });
 

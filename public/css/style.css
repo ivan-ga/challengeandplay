@@ -1,4 +1,7 @@
 /* YOUR CUSTOM STYLES */
+/* ul li:hover a {
+    color: red;
+} */
 
 .text-dark {
   color: #2c0f62 !important;
@@ -42,7 +45,7 @@
         footer a{
           color: #2c0f62 !important;
         }
-        
+
         .boton-homep{
              background-color: #d6d2e1;
         }
@@ -200,7 +203,6 @@
     background-color: white;
 }
 
-.form-nueva-clase input:focus { 
+.form-nueva-clase input:focus {
     background-color: white;
 }
-
