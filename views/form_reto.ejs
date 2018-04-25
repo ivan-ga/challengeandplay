@@ -22,125 +22,147 @@
 
     <main>
         <div class="col-sm-12 en-medio">
-          <div>
-            <div class="row">
-                <div class="col-sm-4 align-middle">
-                    <div class="text-center">
+                    <div>
                         <form class="form-nueva-clase">
-                          <h3>Nuevo reto</h3>
-                          <div class="form-group">
-                            <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre del reto">
-                          </div>
-                          <div class="form-group">
-                            <input type="name" class="form-control" id="exampleInputPassword1" placeholder="otro campo">
-                          </div>
-                          <div class="form-group">
-                            <input type="name" class="form-control" id="exampleInputPassword1" placeholder="otro campo">
-                          </div>
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <h3>Nuevo reto</h3>
+                              <div class="form-group">
+                                <input type="name" class="form-control" id="nombre_reto" placeholder="Nombre del reto">
+                              </div>
+                              <div class="form-group">
+                                <input type="name" class="form-control" id="nombre_clase" placeholder="Nombre de la clase">
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h4>Matemáticas</h4>
+                                <div class="panel-body">
+                                    <div class="checkbox checbox-switch switch-danger">
+                                      <label id="reto">
+                                        <input type="checkbox" name="check" value="1" id="reto-1"/>
+                                        <span></span>
+                                        Suma
+                                      </label>
+                                    </div>
+
+                                    <div class="checkbox checbox-switch switch-danger">
+                                      <label id="reto">
+                                        <input type="checkbox" name="" id="reto-2"/>
+                                        <span></span>
+                                        Multiplicar
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h4>Geografía</h4>
+                              <div class="panel-body">
+                                  <div class="checkbox checbox-switch switch-success">
+                                    <label id="reto">
+                                      <input type="checkbox" name="" id="reto-3"/>
+                                      <span></span>
+                                      Capitales
+                                    </label>
+                                  </div>
+
+                                  <div class="checkbox checbox-switch switch-success">
+                                    <label id="reto">
+                                      <input type="checkbox" name="" id="reto-4"/>
+                                      <span></span>
+                                      Banderas
+                                    </label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div> <!-- FIN ROW 1 -->
+                          <br>
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <h4>Lenguaje</h4>
+                              <div class="panel-body">
+                                  <div class="checkbox checbox-switch switch-primary">
+                                    <label id="reto">
+                                      <input type="checkbox" name="" id="reto-5"/>
+                                      <span></span>
+                                      Artículos
+                                    </label>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h4>Química</h4>
+                                <div class="panel-body">
+                                    <div class="checkbox checbox-switch switch-warning">
+                                      <label id="reto">
+                                        <input type="checkbox" name="" id="reto-6"/>
+                                        <span></span>
+                                        Tabla Perdiódica
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h4>Astronomía</h4>
+                              <div class="panel-body">
+                                  <div class="checkbox checbox-switch switch-dark">
+                                    <label id="reto">
+                                      <input type="checkbox" name="" id="reto-7"/>
+                                      <span></span>
+                                      Planetas
+                                    </label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div> <!-- FIN ROW 2 -->
+                          <br>
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <h4>Inglés</h4>
+                                <div class="panel-body">
+                                    <div class="checkbox checbox-switch switch-warning">
+                                      <label id="reto">
+                                        <input type="checkbox" name="" id="reto-8"/>
+                                        <span></span>
+                                        Inglés
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h4>Historia</h4>
+                              <div class="panel-body">
+                                  <div class="checkbox checbox-switch switch-dark">
+                                    <label id="reto">
+                                      <input type="checkbox" name="" id="reto-9"/>
+                                      <span></span>
+                                      Historia
+                                    </label>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <h4>Personalizado</h4>
+                              <div class="panel-body">
+                                  <div class="checkbox checbox-switch switch-danger">
+                                    <label id="reto">
+                                      <input type="checkbox" name="" id="reto-10"/>
+                                      <span></span>
+                                      Test
+                                    </label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div> <!-- FIN ROW 3 -->
+                          <br>
                           <button type="submit" class="btn red">ENVIAR</button>
                         </form>
                     </div>
-                </div>
-                <div class="col-sm-8 align-middle">
-                  <h3 class="text-center">Selecionar Reto</h3>
-                  <br>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h4>Matemáticas</h4>
-                        <div class="panel-body">
-                            <div class="checkbox checbox-switch switch-danger">
-                              <label id="reto">
-                                <input type="checkbox" name="check" value="1" id="reto-1"/>
-                                <span></span>
-                                Suma
-                              </label>
-
-                              <!-- <label id="reto">
-                                <input type="checkbox" name="check" value="2" id="reto-2"/>
-                                <span></span>
-                                Multiplicar
-                              </label> -->
-
-                            </div>
-
-                            <div class="checkbox checbox-switch switch-danger">
-                              <label id="reto">
-                                <input type="checkbox" name="" id="reto-2"/>
-                                <span></span>
-                                Multiplicar
-                              </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <h4>Geografía</h4>
-                      <div class="panel-body">
-                          <div class="checkbox checbox-switch switch-success">
-                            <label id="reto">
-                              <input type="checkbox" name="" id="reto-3"/>
-                              <span></span>
-                              Capitales
-                            </label>
-                          </div>
-
-                          <div class="checkbox checbox-switch switch-success">
-                            <label id="reto">
-                              <input type="checkbox" name="" id="reto-4"/>
-                              <span></span>
-                              Banderas
-                            </label>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <h4>Lenguaje</h4>
-                      <div class="panel-body">
-                          <div class="checkbox checbox-switch switch-primary">
-                            <label id="reto">
-                              <input type="checkbox" name="" id="reto-5"/>
-                              <span></span>
-                              Artículos
-                            </label>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <h4>Química</h4>
-                        <div class="panel-body">
-                            <div class="checkbox checbox-switch switch-warning">
-                              <label id="reto">
-                                <input type="checkbox" name="" id="reto-6"/>
-                                <span></span>
-                                Tabla Perdiódica
-                              </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <h4>Astronomía</h4>
-                      <div class="panel-body">
-                          <div class="checkbox checbox-switch switch-dark">
-                            <label id="reto">
-                              <input type="checkbox" name="" id="reto-7"/>
-                              <span></span>
-                              Planetas
-                            </label>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
         </div>
     </main>
 
 <!--Footer-->
 
-<footer class="page-footer center-on-small-only" style="position: fixed; bottom:0px;width:100%;z-index:10">
+<footer class="page-footer center-on-small-only" style="position: relative; bottom:0px;width:100%;z-index:10">
   <% include templates/footer %>
 </footer>
 
