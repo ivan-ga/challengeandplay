@@ -15,20 +15,29 @@
         <div class="container">
             <div class="row">
                 <div class="offset-1 col-md-7">
-                    <h1>Matemáticas 1º Curso</h1>
+                    <h1>Clases</h1>
                     <ul class="users">
                     <table class="table table-hover border-dark table-bordered table-stripe">
                         <thead>
                             <tr>
                                 <th scope="col" data-priority="1">Nombre</th>
-                                <th scope="col" data-priority="2">Retos realizados</th>
+                                <th scope="col" data-priority="2">Curso</th>
+                                <th scope="col" data-priority="4">Nº de alumnos</th>
+                                <th scope="col" data-priority="3">Retos realizados</th>
                             </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                              <td>Juan</td>
-                              <td>3</td>
-                          </tr>
+                           <% for (var i=0; i < data.length; i++) {%>
+                                <tr class="table-info">
+                                   <td rowspan=<%= data[i].clase.retos.length %> > 
+                                        <%= data[i].clase.nombre_clase %> </td>
+                                         <td><a><%=  data[i].clase.curso %></a></td>                            </td>
+                                         <td><a><%=  data[i].clase.alumnos_email.length %></a></td>
+                                         <td><a><%=  data[i].clase.retos.length %></a></td>
+                                    </td>
+                                    </tr>
+                            <% } %>
+        
                         </tbody>
                     </table>
                 </div>

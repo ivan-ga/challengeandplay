@@ -93,23 +93,18 @@ router.get('/form_reto', isLoggedIn, function(req, res) {
     res.redirect("/");
 }});
 
-router.get('/clases', isLoggedIn, function(req, res) {
+router.get('/p_clases', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-      res.render('clases.ejs', { user: req.user, expressFlash: '' });
-
-      Clase.find({"clase.profesor_username": req.user.usuario.username, "clase.retos.nombre_reto":   req.query.nombre_reto },
-      {"clase.retos.$": 1},
-               function(err, clas) {
-                if(err) console.error("Error:"+err);
-                  console.log(clas[0].clase.retos[0].ganadas);
-              res.render('r_reto.ejs', { user: req.user, win: clas[0].clase.retos[0].ganadas, loss: clas[0].clase.retos[0].perdidas ,
-                    title: req.query.nombre_reto});
-               });
-
-
-
-
-
+      Clase.find({"clase.profesor_username":req.user.usuario.username}, 
+                 {"clase.alumnos_email":1,"clase.nombre_clase":1,"clase.curso":1, "clase.retos":1} ,
+              function(err, clas) {
+                  if (err) throw err;
+                  //console.log(clas.length + "Datos que miroa ahioar")
+                    console.log("Introducir datos nuevo en la collection clase");
+                  console.log(clas[0].clase.curso + "Esteooo");
+                     
+                  res.render('p_clases.ejs', {user: req.user, data: clas, title: "Clases" });
+            }); 
   }else{
       res.redirect("/");
 }});
@@ -340,18 +335,7 @@ router.get('/rankings_clases', isLoggedIn, function(req, res) {
                     res.render('rankings_clases.ejs', {user: req.user, data: clas, title: "Rankings Clases" });
             });
   }else{
-    // Soy profesor busco en todas mis calse
-      console.log("Soy profesor");
-      Clase.find({"clase.profesor_username":req.user.usuario.username},
-                 {"clase.nombre_clase":1, "clase.retos":1} ,
-              function(err, clas) {
-                  if (err) throw err;
-                  //console.log(clas.length + "Datos que miroa ahioar")
-                    console.log("Introducir datos nuevo en la collection clase");
-                  console.log(clas);
-
-                  res.render('rankings_profesor.ejs', {user: req.user, data: clas, title: "Clases" });
-            });
+        res.redirect('p_clases');
   }
 });
 router.get('/rankings_global?*', isLoggedIn, function(req, res) {
