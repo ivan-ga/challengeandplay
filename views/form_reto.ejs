@@ -23,15 +23,15 @@
     <main>
         <div class="col-sm-12 en-medio">
                     <div>
-                        <form class="form-nueva-clase">
+                        <form class="form-nueva-clase" method="POST" action="/registro_reto">
                           <div class="row">
                             <div class="col-sm-4">
                               <h3>Nuevo reto</h3>
                               <div class="form-group">
-                                <input type="name" class="form-control" id="nombre_reto" placeholder="Nombre del reto">
+                                <input type="name" class="form-control" id="nombre_reto" name="nombre_reto" placeholder="Nombre del reto">
                               </div>
                               <div class="form-group">
-                                <input type="name" class="form-control" id="nombre_clase" placeholder="Nombre de la clase">
+                                <input type="name" class="form-control" id="nombre_clase" name="nombre_clase" placeholder="Nombre de la clase">
                               </div>
                             </div>
                             <div class="col-sm-4">
@@ -39,7 +39,7 @@
                                 <div class="panel-body">
                                     <div class="checkbox checbox-switch switch-danger">
                                       <label id="reto">
-                                        <input type="checkbox" name="check" value="1" id="reto-1"/>
+                                        <input type="checkbox" name="check" value="suma" id="reto-1"/>
                                         <span></span>
                                         Suma
                                       </label>
@@ -47,7 +47,7 @@
 
                                     <div class="checkbox checbox-switch switch-danger">
                                       <label id="reto">
-                                        <input type="checkbox" name="" id="reto-2"/>
+                                        <input type="checkbox" name="check" value="multiplicar" id="reto-2"/>
                                         <span></span>
                                         Multiplicar
                                       </label>
@@ -59,7 +59,7 @@
                               <div class="panel-body">
                                   <div class="checkbox checbox-switch switch-success">
                                     <label id="reto">
-                                      <input type="checkbox" name="" id="reto-3"/>
+                                      <input type="checkbox" name="check" value="capitales" id="reto-3"/>
                                       <span></span>
                                       Capitales
                                     </label>
@@ -67,7 +67,7 @@
 
                                   <div class="checkbox checbox-switch switch-success">
                                     <label id="reto">
-                                      <input type="checkbox" name="" id="reto-4"/>
+                                      <input type="checkbox" name="check" value="banderas" value="articulos" id="reto-4"/>
                                       <span></span>
                                       Banderas
                                     </label>
@@ -82,7 +82,7 @@
                               <div class="panel-body">
                                   <div class="checkbox checbox-switch switch-primary">
                                     <label id="reto">
-                                      <input type="checkbox" name="" id="reto-5"/>
+                                      <input type="checkbox" name="check" value="articulos" id="reto-5"/>
                                       <span></span>
                                       Artículos
                                     </label>
@@ -94,7 +94,7 @@
                                 <div class="panel-body">
                                     <div class="checkbox checbox-switch switch-warning">
                                       <label id="reto">
-                                        <input type="checkbox" name="" id="reto-6"/>
+                                        <input type="checkbox" name="check" value="tp" id="reto-6"/>
                                         <span></span>
                                         Tabla Perdiódica
                                       </label>
@@ -106,7 +106,7 @@
                               <div class="panel-body">
                                   <div class="checkbox checbox-switch switch-dark">
                                     <label id="reto">
-                                      <input type="checkbox" name="" id="reto-7"/>
+                                      <input type="checkbox" name="check" value="planetas" id="reto-7"/>
                                       <span></span>
                                       Planetas
                                     </label>
@@ -121,7 +121,7 @@
                                 <div class="panel-body">
                                     <div class="checkbox checbox-switch switch-warning">
                                       <label id="reto">
-                                        <input type="checkbox" name="" id="reto-8"/>
+                                        <input type="checkbox" name="check" value="ingles" id="reto-8"/>
                                         <span></span>
                                         Inglés
                                       </label>
@@ -133,7 +133,7 @@
                               <div class="panel-body">
                                   <div class="checkbox checbox-switch switch-dark">
                                     <label id="reto">
-                                      <input type="checkbox" name="" id="reto-9"/>
+                                      <input type="checkbox" name="check" value="historia" id="reto-9"/>
                                       <span></span>
                                       Historia
                                     </label>
@@ -145,7 +145,7 @@
                               <div class="panel-body">
                                   <div class="checkbox checbox-switch switch-danger">
                                     <label id="reto">
-                                      <input type="checkbox" name="" id="reto-10"/>
+                                      <input type="checkbox" name="check" value="test" id="reto-10"/>
                                       <span></span>
                                       Test
                                     </label>

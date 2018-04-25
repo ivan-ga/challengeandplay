@@ -59,7 +59,8 @@
 
 /*Para contro0lar alto del footer*/
 .en-medio{
-        padding: 5%;
+    margin-top: -5%;
+    padding: 5%;
 
 }
 

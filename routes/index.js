@@ -95,16 +95,16 @@ router.get('/form_reto', isLoggedIn, function(req, res) {
 
 router.get('/p_clases', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-      Clase.find({"clase.profesor_username":req.user.usuario.username}, 
+      Clase.find({"clase.profesor_username":req.user.usuario.username},
                  {"clase.alumnos_email":1,"clase.nombre_clase":1,"clase.curso":1, "clase.retos":1} ,
               function(err, clas) {
                   if (err) throw err;
                   //console.log(clas.length + "Datos que miroa ahioar")
                     console.log("Introducir datos nuevo en la collection clase");
                   console.log(clas[0].clase.curso + "Esteooo");
-                     
+
                   res.render('p_clases.ejs', {user: req.user, data: clas, title: "Clases" });
-            }); 
+            });
   }else{
       res.redirect("/");
 }});
@@ -184,6 +184,47 @@ router.post('/registro', passport.authenticate('local-signup', {
   failureFlash: true,
 }));
 
+router.post('/registro_reto',  isLoggedIn, function(req,res){
+  // var newClase = Clase();
+  console.log(req.body.check);
+  Clase.find({"clase.nombre_clase" :req.body.nombre_clase,"clase.profesor_username":req.user.usuario.username},
+
+    function(err,reto) {
+      // console.log(retos.clase.retos);
+      reto[0].clase.retos.push({
+        "nombre_reto":req.body.nombre_reto,
+        "nombre_juego":req.body.check,
+        
+      });
+      reto[0].save(function(err) {
+         if (err)  // si erro es nll es k hay un erro al guardar.
+          throw err;/// esto es una exepcio si se dispara no  sigue con return.
+         return reto;
+      });
+    });
+
+  //               //console.log("error" + err);
+  //               //console.log("error" + clas);
+  //               if (err) throw err;
+  //               //console.log(clas.length + "Datos que miroa ahioar")
+  //               if (clas.length < 1){
+  //                 newClase.clase.nombre_clase = req.body.nombreClase;
+  //                 newClase.clase.curso = req.body.curso;
+  //                 newClase.clase.profesor_username = req.user.usuario.username;
+  //                 newClase.clase.password =  newClase.generateHash(req.body.password);
+  //                 // Guardamos en la bbdd.
+  //                 newClase.save(function(err) {
+  //                 if (err) throw err;
+  //                   return newClase;
+  //                 });
+  //                 console.log("Introducir datos nuevo en la collection clase");
+  //                 res.render('form_clase.ejs', { user: req.user, registrado: true, expressFlash: '' });
+  //               }else{
+  //                 console.log("Dato nuevo esta en la bbdd. No se introduce.");
+  //                 res.render('form_clase.ejs', { user: req.user, registrado: false, expressFlash: '' });
+            // }
+          // });
+});
 
 
 router.post('/login', passport.authenticate('local-login', {
