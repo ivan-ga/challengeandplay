@@ -30,8 +30,8 @@
 
 .front {
 	overflow: hidden;
-	width: 220px;
-	height: 220px;
+	width: 250px;
+	height: 250px;
 	/* height: 330px; */
 
 	position: absolute;
@@ -42,11 +42,11 @@
 .back {
 	padding: 15px;
 	padding-top: 0px;
-	width: 220px;
-	height: 220px;
+	width: 250px;
+	height: 250px;
 	/* height: 330px; */
 	-webkit-transform: rotateY(-180deg);
-	overflow: scroll;
+	/* overflow: scroll; */
 }
 
 .info-card:hover .back {

@@ -8,7 +8,7 @@
 
     <style type="text/css">
         img { width: 140px; height: 140px; border-radius: 50%!important }
-        
+
     </style>
 
 </head>
@@ -23,9 +23,10 @@
         <div class="col-sm-12 en-medio">
           <div class="text-center">
             <div class="row">
-                <div class="col-sm-6 offset-3"> 
+                <div class="col-sm-6 offset-3">
                     <div class="contenido-perfil-alu" id="contenido-perfil">
-                        <img src="img/uploads/<%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/'<%= user.usuario.username %>/140'"><br>
+                        <img src="img/uploads/<!--%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/<%= user.usuario.username %>/140'"><br><br>
+                        <!-- <img src="img/uploads/<%=user.id%>.jpg" class="img-circle" onerror="this.src='https://avatars.io/gravatar/'<%= user.usuario.username %>/140'"><br> -->
                         <br>
                         <strong>Nombre</strong>: <%= user.usuario.username %><br><br><br>
                         <strong>Categoría:</strong>: Alumno<br><br><br>
@@ -44,7 +45,7 @@
         	             </form>
                     </div>
                 </div>
-                
+
             </div>
           </div>
         </div>
