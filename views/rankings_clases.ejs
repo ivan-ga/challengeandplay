@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='myApp'>
 <head>
-    
+
   <title>Proyecto-SYTW</title>
   <% include templates/head %>
 
@@ -10,7 +10,7 @@
 			font-family: "Verdana" sans-serif;
 		}
 		a:link,
-		a:visited { 
+		a:visited {
 			color: blue;
 		}
 		a:hover,
@@ -32,7 +32,7 @@
 			padding: 0;
 			border: none;
 			cursor: pointer;
-			
+
 			-moz-user-select: text;
 
 			/* override all your button styles here if there are any others */
@@ -60,10 +60,10 @@
                 <div class="offset-1 col-md-7">
                     <h1>Clases</h1>
                     <form name="ranking"  method="GET" action="/r_reto">
-                 
+
                       <div class="btn-group">
-                       
-                 
+
+
 
                     <table class="table table-hover border-dark table-bordered table-stripe">
                         <thead>
@@ -75,12 +75,12 @@
                         <tbody>
                             <% for (var i=0; i < data.length; i++) {%>
                                 <tr class="table-info">
-                                   <td rowspan=<%= data[i].clase.retos.length %> > 
+                                   <td rowspan=<%= data[i].clase.retos.length %> >
                                        <%= data[i].clase.nombre_clase %> </td>
-                                   
+
                                    <% for (var j=0; j < data[i].clase.retos.length; j++) {%>
                                        <% if(j==0){ %>
-                                          <td>     
+                                          <td>
                             <a href=<%= "/r_reto?nombre_reto="+ data[i].clase.retos[j].nombre_reto+'&nombre_clase='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></a>
 
                                                 </td>
@@ -88,17 +88,17 @@
                                           <tr class="table-info">
                                        <% }else{ %>
                                              <td>
-                                           
+
                                       <a href=<%= "/r_reto?nombre_reto="+ data[i].clase.retos[j].nombre_reto+'&nombre_clase='+  data[i].clase.nombre_clase   %> ><%=  data[i].clase.retos[j].nombre_reto %></a>
                                                 </td>
                                                   <td>   <a href=<%= "g_" + data[i].clase.retos[j].nombre_juego%>>  Ir Reto </a> </td>
                                           </tr>
                                         <% } %>
-                                   
-                                   
+
+
                                    <% } %>
-                                 
-                                 
+
+
                                  </tr class="table-info">
                             <% } %>
                         </tbody>
@@ -111,15 +111,15 @@
                 </div>
             </div>
         </div>
-      
-      
+
+
       <!--/.Page heading-->
     </div>
     <!--/.Main layout-->
   </main>
 
   <!--Footer-->
-  <footer class="page-footer center-on-small-only">
+  <footer class="page-footer center-on-small-only" style="position: fixed; bottom:0px;width:100%;z-index:10">
     <% include templates/footer %>
   </footer>
   <!--/.Footer-->
