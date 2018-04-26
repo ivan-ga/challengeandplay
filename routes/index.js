@@ -88,7 +88,20 @@ router.post('/registro_clase',  isLoggedIn, function(req,res){
 
 router.get('/form_reto', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-    res.render('form_reto.ejs', { user: req.user, expressFlash: '' });
+       Clase.find({"clase.profesor_username":req.user.usuario.username},
+                 {"clase.alumnos_email":1,"clase.nombre_clase":1,"clase.curso":1, "clase.retos":1} ,
+              function(err, clas) {
+                  if (err) throw err;
+                  //console.log(clas.length + "Datos que miroa ahioar")
+                  console.log("Introducir datos nuevo en la collection clase");
+                 if(  req.query.registrado == null ){
+                      res.render('form_reto.ejs',  {user: req.user, data: clas,title: "Retos",registrado:null});
+                 }else{
+                     res.render('form_reto.ejs',  {user: req.user, data: clas,title: "Retos",registrado:true });
+                 }
+                        
+            });
+         
   }else{
     res.redirect("/");
 }});
@@ -111,7 +124,15 @@ router.get('/p_clases', isLoggedIn, function(req, res) {
 
 router.get('/retos', isLoggedIn, function(req, res) {
   if(req.user.usuario.tipo == "profesor"){
-       res.render('retos.ejs', { user: req.user, expressFlash: '' });
+          Clase.find({"clase.profesor_username":req.user.usuario.username},
+                 {"clase.alumnos_email":1,"clase.nombre_clase":1,"clase.curso":1, "clase.retos":1} ,
+              function(err, clas) {
+                  if (err) throw err;
+                  //console.log(clas.length + "Datos que miroa ahioar")
+                  console.log("Introducir datos nuevo en la collection clase");
+                  console.log(clas[0].clase.curso + "Esteooo");
+                  res.render('retos.ejs', {user: req.user, data: clas, title: "Retos" });
+            });
   }else{
        res.redirect("/");
 }});
@@ -194,36 +215,16 @@ router.post('/registro_reto',  isLoggedIn, function(req,res){
       reto[0].clase.retos.push({
         "nombre_reto":req.body.nombre_reto,
         "nombre_juego":req.body.check,
-        
       });
       reto[0].save(function(err) {
          if (err)  // si erro es nll es k hay un erro al guardar.
           throw err;/// esto es una exepcio si se dispara no  sigue con return.
          return reto;
       });
+   
+      res.redirect("/form_reto?registrado=true");   
     });
-
-  //               //console.log("error" + err);
-  //               //console.log("error" + clas);
-  //               if (err) throw err;
-  //               //console.log(clas.length + "Datos que miroa ahioar")
-  //               if (clas.length < 1){
-  //                 newClase.clase.nombre_clase = req.body.nombreClase;
-  //                 newClase.clase.curso = req.body.curso;
-  //                 newClase.clase.profesor_username = req.user.usuario.username;
-  //                 newClase.clase.password =  newClase.generateHash(req.body.password);
-  //                 // Guardamos en la bbdd.
-  //                 newClase.save(function(err) {
-  //                 if (err) throw err;
-  //                   return newClase;
-  //                 });
-  //                 console.log("Introducir datos nuevo en la collection clase");
-  //                 res.render('form_clase.ejs', { user: req.user, registrado: true, expressFlash: '' });
-  //               }else{
-  //                 console.log("Dato nuevo esta en la bbdd. No se introduce.");
-  //                 res.render('form_clase.ejs', { user: req.user, registrado: false, expressFlash: '' });
-            // }
-          // });
+   
 });
 
 
@@ -302,6 +303,8 @@ if(request.user.usuario.tipo != "profesor"){
                });
         });
   }
+  
+  //redirect("/g_"+)
 });
 
 

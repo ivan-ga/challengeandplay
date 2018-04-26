@@ -20,18 +20,38 @@
                     <table class="table table-hover border-dark table-bordered table-stripe">
                         <thead>
                             <tr>
-                                <th scope="col" data-priority="1">Nombre</th>
-                                <th scope="col" data-priority="2">Clase</th>
+                                <th scope="col" data-priority="1">Clase</th>
+                                <th scope="col" data-priority="2">Nombre Reto</th>
                                 <th scope="col" data-priority="4">Participantes</th>
                             </tr>
                         </thead>
                         <tbody>
-
+                           <% for (var i=0; i < data.length; i++) {%>
+                                <tr class="table-info">
+                                <% if(data[i].clase.retos.length != 0){ %>
+                                   
+                                   <td rowspan=<%= data[i].clase.retos.length %> > 
+                                       <%= data[i].clase.nombre_clase %> </td>
+                                  
+                                   <% for (var j=0; j < data[i].clase.retos.length; j++) {%>
+                                          <td><a><%=  data[i].clase.retos[j].nombre_reto %></a></td>
+                                          <td><a><%= data[i].clase.alumnos_email.length%> </a></td>
+                                          </tr >
+                                   <% } %>
+                               <% }else{ %>
+                                  <td><%= data[i].clase.nombre_clase %> </td>
+                                     <td></td>
+                                     <td></td>
+                                     </tr >
+                                  <% } %>
+                                </tr>
+                            <% } %>
                         </tbody>
                     </table>
                 </div>
                 <div class="offset-1 col-md-3 ">
                     <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/39980-200.png" class="img-fluid" alt="Responsive image">
+                    <a href="/form_reto">Añadir Nuevo Reto<a/>
                 </div>
             </div>
         </div>

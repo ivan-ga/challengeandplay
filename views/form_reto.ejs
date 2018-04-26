@@ -23,6 +23,23 @@
     <main>
         <div class="col-sm-12 en-medio">
                     <div>
+                      <% if ( registrado != null ) { %>
+                        <% if ( registrado == true ) { %>
+                         <div class = "row">
+                             <div class="col-sm-12 alert alert-success">
+                               <button type="button" class="close" data-dismiss="alert">&times;</button>
+                               <strong>Registro Correcto</strong>  <!--p><p><!--%= message %> <!--%= error.status %><pre><!--%= error.stack %></pre></p-->
+                             </div>
+                          </div>
+                         <% }else{ %>
+                            <div class = "row">
+                             <div class="col-sm-12 alert alert-danger alert-dismissable">
+                               <button type="button" class="close" data-dismiss="alert">&times;</button>
+                               <strong>Registro Incorrecto</strong>  <!--p><p><!--%= message %> <!--%= error.status %><pre><!--%= error.stack %></pre></p-->
+                             </div>
+                           </div>
+                       <% } %>
+                     <% } %>
                         <form class="form-nueva-clase" method="POST" action="/registro_reto">
                           <div class="row">
                             <div class="col-sm-4">
@@ -31,7 +48,15 @@
                                 <input type="name" class="form-control" id="nombre_reto" name="nombre_reto" placeholder="Nombre del reto">
                               </div>
                               <div class="form-group">
-                                <input type="name" class="form-control" id="nombre_clase" name="nombre_clase" placeholder="Nombre de la clase">
+                                  <label id="reto">
+                                      Nombre de la Clase :
+                                  </label>   
+                                  <select id="nombre_clase" name="nombre_clase" >
+                                      <% for (var i=0; i < data.length; i++) {%>
+                                         <option value=<%= data[i].clase.nombre_clase %>>
+                                           <%= data[i].clase.nombre_clase %></option>
+                                      <% }%>
+                                  </select>
                               </div>
                             </div>
                             <div class="col-sm-4">

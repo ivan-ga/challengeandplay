@@ -27,22 +27,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                           <% for (var i=0; i < data.length; i++) {%>
+                             <% for (var i=0; i < data.length; i++) {%>
                                 <tr class="table-info">
-                                   <td rowspan=<%= data[i].clase.retos.length %> > 
-                                        <%= data[i].clase.nombre_clase %> </td>
-                                         <td><a><%=  data[i].clase.curso %></a></td>                            </td>
+                                         <td><%= data[i].clase.nombre_clase %> </td>
+                                         <td><a><%=  data[i].clase.curso %></a></td>                       
                                          <td><a><%=  data[i].clase.alumnos_email.length %></a></td>
-                                         <td><a><%=  data[i].clase.retos.length %></a></td>
-                                    </td>
-                                    </tr>
-                            <% } %>
-        
+                                         <td><a><%=  data[i].clase.retos.length %></a></td>   
+                              <% } %> </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="offset-1 col-md-3 ">
                     <img src="http://www.mrgff.org/wp-content/uploads/EDU.jpg" class="img-fluid" alt="Responsive image">
+                    <a href="/form_clase">Añadir Nueva Clase<a/>
                 </div>
             </div>
         </div>
